@@ -2,7 +2,12 @@
     "name": "Taperer-v0",
     "description": "Automation software for FAMES lab fiber tapering setup",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-opcua": "0.2.113",
+        "node-red-contrib-phidget22": "1.0.3",
+        "node-red-contrib-pid": "1.1.7",
+        "node-red-dashboard": "2.28.1"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",

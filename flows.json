@@ -1,1 +1,3982 @@
-[{"id":"cd3c6c14.6a19b8","type":"tab","label":"Motors","disabled":false,"info":""},{"id":"472cf316.a032c4","type":"tab","label":"Temperature","disabled":false,"info":""},{"id":"39f681b1.fd6a4e","type":"tab","label":"Strain","disabled":false,"info":""},{"id":"d0319a94.933848","type":"tab","label":"Arm position","disabled":false,"info":""},{"id":"c26a8ff3.92b38","type":"group","z":"472cf316.a032c4","name":"Port 0","style":{"label":true},"nodes":["f4ace7a2.bec3c","27ab509f.2f5a1","61ef360f.a390c8","932e646e.0fbf68","257e7bac.6143d4","f78e86d.c5c22f8","7a3fcb86.106d54","756e902e.51d178","bb7805c0.6e3c5","beba63e8.f60728"],"x":14,"y":179,"w":432,"h":242},{"id":"e84f4e19.17bd18","type":"group","z":"472cf316.a032c4","name":"Port 1","style":{"label":true},"nodes":["ab096339.d678b8","cdac8d41.9bf8b","7be420d4.84ffe8","10cd8186.edbb46","edac851c.1df8d8","1edb2af2.e65475","a42b33f1.e4469","fd29a404.45b278","5faed94a.76bc9","60505327.d3570c"],"x":14,"y":459,"w":432,"h":242},{"id":"d2b1fc20.53eb38","type":"group","z":"472cf316.a032c4","name":"Port 2","style":{"label":true},"nodes":["73f4454b.b44cb4","f811c80e.791ae8","755efd47.5cfafc","d60fe0fb.55c1a8","4731102c.7ff64","dedbbd10.1ac9e"],"x":14,"y":739,"w":432,"h":162},{"id":"f0fc5028.32d6a8","type":"group","z":"d0319a94.933848","name":"ARM 1","style":{"label":true},"nodes":["892f814c.4627c","5623a3ce.79f00c"],"x":40,"y":439,"w":412,"h":82},{"id":"2f6fa9c1.a66a06","type":"group","z":"d0319a94.933848","name":"ARM 2","style":{"label":true},"nodes":["e99b152e.4aa8","979cc689.b8cd7"],"x":40,"y":539,"w":412,"h":82},{"id":"8680f5c5.8c3ab8","type":"ui_base","theme":{"name":"theme-light","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#0094CE","value":"#0094CE","edited":false},"page-titlebar-backgroundColor":{"value":"#0094CE","edited":false},"page-backgroundColor":{"value":"#fafafa","edited":false},"page-sidebar-backgroundColor":{"value":"#ffffff","edited":false},"group-textColor":{"value":"#1bbfff","edited":false},"group-borderColor":{"value":"#ffffff","edited":false},"group-backgroundColor":{"value":"#ffffff","edited":false},"widget-textColor":{"value":"#111111","edited":false},"widget-backgroundColor":{"value":"#0094ce","edited":false},"widget-borderColor":{"value":"#ffffff","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}},"angularTheme":{"primary":"indigo","accents":"blue","warn":"red","background":"grey"}},"site":{"name":"Tapering UI","hideToolbar":"true","allowSwipe":"false","lockMenu":"true","allowTempTheme":"true","dateFormat":"DD/MM/YYYY","sizes":{"sx":48,"sy":48,"gx":6,"gy":6,"cx":6,"cy":6,"px":0,"py":0}}},{"id":"fa943f83.ed6f3","type":"ui_group","name":"Temperature","tab":"21d594e5.b5238c","order":2,"disp":true,"width":"9","collapse":false},{"id":"ffe1c026.b79e4","type":"OpcUa-Endpoint","endpoint":"opc.tcp://192.168.10.50:4840","secpol":"None","secmode":"None","login":false},{"id":"21d594e5.b5238c","type":"ui_tab","name":"Furnace","icon":"dashboard","order":2,"disabled":false,"hidden":false},{"id":"c50b1cd6.b052d","type":"ui_group","name":"Motor control","tab":"da0b05bc.b4d428","order":1,"disp":true,"width":"6","collapse":false},{"id":"9315ce3e.fb1dc8","type":"ui_tab","name":"Strain ","icon":"dashboard","order":1,"disabled":false,"hidden":false},{"id":"93e5d32a.4731b8","type":"ui_group","name":"Strain","tab":"9315ce3e.fb1dc8","order":3,"disp":true,"width":"12","collapse":false},{"id":"590618eb.b8ddc8","type":"ui_spacer","name":"spacer","group":"c50b1cd6.b052d","order":2,"width":1,"height":1},{"id":"da0b05bc.b4d428","type":"ui_tab","name":"Motor control","icon":"dashboard","order":3,"disabled":false,"hidden":false},{"id":"f2b9b840.849ad","type":"ui_tab","name":"Position","icon":"dashboard","order":4,"disabled":false,"hidden":false},{"id":"63b898e3.cb88b","type":"ui_group","name":"Position","tab":"f2b9b840.849ad","order":1,"disp":true,"width":"6","collapse":false},{"id":"69196b0c.20fd24","type":"OpcUa-Client","z":"cd3c6c14.6a19b8","endpoint":"ffe1c026.b79e4","action":"read","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","name":"read from lemon","x":640,"y":220,"wires":[["d5e87bcc.0a9688"]]},{"id":"d5e87bcc.0a9688","type":"debug","z":"cd3c6c14.6a19b8","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":870,"y":220,"wires":[]},{"id":"b4d3777b.827aa8","type":"inject","z":"cd3c6c14.6a19b8","name":"read c_Vel","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Vel","x":320,"y":200,"wires":[["69196b0c.20fd24"]]},{"id":"92164c2e.bef808","type":"OpcUa-Client","z":"cd3c6c14.6a19b8","endpoint":"ffe1c026.b79e4","action":"write","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","name":"write to lemon","x":700,"y":300,"wires":[[]]},{"id":"e81d1acf.ee4a38","type":"inject","z":"cd3c6c14.6a19b8","name":"write c_Vel","props":[{"p":"topic","vt":"str"},{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Vel","payload":"0.25","payloadType":"num","x":320,"y":400,"wires":[["e57ad8f.51fcd28"]]},{"id":"e57ad8f.51fcd28","type":"OpcUa-Item","z":"cd3c6c14.6a19b8","item":"ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Vel","datatype":"Float","value":"","name":"speed","x":490,"y":380,"wires":[["92164c2e.bef808"]]},{"id":"8f1ba088.c35c88","type":"ui_text","z":"cd3c6c14.6a19b8","group":"c50b1cd6.b052d","order":2,"width":0,"height":0,"name":"Widget info text","label":"OPC-UA","format":"PLC controls here","layout":"col-center","x":260,"y":120,"wires":[]},{"id":"77071c6d.6debc4","type":"ui_text_input","z":"cd3c6c14.6a19b8","name":"Speed input","label":"Speed in mm/min","tooltip":"","group":"c50b1cd6.b052d","order":2,"width":0,"height":0,"passthru":false,"mode":"number","delay":"0","topic":"ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Vel","topicType":"str","x":110,"y":340,"wires":[["b2eb0a03.e1fcf"]]},{"id":"575d194f.6fd2a8","type":"inject","z":"cd3c6c14.6a19b8","name":"read c_Power","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Power","payloadType":"str","x":310,"y":260,"wires":[["69196b0c.20fd24"]]},{"id":"9e4d1534.8429d8","type":"OpcUa-Item","z":"cd3c6c14.6a19b8","item":"ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Power","datatype":"Boolean","value":"","name":"speed","x":470,"y":480,"wires":[["92164c2e.bef808"]]},{"id":"b8fe3285.eff88","type":"inject","z":"cd3c6c14.6a19b8","name":"power on","props":[{"p":"topic","vt":"str"},{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Power","payload":"true","payloadType":"bool","x":300,"y":460,"wires":[["9e4d1534.8429d8"]]},{"id":"af30aec1.c33e28","type":"inject","z":"cd3c6c14.6a19b8","name":"power off","props":[{"p":"topic","vt":"str"},{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Power","payload":"false","payloadType":"bool","x":260,"y":560,"wires":[["9e4d1534.8429d8"]]},{"id":"b2eb0a03.e1fcf","type":"function","z":"cd3c6c14.6a19b8","name":"unit conversion","func":"\nradius=50; //radius of the drive in mm\n\n// 0.01 is due to second gearbox not accounted for in plc units\n// 60 is seconds to a minute\n// 2*pi*r is the circumference of the drive\n\ncoef = 0.01 * 60 * (2 * Math.PI * radius);\n\nmsg.payload /= coef;\n\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":320,"y":340,"wires":[["e57ad8f.51fcd28","bdaaade7.2a31b8"]]},{"id":"bdaaade7.2a31b8","type":"debug","z":"cd3c6c14.6a19b8","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":810,"y":380,"wires":[]},{"id":"cc7c0ac.94f4878","type":"phidget22-connect","z":"472cf316.a032c4","port":"5661","hostname":"localhost","debug":false,"x":130,"y":60,"wires":[[]]},{"id":"f4ace7a2.bec3c","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","g":"c26a8ff3.92b38","channel":"1","deviceSerialNumber":"559642","hubPort":"0","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":260,"wires":[["61ef360f.a390c8"]]},{"id":"27ab509f.2f5a1","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"c26a8ff3.92b38","channel":"3","deviceSerialNumber":"559642","hubPort":"0","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":340,"wires":[["932e646e.0fbf68"]]},{"id":"61ef360f.a390c8","type":"function","z":"472cf316.a032c4","g":"c26a8ff3.92b38","name":"","func":"if (msg.topic != 'Error') {\nmsg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC02'\nreturn msg;\n}","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":260,"wires":[["11623147.a352af","ce937b08.f7374"]]},{"id":"11623147.a352af","type":"ui_chart","z":"472cf316.a032c4","name":"","group":"fa943f83.ed6f3","order":1,"width":"9","height":"6","label":"Temperature 0","chartType":"line","legend":"true","xformat":"mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":"1","removeOlderPoints":"","removeOlderUnit":"60","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":660,"y":280,"wires":[[]]},{"id":"932e646e.0fbf68","type":"function","z":"472cf316.a032c4","d":true,"g":"c26a8ff3.92b38","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC04'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":340,"wires":[["11623147.a352af"]]},{"id":"2c98d758.c77ce","type":"inject","z":"472cf316.a032c4","name":"Reset plot","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[]","payloadType":"json","x":380,"y":140,"wires":[["11623147.a352af","60aac0f4.f62ed8","4a57c17d.e1b418"]]},{"id":"257e7bac.6143d4","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"c26a8ff3.92b38","channel":"0","deviceSerialNumber":"559642","hubPort":"0","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":220,"wires":[["f78e86d.c5c22f8"]]},{"id":"f78e86d.c5c22f8","type":"function","z":"472cf316.a032c4","d":true,"g":"c26a8ff3.92b38","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC01'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":220,"wires":[["11623147.a352af"]]},{"id":"7a3fcb86.106d54","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"c26a8ff3.92b38","channel":"2","deviceSerialNumber":"559642","hubPort":"0","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":300,"wires":[["756e902e.51d178"]]},{"id":"756e902e.51d178","type":"function","z":"472cf316.a032c4","d":true,"g":"c26a8ff3.92b38","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC03'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":300,"wires":[["11623147.a352af"]]},{"id":"bb7805c0.6e3c5","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"c26a8ff3.92b38","channel":"4","deviceSerialNumber":"559642","hubPort":"0","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"2","x":140,"y":380,"wires":[["beba63e8.f60728"]]},{"id":"beba63e8.f60728","type":"function","z":"472cf316.a032c4","d":true,"g":"c26a8ff3.92b38","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'onboard-0'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":380,"wires":[["b6a4eb3e.196a48"]]},{"id":"ab096339.d678b8","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","channel":"1","deviceSerialNumber":"559642","hubPort":"1","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":540,"wires":[["7be420d4.84ffe8"]]},{"id":"cdac8d41.9bf8b","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","channel":"3","deviceSerialNumber":"559642","hubPort":"1","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":620,"wires":[["10cd8186.edbb46"]]},{"id":"7be420d4.84ffe8","type":"function","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC06'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":540,"wires":[["60aac0f4.f62ed8"]]},{"id":"10cd8186.edbb46","type":"function","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC08'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":620,"wires":[["60aac0f4.f62ed8"]]},{"id":"edac851c.1df8d8","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","channel":"0","deviceSerialNumber":"559642","hubPort":"1","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":500,"wires":[["1edb2af2.e65475","2a29fe42.ed103a"]]},{"id":"1edb2af2.e65475","type":"function","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC05'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":500,"wires":[["60aac0f4.f62ed8","4f380687.f36c7"]]},{"id":"a42b33f1.e4469","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","channel":"2","deviceSerialNumber":"559642","hubPort":"1","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":580,"wires":[["fd29a404.45b278"]]},{"id":"fd29a404.45b278","type":"function","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC07'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":580,"wires":[["60aac0f4.f62ed8"]]},{"id":"5faed94a.76bc9","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","channel":"4","deviceSerialNumber":"559642","hubPort":"1","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"2","x":140,"y":660,"wires":[["60505327.d3570c"]]},{"id":"60505327.d3570c","type":"function","z":"472cf316.a032c4","d":true,"g":"e84f4e19.17bd18","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'onboard-1'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":660,"wires":[["52db0dd.3eae374"]]},{"id":"73f4454b.b44cb4","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"d2b1fc20.53eb38","channel":"1","deviceSerialNumber":"559642","hubPort":"2","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":820,"wires":[["f811c80e.791ae8"]]},{"id":"f811c80e.791ae8","type":"function","z":"472cf316.a032c4","d":true,"g":"d2b1fc20.53eb38","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC10'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":820,"wires":[["4a57c17d.e1b418"]]},{"id":"755efd47.5cfafc","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","g":"d2b1fc20.53eb38","channel":"0","deviceSerialNumber":"559642","hubPort":"2","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"1","x":140,"y":780,"wires":[["d60fe0fb.55c1a8","8a3f0628.d54b"]]},{"id":"d60fe0fb.55c1a8","type":"function","z":"472cf316.a032c4","g":"d2b1fc20.53eb38","name":"","func":"if (msg.topic != 'Error') {\nmsg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC09'\nreturn msg;\n}","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":780,"wires":[["4a57c17d.e1b418"]]},{"id":"4731102c.7ff64","type":"phidget22-temperaturesensor","z":"472cf316.a032c4","d":true,"g":"d2b1fc20.53eb38","channel":"4","deviceSerialNumber":"559642","hubPort":"2","debug":false,"dataInterval":"1000","temperatureChangeTrigger":0,"RTDWireSetup":3,"RTDType":2,"thermocoupleType":"2","x":140,"y":860,"wires":[["dedbbd10.1ac9e"]]},{"id":"dedbbd10.1ac9e","type":"function","z":"472cf316.a032c4","d":true,"g":"d2b1fc20.53eb38","name":"","func":"msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'onboard-2'\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":360,"y":860,"wires":[["8c0ef6f.4816c08"]]},{"id":"8c0ef6f.4816c08","type":"ui_gauge","z":"472cf316.a032c4","name":"Gauge 2","group":"fa943f83.ed6f3","order":5,"width":"3","height":"3","gtype":"gage","title":"{{topic}}","label":"°C","format":"{{value}}","min":"10","max":"30","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":680,"y":860,"wires":[]},{"id":"52db0dd.3eae374","type":"ui_gauge","z":"472cf316.a032c4","name":"Gauge 1","group":"fa943f83.ed6f3","order":4,"width":"3","height":"3","gtype":"gage","title":"{{topic}}","label":"°C","format":"{{value}}","min":"10","max":"30","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":680,"y":640,"wires":[]},{"id":"b6a4eb3e.196a48","type":"ui_gauge","z":"472cf316.a032c4","name":"Gauge 0","group":"fa943f83.ed6f3","order":3,"width":"3","height":"3","gtype":"gage","title":"{{topic}}","label":"°C","format":"{{value}}","min":"10","max":"30","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":660,"y":380,"wires":[]},{"id":"60aac0f4.f62ed8","type":"ui_chart","z":"472cf316.a032c4","name":"","group":"fa943f83.ed6f3","order":2,"width":"9","height":"6","label":"Temperature 1","chartType":"line","legend":"true","xformat":"mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":"1","removeOlderPoints":"","removeOlderUnit":"60","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":680,"y":520,"wires":[[]]},{"id":"4a57c17d.e1b418","type":"ui_chart","z":"472cf316.a032c4","name":"","group":"fa943f83.ed6f3","order":2,"width":"9","height":"6","label":"Temperature 2","chartType":"line","legend":"true","xformat":"mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":"1","removeOlderPoints":"","removeOlderUnit":"60","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":660,"y":780,"wires":[[]]},{"id":"bdfe793e.f3c428","type":"phidget22-voltageinput","z":"472cf316.a032c4","d":true,"channel":"1","deviceSerialNumber":"559642","isHubPortDevice":false,"hubPort":0,"debug":false,"dataInterval":"1000","voltageChangeTrigger":0,"sensorType":0,"powerSupply":1,"voltageRange":"11","x":220,"y":960,"wires":[["c296187c.13d38"]]},{"id":"2077297c.2f5d6e","type":"debug","z":"472cf316.a032c4","d":true,"name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":650,"y":960,"wires":[]},{"id":"c296187c.13d38","type":"function","z":"472cf316.a032c4","d":true,"name":"","func":"msg.payload.voltage*=1000\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":420,"y":960,"wires":[["2077297c.2f5d6e"]]},{"id":"4f380687.f36c7","type":"debug","z":"472cf316.a032c4","d":true,"name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":810,"y":460,"wires":[]},{"id":"2a29fe42.ed103a","type":"debug","z":"472cf316.a032c4","d":true,"name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":810,"y":420,"wires":[]},{"id":"8a3f0628.d54b","type":"debug","z":"472cf316.a032c4","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":820,"y":720,"wires":[]},{"id":"ce937b08.f7374","type":"PID","z":"472cf316.a032c4","d":true,"name":"","setpoint":"40","pb":"10","ti":"5","td":"1","integral_default":0.5,"smooth_factor":3,"max_interval":"10","enable":1,"disabled_op":0,"x":590,"y":80,"wires":[["db700bac.56e68"]]},{"id":"671a928a.47199c","type":"phidget22-digitaloutput","z":"472cf316.a032c4","channel":"1","deviceSerialNumber":"559642","isHubPortDevice":false,"hubPort":"4","debug":false,"LEDCurrentLimit":0.02,"LEDForwardVoltage":1,"x":1100,"y":140,"wires":[[]]},{"id":"cb2f7004.f87d1","type":"inject","z":"472cf316.a032c4","name":"50%","props":[{"p":"payload.dutyCycle","v":"0.5","vt":"num"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"setDutyCycle","payloadType":"str","x":850,"y":200,"wires":[["671a928a.47199c"]]},{"id":"e5a672ae.356fc","type":"inject","z":"472cf316.a032c4","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":670,"y":220,"wires":[[]]},{"id":"49c94644.0bfca","type":"debug","z":"472cf316.a032c4","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload.dutyCycle","targetType":"msg","statusVal":"","statusType":"auto","x":1070,"y":40,"wires":[]},{"id":"ab6ad609.dc74e8","type":"inject","z":"472cf316.a032c4","name":"off","props":[{"p":"payload.dutyCycle","v":"0","vt":"num"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"setDutyCycle","payloadType":"str","x":850,"y":140,"wires":[["671a928a.47199c"]]},{"id":"db700bac.56e68","type":"function","z":"472cf316.a032c4","name":"","func":"msg.topic = 'setDutyCycle'\nmsg.payload= { \"dutyCycle\" : msg.payload }\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":780,"y":80,"wires":[["671a928a.47199c","49c94644.0bfca"]]},{"id":"4a789e07.219498","type":"inject","z":"472cf316.a032c4","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"45","payloadType":"num","x":530,"y":20,"wires":[["ce937b08.f7374"]]},{"id":"ce0c4bb1.ee7488","type":"phidget22-connect","z":"39f681b1.fd6a4e","port":"5661","hostname":"localhost","debug":false,"x":170,"y":120,"wires":[[]]},{"id":"49c47775.50ca4","type":"phidget22-voltageratioinput","z":"39f681b1.fd6a4e","channel":0,"deviceSerialNumber":"559402","isHubPortDevice":false,"hubPort":"0","debug":true,"dataInterval":"250","voltageRatioChangeTrigger":0,"sensorType":0,"bridgeGain":"8","x":160,"y":220,"wires":[["a4493398.d24668","7d7cac2.09e3a54","4ae84ec4.42616"]]},{"id":"65560268.c466c4","type":"ui_chart","z":"39f681b1.fd6a4e","name":"","group":"93e5d32a.4731b8","order":6,"width":"12","height":"7","label":"Strain","chartType":"line","legend":"true","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"60","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":890,"y":240,"wires":[[]]},{"id":"a4493398.d24668","type":"change","z":"39f681b1.fd6a4e","name":"","rules":[{"t":"move","p":"payload.voltageRatio","pt":"msg","to":"payload","tot":"msg"},{"t":"set","p":"topic","pt":"msg","to":"strain_1","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":440,"y":220,"wires":[["7d7cac2.09e3a54"]]},{"id":"d5b0ef19.44cfb","type":"inject","z":"39f681b1.fd6a4e","name":"Reset plot","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[]","payloadType":"json","x":660,"y":40,"wires":[["65560268.c466c4"]]},{"id":"cec384a2.b8b4e","type":"phidget22-voltageratioinput","z":"39f681b1.fd6a4e","channel":"1","deviceSerialNumber":"559402","isHubPortDevice":false,"hubPort":"0","debug":false,"dataInterval":"250","voltageRatioChangeTrigger":0,"sensorType":0,"bridgeGain":"8","x":160,"y":280,"wires":[["8f2ff0c2.af014","f4dd88fa.3c273"]]},{"id":"8f2ff0c2.af014","type":"change","z":"39f681b1.fd6a4e","name":"","rules":[{"t":"move","p":"payload.voltageRatio","pt":"msg","to":"payload","tot":"msg"},{"t":"set","p":"topic","pt":"msg","to":"strain_2","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":440,"y":280,"wires":[["f4dd88fa.3c273"]]},{"id":"2513049d.8fac1c","type":"ui_button","z":"39f681b1.fd6a4e","name":"","group":"93e5d32a.4731b8","order":1,"width":0,"height":0,"passthru":false,"label":"Zero","tooltip":"","color":"","bgcolor":"","icon":"","payload":"","payloadType":"str","topic":"ZeroNow","topicType":"str","x":670,"y":640,"wires":[["7d7cac2.09e3a54","f4dd88fa.3c273"]]},{"id":"7d7cac2.09e3a54","type":"function","z":"39f681b1.fd6a4e","name":"","func":"if (msg.topic == 'VoltageratioChange') {\n    context.set('lastValue', msg.payload.voltageRatio);\n}\nelse  if (msg.topic == 'ZeroNow') {\n    context.set('offset', context.get('lastValue') );\n}\nelse {\n    msg.payload -= context.get('offset')\n    return msg;\n}\n","outputs":1,"noerr":0,"initialize":"// Code added here will be run once\n// whenever the node is deployed.\ncontext.set('offset', 0)","finalize":"","x":660,"y":140,"wires":[["65560268.c466c4"]]},{"id":"f4dd88fa.3c273","type":"function","z":"39f681b1.fd6a4e","name":"","func":"if (msg.topic == 'VoltageratioChange') {\n    context.set('lastValue', msg.payload.voltageRatio);\n}\nelse  if (msg.topic == 'ZeroNow') {\n    context.set('offset', context.get('lastValue') );\n}\nelse {\n    msg.payload -= context.get('offset')\n    return msg;\n}\n","outputs":1,"noerr":0,"initialize":"// Code added here will be run once\n// whenever the node is deployed.\ncontext.set('offset', 0)","finalize":"","x":680,"y":340,"wires":[["65560268.c466c4"]]},{"id":"4ae84ec4.42616","type":"debug","z":"39f681b1.fd6a4e","name":"","active":false,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":420,"y":100,"wires":[]},{"id":"2e7c1c51.2896b4","type":"phidget22-voltageratioinput","z":"39f681b1.fd6a4e","channel":0,"deviceSerialNumber":"559402","isHubPortDevice":false,"hubPort":"1","debug":true,"dataInterval":"250","voltageRatioChangeTrigger":0,"sensorType":0,"bridgeGain":"8","x":160,"y":400,"wires":[["ecd8638c.b6549"]]},{"id":"ecd8638c.b6549","type":"change","z":"39f681b1.fd6a4e","name":"","rules":[{"t":"move","p":"payload.voltageRatio","pt":"msg","to":"payload","tot":"msg"},{"t":"set","p":"topic","pt":"msg","to":"strain_3","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":440,"y":400,"wires":[["65560268.c466c4"]]},{"id":"8505330a.300fb8","type":"phidget22-voltageratioinput","z":"39f681b1.fd6a4e","channel":"1","deviceSerialNumber":"559402","isHubPortDevice":false,"hubPort":"1","debug":false,"dataInterval":"250","voltageRatioChangeTrigger":0,"sensorType":0,"bridgeGain":"8","x":160,"y":460,"wires":[["cefa2f37.d8fdc8"]]},{"id":"cefa2f37.d8fdc8","type":"change","z":"39f681b1.fd6a4e","name":"","rules":[{"t":"move","p":"payload.voltageRatio","pt":"msg","to":"payload","tot":"msg"},{"t":"set","p":"topic","pt":"msg","to":"strain_4","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":440,"y":460,"wires":[["65560268.c466c4"]]},{"id":"2f2ed952.2cb95e","type":"phidget22-connect","z":"d0319a94.933848","port":"5661","hostname":"localhost","debug":false,"x":90,"y":40,"wires":[[]]},{"id":"c64d78f8.5a62b8","type":"phidget22-digitaloutput","z":"d0319a94.933848","channel":0,"deviceSerialNumber":"559068","isHubPortDevice":false,"hubPort":"4","debug":false,"LEDCurrentLimit":0.02,"LEDForwardVoltage":"7","x":560,"y":240,"wires":[[]]},{"id":"59c76b4e.7e0824","type":"phidget22-voltageoutput","z":"d0319a94.933848","channel":0,"deviceSerialNumber":"559068","hubPort":0,"debug":false,"voltageOutputRange":"2","x":510,"y":800,"wires":[["5aa9c2e8.3d69f4"]]},{"id":"cfb3c4f3.b72ea","type":"inject","z":"d0319a94.933848","name":"1.5V","props":[{"p":"payload.voltage","v":"2","vt":"num"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":true,"onceDelay":"1","topic":"setVoltage","x":230,"y":860,"wires":[["59c76b4e.7e0824","ae3095c9.296df","b77c3597.635d28","657024c2.fb59dc"]]},{"id":"148e9301.db3565","type":"function","z":"d0319a94.933848","name":"Track position","func":"var positions = context.get('positions');\n\nif (msg.topic == 'PositionChange') {\n\nif (msg.label in positions) {\n    position = positions[msg.label]\n}\nelse {\n    position = 0;\n}\nposition += msg.payload.positionChange;\n\npositions[msg.label] = position;\n\ncontext.set('positions', positions)\n\nvar velocity = msg.payload.positionChange/msg.payload.timeChange;\n\nvar pos = { topic: msg.label,  payload: position }\nvar vel = { topic: msg.label,  payload: velocity }\n\nreturn [pos, vel]\n}\nelse if (msg.topic == 'Zero') { \n    for (label in positions) {\n        positions[label]=0\n    }\n    \n    context.set('positions', positions)\n}","outputs":2,"noerr":0,"initialize":"// Code added here will be run once\n// whenever the node is deployed.\ncontext.set('positions', {});","finalize":"","x":640,"y":520,"wires":[["80b7173c.a29828"],["dd72a233.b411d"]]},{"id":"80b7173c.a29828","type":"ui_chart","z":"d0319a94.933848","name":"","group":"63b898e3.cb88b","order":8,"width":0,"height":0,"label":"Position","chartType":"line","legend":"true","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":"10","removeOlderPoints":"","removeOlderUnit":"1","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":920,"y":500,"wires":[[]]},{"id":"979ff12.e62269","type":"ui_button","z":"d0319a94.933848","name":"","group":"63b898e3.cb88b","order":3,"width":0,"height":0,"passthru":false,"label":"Reset","tooltip":"","color":"","bgcolor":"","icon":"","payload":"[]","payloadType":"json","topic":"topic","topicType":"str","x":630,"y":600,"wires":[["80b7173c.a29828","dd72a233.b411d"]]},{"id":"f06a5943.32bfe8","type":"ui_button","z":"d0319a94.933848","name":"","group":"63b898e3.cb88b","order":4,"width":0,"height":0,"passthru":false,"label":"Zero","tooltip":"","color":"","bgcolor":"","icon":"","payload":"","payloadType":"str","topic":"Zero","topicType":"str","x":370,"y":380,"wires":[["148e9301.db3565"]]},{"id":"892f814c.4627c","type":"phidget22-encoder","z":"d0319a94.933848","g":"f0fc5028.32d6a8","channel":0,"deviceSerialNumber":"561741","hubPort":"0","debug":false,"IOMode":"1","dataInterval":"200","positionChangeTrigger":"0","enabled":false,"x":136,"y":480,"wires":[["5623a3ce.79f00c"]]},{"id":"741acf27.a42e9","type":"delay","z":"d0319a94.933848","name":"","pauseType":"delay","timeout":"5","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"x":520,"y":340,"wires":[["2cf144c7.ac32b4"]]},{"id":"2cf144c7.ac32b4","type":"change","z":"d0319a94.933848","name":"Set zero","rules":[{"t":"set","p":"topic","pt":"msg","to":"Zero","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":620,"y":400,"wires":[[]]},{"id":"dd72a233.b411d","type":"ui_chart","z":"d0319a94.933848","name":"","group":"63b898e3.cb88b","order":9,"width":0,"height":0,"label":"Velocity","chartType":"line","legend":"true","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":"10","removeOlderPoints":"","removeOlderUnit":"1","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":920,"y":600,"wires":[[]]},{"id":"be9a7643.78ca9","type":"ui_button","z":"d0319a94.933848","name":"","group":"63b898e3.cb88b","order":5,"width":0,"height":0,"passthru":false,"label":"Open","tooltip":"","color":"","bgcolor":"","icon":"","payload":"{\"dutyCycle\":0}","payloadType":"json","topic":"setDutyCycle","topicType":"str","x":290,"y":240,"wires":[["c64d78f8.5a62b8","b256bd2c.0de278","741acf27.a42e9"]]},{"id":"6c9085ea.39e55c","type":"ui_button","z":"d0319a94.933848","name":"","group":"63b898e3.cb88b","order":6,"width":0,"height":0,"passthru":false,"label":"Close","tooltip":"","color":"","bgcolor":"","icon":"","payload":"{\"dutyCycle\":1}","payloadType":"json","topic":"setDutyCycle","topicType":"str","x":290,"y":280,"wires":[["c64d78f8.5a62b8","b256bd2c.0de278"]]},{"id":"b256bd2c.0de278","type":"phidget22-digitaloutput","z":"d0319a94.933848","channel":"1","deviceSerialNumber":"559068","isHubPortDevice":false,"hubPort":"4","debug":false,"LEDCurrentLimit":0.02,"LEDForwardVoltage":"7","x":560,"y":280,"wires":[[]]},{"id":"ae3095c9.296df","type":"phidget22-voltageoutput","z":"d0319a94.933848","channel":0,"deviceSerialNumber":"559068","hubPort":"1","debug":false,"voltageOutputRange":"2","x":510,"y":840,"wires":[["5aa9c2e8.3d69f4"]]},{"id":"b77c3597.635d28","type":"phidget22-voltageoutput","z":"d0319a94.933848","channel":0,"deviceSerialNumber":"559068","hubPort":"2","debug":false,"voltageOutputRange":"2","x":510,"y":880,"wires":[["5aa9c2e8.3d69f4"]]},{"id":"657024c2.fb59dc","type":"phidget22-voltageoutput","z":"d0319a94.933848","channel":0,"deviceSerialNumber":"559068","hubPort":"3","debug":false,"voltageOutputRange":"2","x":510,"y":920,"wires":[["5aa9c2e8.3d69f4"]]},{"id":"5623a3ce.79f00c","type":"change","z":"d0319a94.933848","g":"f0fc5028.32d6a8","name":"","rules":[{"t":"set","p":"label","pt":"msg","to":"ARM 1","tot":"str"},{"t":"set","p":"armno","pt":"msg","to":"0","tot":"num"}],"action":"","property":"","from":"","to":"","reg":false,"x":346,"y":480,"wires":[["148e9301.db3565"]]},{"id":"e99b152e.4aa8","type":"phidget22-encoder","z":"d0319a94.933848","g":"2f6fa9c1.a66a06","channel":0,"deviceSerialNumber":"561741","hubPort":"1","debug":false,"IOMode":"1","dataInterval":"200","positionChangeTrigger":"0","enabled":false,"x":136,"y":580,"wires":[["979cc689.b8cd7"]]},{"id":"979cc689.b8cd7","type":"change","z":"d0319a94.933848","g":"2f6fa9c1.a66a06","name":"","rules":[{"t":"set","p":"label","pt":"msg","to":"ARM 2","tot":"str"},{"t":"set","p":"armno","pt":"msg","to":"1","tot":"num"}],"action":"","property":"","from":"","to":"","reg":false,"x":346,"y":580,"wires":[["148e9301.db3565"]]},{"id":"5aa9c2e8.3d69f4","type":"debug","z":"d0319a94.933848","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":780,"y":880,"wires":[]}]
+[
+    {
+        "id": "cd3c6c14.6a19b8",
+        "type": "tab",
+        "label": "Motors",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "472cf316.a032c4",
+        "type": "tab",
+        "label": "Temperature",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "39f681b1.fd6a4e",
+        "type": "tab",
+        "label": "Strain",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d0319a94.933848",
+        "type": "tab",
+        "label": "Arm position",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "fc115ed2.37a19",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [],
+        "out": []
+    },
+    {
+        "id": "c26a8ff3.92b38",
+        "type": "group",
+        "z": "472cf316.a032c4",
+        "name": "Port 0",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f4ace7a2.bec3c",
+            "27ab509f.2f5a1",
+            "61ef360f.a390c8",
+            "932e646e.0fbf68",
+            "257e7bac.6143d4",
+            "f78e86d.c5c22f8",
+            "7a3fcb86.106d54",
+            "756e902e.51d178",
+            "bb7805c0.6e3c5",
+            "beba63e8.f60728"
+        ],
+        "x": 14,
+        "y": 179,
+        "w": 432,
+        "h": 242
+    },
+    {
+        "id": "e84f4e19.17bd18",
+        "type": "group",
+        "z": "472cf316.a032c4",
+        "name": "Port 1",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ab096339.d678b8",
+            "cdac8d41.9bf8b",
+            "7be420d4.84ffe8",
+            "10cd8186.edbb46",
+            "edac851c.1df8d8",
+            "1edb2af2.e65475",
+            "a42b33f1.e4469",
+            "fd29a404.45b278",
+            "5faed94a.76bc9",
+            "60505327.d3570c"
+        ],
+        "x": 14,
+        "y": 459,
+        "w": 432,
+        "h": 242
+    },
+    {
+        "id": "d2b1fc20.53eb38",
+        "type": "group",
+        "z": "472cf316.a032c4",
+        "name": "Port 2",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "73f4454b.b44cb4",
+            "f811c80e.791ae8",
+            "755efd47.5cfafc",
+            "d60fe0fb.55c1a8",
+            "4731102c.7ff64",
+            "dedbbd10.1ac9e"
+        ],
+        "x": 14,
+        "y": 739,
+        "w": 432,
+        "h": 162
+    },
+    {
+        "id": "f0fc5028.32d6a8",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "446380d7.ea15e8",
+        "name": "ARM 1",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "892f814c.4627c",
+            "5623a3ce.79f00c"
+        ],
+        "x": 34,
+        "y": 839,
+        "w": 412,
+        "h": 82
+    },
+    {
+        "id": "2f6fa9c1.a66a06",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "446380d7.ea15e8",
+        "name": "ARM 2",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e99b152e.4aa8",
+            "979cc689.b8cd7"
+        ],
+        "x": 34,
+        "y": 939,
+        "w": 412,
+        "h": 82
+    },
+    {
+        "id": "f101bbae.4501b",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "8e799bae.813c4",
+        "name": "ARM 1",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c64d78f8.5a62b8"
+        ],
+        "x": 1534,
+        "y": 499,
+        "w": 212,
+        "h": 82
+    },
+    {
+        "id": "820e06a1.dbb25",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "8e799bae.813c4",
+        "name": "ARM 2",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b256bd2c.0de278"
+        ],
+        "x": 1534,
+        "y": 619,
+        "w": 212,
+        "h": 82
+    },
+    {
+        "id": "8e799bae.813c4",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "name": "DIRECTION",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "820e06a1.dbb25",
+            "f101bbae.4501b"
+        ],
+        "x": 1508,
+        "y": 473,
+        "w": 264,
+        "h": 254
+    },
+    {
+        "id": "d0266af7.3d318",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "666a68bf.ca7fa",
+        "name": "ARM 1",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "59c76b4e.7e0824"
+        ],
+        "x": 1534,
+        "y": 899,
+        "w": 232,
+        "h": 82
+    },
+    {
+        "id": "cdea3450.e3356",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "666a68bf.ca7fa",
+        "name": "ARM 2",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ae3095c9.296df"
+        ],
+        "x": 1534,
+        "y": 999,
+        "w": 232,
+        "h": 82
+    },
+    {
+        "id": "571af70e.0a22e8",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "666a68bf.ca7fa",
+        "name": "ARM 3",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b77c3597.635d28"
+        ],
+        "x": 1534,
+        "y": 1099,
+        "w": 232,
+        "h": 82
+    },
+    {
+        "id": "b26ba769.478ee",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "666a68bf.ca7fa",
+        "name": "ARM 4",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "657024c2.fb59dc"
+        ],
+        "x": 1534,
+        "y": 1199,
+        "w": 232,
+        "h": 82
+    },
+    {
+        "id": "666a68bf.ca7fa",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "name": "PRESSURE",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "571af70e.0a22e8",
+            "b26ba769.478ee",
+            "cdea3450.e3356",
+            "d0266af7.3d318"
+        ],
+        "x": 1508,
+        "y": 873,
+        "w": 284,
+        "h": 434
+    },
+    {
+        "id": "6efa4d4c.8cfd5c",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "446380d7.ea15e8",
+        "name": "ARM 3",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "fdf0a72f.27a298",
+            "f44d09ec.9461c8"
+        ],
+        "x": 34,
+        "y": 1039,
+        "w": 412,
+        "h": 82
+    },
+    {
+        "id": "4a4a35dc.26d1d4",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "g": "446380d7.ea15e8",
+        "name": "ARM 4",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "48b43a32.c701e4",
+            "ea17158c.b96fa8"
+        ],
+        "x": 34,
+        "y": 1139,
+        "w": 412,
+        "h": 82
+    },
+    {
+        "id": "446380d7.ea15e8",
+        "type": "group",
+        "z": "d0319a94.933848",
+        "name": "POSITION",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2f6fa9c1.a66a06",
+            "4a4a35dc.26d1d4",
+            "6efa4d4c.8cfd5c",
+            "f0fc5028.32d6a8"
+        ],
+        "x": 8,
+        "y": 813,
+        "w": 464,
+        "h": 434
+    },
+    {
+        "id": "8680f5c5.8c3ab8",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Tapering UI",
+            "hideToolbar": "true",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "fa943f83.ed6f3",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "21d594e5.b5238c",
+        "order": 2,
+        "disp": true,
+        "width": "9",
+        "collapse": false
+    },
+    {
+        "id": "ffe1c026.b79e4",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.10.50:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "login": false
+    },
+    {
+        "id": "21d594e5.b5238c",
+        "type": "ui_tab",
+        "name": "Furnace",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c50b1cd6.b052d",
+        "type": "ui_group",
+        "name": "Motor control",
+        "tab": "da0b05bc.b4d428",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9315ce3e.fb1dc8",
+        "type": "ui_tab",
+        "name": "Strain ",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "93e5d32a.4731b8",
+        "type": "ui_group",
+        "name": "Strain",
+        "tab": "9315ce3e.fb1dc8",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "590618eb.b8ddc8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c50b1cd6.b052d",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "da0b05bc.b4d428",
+        "type": "ui_tab",
+        "name": "Motor control",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f2b9b840.849ad",
+        "type": "ui_tab",
+        "name": "Position",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "63b898e3.cb88b",
+        "type": "ui_group",
+        "name": "Position",
+        "tab": "f2b9b840.849ad",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "69196b0c.20fd24",
+        "type": "OpcUa-Client",
+        "z": "cd3c6c14.6a19b8",
+        "endpoint": "ffe1c026.b79e4",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "name": "read from lemon",
+        "x": 640,
+        "y": 220,
+        "wires": [
+            [
+                "d5e87bcc.0a9688"
+            ]
+        ]
+    },
+    {
+        "id": "d5e87bcc.0a9688",
+        "type": "debug",
+        "z": "cd3c6c14.6a19b8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b4d3777b.827aa8",
+        "type": "inject",
+        "z": "cd3c6c14.6a19b8",
+        "name": "read c_Vel",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Vel",
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "69196b0c.20fd24"
+            ]
+        ]
+    },
+    {
+        "id": "92164c2e.bef808",
+        "type": "OpcUa-Client",
+        "z": "cd3c6c14.6a19b8",
+        "endpoint": "ffe1c026.b79e4",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "name": "write to lemon",
+        "x": 700,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e81d1acf.ee4a38",
+        "type": "inject",
+        "z": "cd3c6c14.6a19b8",
+        "name": "write c_Vel",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Vel",
+        "payload": "0.25",
+        "payloadType": "num",
+        "x": 320,
+        "y": 400,
+        "wires": [
+            [
+                "e57ad8f.51fcd28"
+            ]
+        ]
+    },
+    {
+        "id": "e57ad8f.51fcd28",
+        "type": "OpcUa-Item",
+        "z": "cd3c6c14.6a19b8",
+        "item": "ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Vel",
+        "datatype": "Float",
+        "value": "",
+        "name": "speed",
+        "x": 490,
+        "y": 380,
+        "wires": [
+            [
+                "92164c2e.bef808"
+            ]
+        ]
+    },
+    {
+        "id": "8f1ba088.c35c88",
+        "type": "ui_text",
+        "z": "cd3c6c14.6a19b8",
+        "group": "c50b1cd6.b052d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Widget info text",
+        "label": "OPC-UA",
+        "format": "PLC controls here",
+        "layout": "col-center",
+        "x": 260,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "77071c6d.6debc4",
+        "type": "ui_text_input",
+        "z": "cd3c6c14.6a19b8",
+        "name": "Speed input",
+        "label": "Speed in mm/min",
+        "tooltip": "",
+        "group": "c50b1cd6.b052d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "0",
+        "topic": "ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Vel",
+        "topicType": "str",
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "b2eb0a03.e1fcf"
+            ]
+        ]
+    },
+    {
+        "id": "575d194f.6fd2a8",
+        "type": "inject",
+        "z": "cd3c6c14.6a19b8",
+        "name": "read c_Power",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Power",
+        "payloadType": "str",
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "69196b0c.20fd24"
+            ]
+        ]
+    },
+    {
+        "id": "9e4d1534.8429d8",
+        "type": "OpcUa-Item",
+        "z": "cd3c6c14.6a19b8",
+        "item": "ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Power",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "speed",
+        "x": 470,
+        "y": 480,
+        "wires": [
+            [
+                "92164c2e.bef808"
+            ]
+        ]
+    },
+    {
+        "id": "b8fe3285.eff88",
+        "type": "inject",
+        "z": "cd3c6c14.6a19b8",
+        "name": "power on",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Power",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 300,
+        "y": 460,
+        "wires": [
+            [
+                "9e4d1534.8429d8"
+            ]
+        ]
+    },
+    {
+        "id": "af30aec1.c33e28",
+        "type": "inject",
+        "z": "cd3c6c14.6a19b8",
+        "name": "power off",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "ns=4;s=|var|PAC320-CWN21-3A.Application.GVL.c_Power",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 260,
+        "y": 560,
+        "wires": [
+            [
+                "9e4d1534.8429d8"
+            ]
+        ]
+    },
+    {
+        "id": "b2eb0a03.e1fcf",
+        "type": "function",
+        "z": "cd3c6c14.6a19b8",
+        "name": "unit conversion",
+        "func": "\nradius=50; //radius of the drive in mm\n\n// 0.01 is due to second gearbox not accounted for in plc units\n// 60 is seconds to a minute\n// 2*pi*r is the circumference of the drive\n\ncoef = 0.01 * 60 * (2 * Math.PI * radius);\n\nmsg.payload /= coef;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "e57ad8f.51fcd28",
+                "bdaaade7.2a31b8"
+            ]
+        ]
+    },
+    {
+        "id": "bdaaade7.2a31b8",
+        "type": "debug",
+        "z": "cd3c6c14.6a19b8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "cc7c0ac.94f4878",
+        "type": "phidget22-connect",
+        "z": "472cf316.a032c4",
+        "port": "5661",
+        "hostname": "localhost",
+        "debug": false,
+        "x": 130,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4ace7a2.bec3c",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "g": "c26a8ff3.92b38",
+        "channel": "1",
+        "deviceSerialNumber": "559642",
+        "hubPort": "0",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "61ef360f.a390c8"
+            ]
+        ]
+    },
+    {
+        "id": "27ab509f.2f5a1",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "c26a8ff3.92b38",
+        "channel": "3",
+        "deviceSerialNumber": "559642",
+        "hubPort": "0",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "932e646e.0fbf68"
+            ]
+        ]
+    },
+    {
+        "id": "61ef360f.a390c8",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "g": "c26a8ff3.92b38",
+        "name": "",
+        "func": "if (msg.topic != 'Error') {\nmsg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC02'\nreturn msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "11623147.a352af",
+                "ce937b08.f7374"
+            ]
+        ]
+    },
+    {
+        "id": "11623147.a352af",
+        "type": "ui_chart",
+        "z": "472cf316.a032c4",
+        "name": "",
+        "group": "fa943f83.ed6f3",
+        "order": 1,
+        "width": "9",
+        "height": "6",
+        "label": "Temperature 0",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 660,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "932e646e.0fbf68",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "c26a8ff3.92b38",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC04'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 340,
+        "wires": [
+            [
+                "11623147.a352af"
+            ]
+        ]
+    },
+    {
+        "id": "2c98d758.c77ce",
+        "type": "inject",
+        "z": "472cf316.a032c4",
+        "name": "Reset plot",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 380,
+        "y": 140,
+        "wires": [
+            [
+                "11623147.a352af",
+                "60aac0f4.f62ed8",
+                "4a57c17d.e1b418"
+            ]
+        ]
+    },
+    {
+        "id": "257e7bac.6143d4",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "c26a8ff3.92b38",
+        "channel": "0",
+        "deviceSerialNumber": "559642",
+        "hubPort": "0",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "f78e86d.c5c22f8"
+            ]
+        ]
+    },
+    {
+        "id": "f78e86d.c5c22f8",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "c26a8ff3.92b38",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC01'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 220,
+        "wires": [
+            [
+                "11623147.a352af"
+            ]
+        ]
+    },
+    {
+        "id": "7a3fcb86.106d54",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "c26a8ff3.92b38",
+        "channel": "2",
+        "deviceSerialNumber": "559642",
+        "hubPort": "0",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "756e902e.51d178"
+            ]
+        ]
+    },
+    {
+        "id": "756e902e.51d178",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "c26a8ff3.92b38",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC03'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "11623147.a352af"
+            ]
+        ]
+    },
+    {
+        "id": "bb7805c0.6e3c5",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "c26a8ff3.92b38",
+        "channel": "4",
+        "deviceSerialNumber": "559642",
+        "hubPort": "0",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "2",
+        "x": 140,
+        "y": 380,
+        "wires": [
+            [
+                "beba63e8.f60728"
+            ]
+        ]
+    },
+    {
+        "id": "beba63e8.f60728",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "c26a8ff3.92b38",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'onboard-0'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "b6a4eb3e.196a48"
+            ]
+        ]
+    },
+    {
+        "id": "ab096339.d678b8",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "channel": "1",
+        "deviceSerialNumber": "559642",
+        "hubPort": "1",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "7be420d4.84ffe8"
+            ]
+        ]
+    },
+    {
+        "id": "cdac8d41.9bf8b",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "channel": "3",
+        "deviceSerialNumber": "559642",
+        "hubPort": "1",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 620,
+        "wires": [
+            [
+                "10cd8186.edbb46"
+            ]
+        ]
+    },
+    {
+        "id": "7be420d4.84ffe8",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC06'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 540,
+        "wires": [
+            [
+                "60aac0f4.f62ed8"
+            ]
+        ]
+    },
+    {
+        "id": "10cd8186.edbb46",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC08'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 620,
+        "wires": [
+            [
+                "60aac0f4.f62ed8"
+            ]
+        ]
+    },
+    {
+        "id": "edac851c.1df8d8",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "channel": "0",
+        "deviceSerialNumber": "559642",
+        "hubPort": "1",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "1edb2af2.e65475",
+                "2a29fe42.ed103a"
+            ]
+        ]
+    },
+    {
+        "id": "1edb2af2.e65475",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC05'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 500,
+        "wires": [
+            [
+                "60aac0f4.f62ed8",
+                "4f380687.f36c7"
+            ]
+        ]
+    },
+    {
+        "id": "a42b33f1.e4469",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "channel": "2",
+        "deviceSerialNumber": "559642",
+        "hubPort": "1",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 580,
+        "wires": [
+            [
+                "fd29a404.45b278"
+            ]
+        ]
+    },
+    {
+        "id": "fd29a404.45b278",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC07'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 580,
+        "wires": [
+            [
+                "60aac0f4.f62ed8"
+            ]
+        ]
+    },
+    {
+        "id": "5faed94a.76bc9",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "channel": "4",
+        "deviceSerialNumber": "559642",
+        "hubPort": "1",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "2",
+        "x": 140,
+        "y": 660,
+        "wires": [
+            [
+                "60505327.d3570c"
+            ]
+        ]
+    },
+    {
+        "id": "60505327.d3570c",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "e84f4e19.17bd18",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'onboard-1'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 660,
+        "wires": [
+            [
+                "52db0dd.3eae374"
+            ]
+        ]
+    },
+    {
+        "id": "73f4454b.b44cb4",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "d2b1fc20.53eb38",
+        "channel": "1",
+        "deviceSerialNumber": "559642",
+        "hubPort": "2",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 820,
+        "wires": [
+            [
+                "f811c80e.791ae8"
+            ]
+        ]
+    },
+    {
+        "id": "f811c80e.791ae8",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "d2b1fc20.53eb38",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC10'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 820,
+        "wires": [
+            [
+                "4a57c17d.e1b418"
+            ]
+        ]
+    },
+    {
+        "id": "755efd47.5cfafc",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "g": "d2b1fc20.53eb38",
+        "channel": "0",
+        "deviceSerialNumber": "559642",
+        "hubPort": "2",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "1",
+        "x": 140,
+        "y": 780,
+        "wires": [
+            [
+                "d60fe0fb.55c1a8",
+                "8a3f0628.d54b"
+            ]
+        ]
+    },
+    {
+        "id": "d60fe0fb.55c1a8",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "g": "d2b1fc20.53eb38",
+        "name": "",
+        "func": "if (msg.topic != 'Error') {\nmsg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'TC09'\nreturn msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 780,
+        "wires": [
+            [
+                "4a57c17d.e1b418"
+            ]
+        ]
+    },
+    {
+        "id": "4731102c.7ff64",
+        "type": "phidget22-temperaturesensor",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "d2b1fc20.53eb38",
+        "channel": "4",
+        "deviceSerialNumber": "559642",
+        "hubPort": "2",
+        "debug": false,
+        "dataInterval": "1000",
+        "temperatureChangeTrigger": 0,
+        "RTDWireSetup": 3,
+        "RTDType": 2,
+        "thermocoupleType": "2",
+        "x": 140,
+        "y": 860,
+        "wires": [
+            [
+                "dedbbd10.1ac9e"
+            ]
+        ]
+    },
+    {
+        "id": "dedbbd10.1ac9e",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "g": "d2b1fc20.53eb38",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature.toFixed(1)\nmsg.topic = 'onboard-2'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 860,
+        "wires": [
+            [
+                "8c0ef6f.4816c08"
+            ]
+        ]
+    },
+    {
+        "id": "8c0ef6f.4816c08",
+        "type": "ui_gauge",
+        "z": "472cf316.a032c4",
+        "name": "Gauge 2",
+        "group": "fa943f83.ed6f3",
+        "order": 5,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "{{topic}}",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 680,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "52db0dd.3eae374",
+        "type": "ui_gauge",
+        "z": "472cf316.a032c4",
+        "name": "Gauge 1",
+        "group": "fa943f83.ed6f3",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "{{topic}}",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 680,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "b6a4eb3e.196a48",
+        "type": "ui_gauge",
+        "z": "472cf316.a032c4",
+        "name": "Gauge 0",
+        "group": "fa943f83.ed6f3",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "{{topic}}",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 660,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "60aac0f4.f62ed8",
+        "type": "ui_chart",
+        "z": "472cf316.a032c4",
+        "name": "",
+        "group": "fa943f83.ed6f3",
+        "order": 2,
+        "width": "9",
+        "height": "6",
+        "label": "Temperature 1",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 680,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a57c17d.e1b418",
+        "type": "ui_chart",
+        "z": "472cf316.a032c4",
+        "name": "",
+        "group": "fa943f83.ed6f3",
+        "order": 2,
+        "width": "9",
+        "height": "6",
+        "label": "Temperature 2",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 660,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bdfe793e.f3c428",
+        "type": "phidget22-voltageinput",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "channel": "1",
+        "deviceSerialNumber": "559642",
+        "isHubPortDevice": false,
+        "hubPort": 0,
+        "debug": false,
+        "dataInterval": "1000",
+        "voltageChangeTrigger": 0,
+        "sensorType": 0,
+        "powerSupply": 1,
+        "voltageRange": "11",
+        "x": 220,
+        "y": 960,
+        "wires": [
+            [
+                "c296187c.13d38"
+            ]
+        ]
+    },
+    {
+        "id": "2077297c.2f5d6e",
+        "type": "debug",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "c296187c.13d38",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "name": "",
+        "func": "msg.payload.voltage*=1000\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 420,
+        "y": 960,
+        "wires": [
+            [
+                "2077297c.2f5d6e"
+            ]
+        ]
+    },
+    {
+        "id": "4f380687.f36c7",
+        "type": "debug",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "2a29fe42.ed103a",
+        "type": "debug",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "8a3f0628.d54b",
+        "type": "debug",
+        "z": "472cf316.a032c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "ce937b08.f7374",
+        "type": "PID",
+        "z": "472cf316.a032c4",
+        "d": true,
+        "name": "",
+        "setpoint": "40",
+        "pb": "10",
+        "ti": "5",
+        "td": "1",
+        "integral_default": 0.5,
+        "smooth_factor": 3,
+        "max_interval": "10",
+        "enable": 1,
+        "disabled_op": 0,
+        "x": 590,
+        "y": 80,
+        "wires": [
+            [
+                "db700bac.56e68"
+            ]
+        ]
+    },
+    {
+        "id": "671a928a.47199c",
+        "type": "phidget22-digitaloutput",
+        "z": "472cf316.a032c4",
+        "channel": "1",
+        "deviceSerialNumber": "559642",
+        "isHubPortDevice": false,
+        "hubPort": "4",
+        "debug": false,
+        "LEDCurrentLimit": 0.02,
+        "LEDForwardVoltage": 1,
+        "x": 1100,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb2f7004.f87d1",
+        "type": "inject",
+        "z": "472cf316.a032c4",
+        "name": "50%",
+        "props": [
+            {
+                "p": "payload.dutyCycle",
+                "v": "0.5",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "setDutyCycle",
+        "payloadType": "str",
+        "x": 850,
+        "y": 200,
+        "wires": [
+            [
+                "671a928a.47199c"
+            ]
+        ]
+    },
+    {
+        "id": "e5a672ae.356fc",
+        "type": "inject",
+        "z": "472cf316.a032c4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 670,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49c94644.0bfca",
+        "type": "debug",
+        "z": "472cf316.a032c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.dutyCycle",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ab6ad609.dc74e8",
+        "type": "inject",
+        "z": "472cf316.a032c4",
+        "name": "off",
+        "props": [
+            {
+                "p": "payload.dutyCycle",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "setDutyCycle",
+        "payloadType": "str",
+        "x": 850,
+        "y": 140,
+        "wires": [
+            [
+                "671a928a.47199c"
+            ]
+        ]
+    },
+    {
+        "id": "db700bac.56e68",
+        "type": "function",
+        "z": "472cf316.a032c4",
+        "name": "",
+        "func": "msg.topic = 'setDutyCycle'\nmsg.payload= { \"dutyCycle\" : msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 780,
+        "y": 80,
+        "wires": [
+            [
+                "671a928a.47199c",
+                "49c94644.0bfca"
+            ]
+        ]
+    },
+    {
+        "id": "4a789e07.219498",
+        "type": "inject",
+        "z": "472cf316.a032c4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "45",
+        "payloadType": "num",
+        "x": 530,
+        "y": 20,
+        "wires": [
+            [
+                "ce937b08.f7374"
+            ]
+        ]
+    },
+    {
+        "id": "ce0c4bb1.ee7488",
+        "type": "phidget22-connect",
+        "z": "39f681b1.fd6a4e",
+        "port": "5661",
+        "hostname": "localhost",
+        "debug": false,
+        "x": 170,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49c47775.50ca4",
+        "type": "phidget22-voltageratioinput",
+        "z": "39f681b1.fd6a4e",
+        "channel": 0,
+        "deviceSerialNumber": "559402",
+        "isHubPortDevice": false,
+        "hubPort": "0",
+        "debug": true,
+        "dataInterval": "250",
+        "voltageRatioChangeTrigger": 0,
+        "sensorType": 0,
+        "bridgeGain": "8",
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "a4493398.d24668",
+                "7d7cac2.09e3a54",
+                "4ae84ec4.42616"
+            ]
+        ]
+    },
+    {
+        "id": "65560268.c466c4",
+        "type": "ui_chart",
+        "z": "39f681b1.fd6a4e",
+        "name": "",
+        "group": "93e5d32a.4731b8",
+        "order": 6,
+        "width": "12",
+        "height": "7",
+        "label": "Strain",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 890,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4493398.d24668",
+        "type": "change",
+        "z": "39f681b1.fd6a4e",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.voltageRatio",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "strain_1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "7d7cac2.09e3a54"
+            ]
+        ]
+    },
+    {
+        "id": "d5b0ef19.44cfb",
+        "type": "inject",
+        "z": "39f681b1.fd6a4e",
+        "name": "Reset plot",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 660,
+        "y": 40,
+        "wires": [
+            [
+                "65560268.c466c4"
+            ]
+        ]
+    },
+    {
+        "id": "cec384a2.b8b4e",
+        "type": "phidget22-voltageratioinput",
+        "z": "39f681b1.fd6a4e",
+        "channel": "1",
+        "deviceSerialNumber": "559402",
+        "isHubPortDevice": false,
+        "hubPort": "0",
+        "debug": false,
+        "dataInterval": "250",
+        "voltageRatioChangeTrigger": 0,
+        "sensorType": 0,
+        "bridgeGain": "8",
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "8f2ff0c2.af014",
+                "f4dd88fa.3c273"
+            ]
+        ]
+    },
+    {
+        "id": "8f2ff0c2.af014",
+        "type": "change",
+        "z": "39f681b1.fd6a4e",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.voltageRatio",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "strain_2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "f4dd88fa.3c273"
+            ]
+        ]
+    },
+    {
+        "id": "2513049d.8fac1c",
+        "type": "ui_button",
+        "z": "39f681b1.fd6a4e",
+        "name": "",
+        "group": "93e5d32a.4731b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Zero",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "ZeroNow",
+        "topicType": "str",
+        "x": 670,
+        "y": 640,
+        "wires": [
+            [
+                "7d7cac2.09e3a54",
+                "f4dd88fa.3c273"
+            ]
+        ]
+    },
+    {
+        "id": "7d7cac2.09e3a54",
+        "type": "function",
+        "z": "39f681b1.fd6a4e",
+        "name": "",
+        "func": "if (msg.topic == 'VoltageratioChange') {\n    context.set('lastValue', msg.payload.voltageRatio);\n}\nelse  if (msg.topic == 'ZeroNow') {\n    context.set('offset', context.get('lastValue') );\n}\nelse {\n    msg.payload -= context.get('offset')\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\ncontext.set('offset', 0)",
+        "finalize": "",
+        "x": 660,
+        "y": 140,
+        "wires": [
+            [
+                "65560268.c466c4"
+            ]
+        ]
+    },
+    {
+        "id": "f4dd88fa.3c273",
+        "type": "function",
+        "z": "39f681b1.fd6a4e",
+        "name": "",
+        "func": "if (msg.topic == 'VoltageratioChange') {\n    context.set('lastValue', msg.payload.voltageRatio);\n}\nelse  if (msg.topic == 'ZeroNow') {\n    context.set('offset', context.get('lastValue') );\n}\nelse {\n    msg.payload -= context.get('offset')\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\ncontext.set('offset', 0)",
+        "finalize": "",
+        "x": 680,
+        "y": 340,
+        "wires": [
+            [
+                "65560268.c466c4"
+            ]
+        ]
+    },
+    {
+        "id": "4ae84ec4.42616",
+        "type": "debug",
+        "z": "39f681b1.fd6a4e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2e7c1c51.2896b4",
+        "type": "phidget22-voltageratioinput",
+        "z": "39f681b1.fd6a4e",
+        "channel": 0,
+        "deviceSerialNumber": "559402",
+        "isHubPortDevice": false,
+        "hubPort": "1",
+        "debug": true,
+        "dataInterval": "250",
+        "voltageRatioChangeTrigger": 0,
+        "sensorType": 0,
+        "bridgeGain": "8",
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "ecd8638c.b6549"
+            ]
+        ]
+    },
+    {
+        "id": "ecd8638c.b6549",
+        "type": "change",
+        "z": "39f681b1.fd6a4e",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.voltageRatio",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "strain_3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 400,
+        "wires": [
+            [
+                "65560268.c466c4"
+            ]
+        ]
+    },
+    {
+        "id": "8505330a.300fb8",
+        "type": "phidget22-voltageratioinput",
+        "z": "39f681b1.fd6a4e",
+        "channel": "1",
+        "deviceSerialNumber": "559402",
+        "isHubPortDevice": false,
+        "hubPort": "1",
+        "debug": false,
+        "dataInterval": "250",
+        "voltageRatioChangeTrigger": 0,
+        "sensorType": 0,
+        "bridgeGain": "8",
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "cefa2f37.d8fdc8"
+            ]
+        ]
+    },
+    {
+        "id": "cefa2f37.d8fdc8",
+        "type": "change",
+        "z": "39f681b1.fd6a4e",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.voltageRatio",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "strain_4",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "65560268.c466c4"
+            ]
+        ]
+    },
+    {
+        "id": "2f2ed952.2cb95e",
+        "type": "phidget22-connect",
+        "z": "d0319a94.933848",
+        "port": "5661",
+        "hostname": "localhost",
+        "debug": true,
+        "x": 90,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c64d78f8.5a62b8",
+        "type": "phidget22-digitaloutput",
+        "z": "d0319a94.933848",
+        "g": "f101bbae.4501b",
+        "channel": 0,
+        "deviceSerialNumber": "559068",
+        "isHubPortDevice": false,
+        "hubPort": "4",
+        "debug": false,
+        "LEDCurrentLimit": 0.02,
+        "LEDForwardVoltage": "7",
+        "x": 1640,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59c76b4e.7e0824",
+        "type": "phidget22-voltageoutput",
+        "z": "d0319a94.933848",
+        "g": "d0266af7.3d318",
+        "channel": 0,
+        "deviceSerialNumber": "559068",
+        "hubPort": 0,
+        "debug": false,
+        "voltageOutputRange": "1",
+        "x": 1650,
+        "y": 940,
+        "wires": [
+            [
+                "74e8f634.417238"
+            ]
+        ]
+    },
+    {
+        "id": "148e9301.db3565",
+        "type": "function",
+        "z": "d0319a94.933848",
+        "name": "Track position",
+        "func": "var positions = context.get('positions');\n\nif (msg.topic == 'PositionChange') {\n\nif (msg.label in positions) {\n    position = positions[msg.label]\n}\nelse {\n    position = 0;\n}\n// 2 mm pole length\n// 4096 interpolated steps\n// RLM2HDA12B\nposition += -msg.payload.positionChange*2/4096;\n\npositions[msg.label] = position;\n\ncontext.set('positions', positions)\n\nvar velocity = msg.payload.positionChange/msg.payload.timeChange;\n\nvar pos = { topic: msg.label,  payload: position }\nvar vel = { topic: msg.label,  payload: velocity }\n\nreturn [pos, vel]\n}\nelse if (msg.topic == 'Zero') { \n    for (var label in positions) {\n        positions[label]=0\n    }\n    \n    context.set('positions', positions)\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\ncontext.set('positions', {});",
+        "finalize": "",
+        "x": 634,
+        "y": 920,
+        "wires": [
+            [
+                "80b7173c.a29828",
+                "40ca5ce3.622acc"
+            ],
+            [
+                "dd72a233.b411d"
+            ]
+        ]
+    },
+    {
+        "id": "80b7173c.a29828",
+        "type": "ui_chart",
+        "z": "d0319a94.933848",
+        "name": "",
+        "group": "63b898e3.cb88b",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "label": "Position",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 914,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "979ff12.e62269",
+        "type": "ui_button",
+        "z": "d0319a94.933848",
+        "name": "",
+        "group": "63b898e3.cb88b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "str",
+        "x": 670,
+        "y": 1000,
+        "wires": [
+            [
+                "80b7173c.a29828",
+                "dd72a233.b411d"
+            ]
+        ]
+    },
+    {
+        "id": "f06a5943.32bfe8",
+        "type": "ui_button",
+        "z": "d0319a94.933848",
+        "name": "",
+        "group": "63b898e3.cb88b",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Zero",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "Zero",
+        "topicType": "str",
+        "x": 364,
+        "y": 780,
+        "wires": [
+            [
+                "148e9301.db3565"
+            ]
+        ]
+    },
+    {
+        "id": "892f814c.4627c",
+        "type": "phidget22-encoder",
+        "z": "d0319a94.933848",
+        "g": "f0fc5028.32d6a8",
+        "channel": 0,
+        "deviceSerialNumber": "561741",
+        "hubPort": "0",
+        "debug": false,
+        "IOMode": "1",
+        "dataInterval": "50",
+        "positionChangeTrigger": "0",
+        "enabled": false,
+        "x": 130,
+        "y": 880,
+        "wires": [
+            [
+                "5623a3ce.79f00c"
+            ]
+        ]
+    },
+    {
+        "id": "741acf27.a42e9",
+        "type": "delay",
+        "z": "d0319a94.933848",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 554,
+        "y": 740,
+        "wires": [
+            [
+                "2cf144c7.ac32b4"
+            ]
+        ]
+    },
+    {
+        "id": "2cf144c7.ac32b4",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "Set zero",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Zero",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 714,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd72a233.b411d",
+        "type": "ui_chart",
+        "z": "d0319a94.933848",
+        "d": true,
+        "name": "",
+        "group": "63b898e3.cb88b",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "label": "Velocity",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 914,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be9a7643.78ca9",
+        "type": "ui_button",
+        "z": "d0319a94.933848",
+        "name": "",
+        "group": "63b898e3.cb88b",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Open",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "{\"dutyCycle\":0}",
+        "payloadType": "json",
+        "topic": "setDutyCycle",
+        "topicType": "str",
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "91af1e9f.5c00e",
+                "52b0759b.5c6144"
+            ]
+        ]
+    },
+    {
+        "id": "6c9085ea.39e55c",
+        "type": "ui_button",
+        "z": "d0319a94.933848",
+        "name": "",
+        "group": "63b898e3.cb88b",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Close",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "{\"dutyCycle\":1}",
+        "payloadType": "json",
+        "topic": "setDutyCycle",
+        "topicType": "str",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "d6f8fb4d.69e5b"
+            ]
+        ]
+    },
+    {
+        "id": "b256bd2c.0de278",
+        "type": "phidget22-digitaloutput",
+        "z": "d0319a94.933848",
+        "g": "820e06a1.dbb25",
+        "channel": "1",
+        "deviceSerialNumber": "559068",
+        "isHubPortDevice": false,
+        "hubPort": "4",
+        "debug": false,
+        "LEDCurrentLimit": 0.02,
+        "LEDForwardVoltage": "7",
+        "x": 1640,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae3095c9.296df",
+        "type": "phidget22-voltageoutput",
+        "z": "d0319a94.933848",
+        "g": "cdea3450.e3356",
+        "channel": 0,
+        "deviceSerialNumber": "559068",
+        "hubPort": "1",
+        "debug": false,
+        "voltageOutputRange": "2",
+        "x": 1650,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b77c3597.635d28",
+        "type": "phidget22-voltageoutput",
+        "z": "d0319a94.933848",
+        "g": "571af70e.0a22e8",
+        "channel": 0,
+        "deviceSerialNumber": "559068",
+        "hubPort": "2",
+        "debug": false,
+        "voltageOutputRange": "2",
+        "x": 1650,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "657024c2.fb59dc",
+        "type": "phidget22-voltageoutput",
+        "z": "d0319a94.933848",
+        "g": "b26ba769.478ee",
+        "channel": 0,
+        "deviceSerialNumber": "559068",
+        "hubPort": "3",
+        "debug": false,
+        "voltageOutputRange": "2",
+        "x": 1650,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5623a3ce.79f00c",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "g": "f0fc5028.32d6a8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "label",
+                "pt": "msg",
+                "to": "ARM 1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "armno",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 880,
+        "wires": [
+            [
+                "148e9301.db3565"
+            ]
+        ]
+    },
+    {
+        "id": "e99b152e.4aa8",
+        "type": "phidget22-encoder",
+        "z": "d0319a94.933848",
+        "g": "2f6fa9c1.a66a06",
+        "channel": 0,
+        "deviceSerialNumber": "561741",
+        "hubPort": "1",
+        "debug": false,
+        "IOMode": "1",
+        "dataInterval": "50",
+        "positionChangeTrigger": "0",
+        "enabled": false,
+        "x": 130,
+        "y": 980,
+        "wires": [
+            [
+                "979cc689.b8cd7"
+            ]
+        ]
+    },
+    {
+        "id": "979cc689.b8cd7",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "g": "2f6fa9c1.a66a06",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "label",
+                "pt": "msg",
+                "to": "ARM 2",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "armno",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 980,
+        "wires": [
+            [
+                "148e9301.db3565"
+            ]
+        ]
+    },
+    {
+        "id": "79d8d28b.507f4c",
+        "type": "inject",
+        "z": "d0319a94.933848",
+        "name": "RELEASE",
+        "props": [
+            {
+                "p": "payload.voltage",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2.1",
+        "topic": "setVoltage",
+        "payloadType": "str",
+        "x": 1070,
+        "y": 1200,
+        "wires": [
+            [
+                "59c76b4e.7e0824",
+                "ae3095c9.296df",
+                "b77c3597.635d28",
+                "657024c2.fb59dc"
+            ]
+        ]
+    },
+    {
+        "id": "8909f25a.d441f8",
+        "type": "inject",
+        "z": "d0319a94.933848",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "setVoltageOutputRange",
+        "payload": "{\"voltageOutputRange\":2}",
+        "payloadType": "json",
+        "x": 1070,
+        "y": 1360,
+        "wires": [
+            [
+                "59c76b4e.7e0824",
+                "ae3095c9.296df",
+                "b77c3597.635d28",
+                "657024c2.fb59dc"
+            ]
+        ]
+    },
+    {
+        "id": "91af1e9f.5c00e",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "setVoltage",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"voltage\":0}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "e8387c47.c368f",
+                "59c76b4e.7e0824",
+                "ae3095c9.296df"
+            ]
+        ]
+    },
+    {
+        "id": "f96c8693.a54ce",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "setDutyCycle",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"dutyCycle\":0}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 260,
+        "wires": [
+            [
+                "fe1f63eb.bf49e8",
+                "c64d78f8.5a62b8",
+                "b9c90ff2.aefc",
+                "b256bd2c.0de278"
+            ]
+        ]
+    },
+    {
+        "id": "4ace9692.d8fcf8",
+        "type": "easing",
+        "z": "d0319a94.933848",
+        "name": "",
+        "easingType": "easeInOutQuad",
+        "outputType": "overTime",
+        "duration": "4000",
+        "interval": "200",
+        "numberOfValues": 10,
+        "x": 1110,
+        "y": 400,
+        "wires": [
+            [
+                "7d6aab10.f2158c"
+            ]
+        ]
+    },
+    {
+        "id": "7d6aab10.f2158c",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "setVoltage",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"voltage\":(payload)}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1280,
+        "y": 400,
+        "wires": [
+            [
+                "59c76b4e.7e0824",
+                "ae3095c9.296df"
+            ]
+        ]
+    },
+    {
+        "id": "636189.bb35b678",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"from\" : 1.3 , \"to\" : 1.9}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 400,
+        "wires": [
+            [
+                "4ace9692.d8fcf8"
+            ]
+        ]
+    },
+    {
+        "id": "e8387c47.c368f",
+        "type": "delay",
+        "z": "d0319a94.933848",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "f96c8693.a54ce"
+            ]
+        ]
+    },
+    {
+        "id": "fe1f63eb.bf49e8",
+        "type": "delay",
+        "z": "d0319a94.933848",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 640,
+        "y": 320,
+        "wires": [
+            [
+                "636189.bb35b678"
+            ]
+        ]
+    },
+    {
+        "id": "f20467f7.5cab78",
+        "type": "inject",
+        "z": "d0319a94.933848",
+        "name": "Open",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "91af1e9f.5c00e"
+            ]
+        ]
+    },
+    {
+        "id": "d6f8fb4d.69e5b",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "setVoltage",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"voltage\":0}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 420,
+        "wires": [
+            [
+                "dab766a0.9ef678",
+                "59c76b4e.7e0824",
+                "ae3095c9.296df"
+            ]
+        ]
+    },
+    {
+        "id": "f17856a8.dc347",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "setDutyCycle",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"dutyCycle\":1}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 420,
+        "wires": [
+            [
+                "9d50d517.5cfeb8",
+                "c64d78f8.5a62b8",
+                "b256bd2c.0de278"
+            ]
+        ]
+    },
+    {
+        "id": "dab766a0.9ef678",
+        "type": "delay",
+        "z": "d0319a94.933848",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "f17856a8.dc347"
+            ]
+        ]
+    },
+    {
+        "id": "9d50d517.5cfeb8",
+        "type": "delay",
+        "z": "d0319a94.933848",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 640,
+        "y": 480,
+        "wires": [
+            [
+                "636189.bb35b678"
+            ]
+        ]
+    },
+    {
+        "id": "91d2b487.c8b48",
+        "type": "inject",
+        "z": "d0319a94.933848",
+        "name": "Close",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "d6f8fb4d.69e5b"
+            ]
+        ]
+    },
+    {
+        "id": "fdf0a72f.27a298",
+        "type": "phidget22-encoder",
+        "z": "d0319a94.933848",
+        "d": true,
+        "g": "6efa4d4c.8cfd5c",
+        "channel": 0,
+        "deviceSerialNumber": "561741",
+        "hubPort": "2",
+        "debug": false,
+        "IOMode": "1",
+        "dataInterval": "200",
+        "positionChangeTrigger": "0",
+        "enabled": false,
+        "x": 130,
+        "y": 1080,
+        "wires": [
+            [
+                "f44d09ec.9461c8"
+            ]
+        ]
+    },
+    {
+        "id": "f44d09ec.9461c8",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "d": true,
+        "g": "6efa4d4c.8cfd5c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "label",
+                "pt": "msg",
+                "to": "ARM 3",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "armno",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "48b43a32.c701e4",
+        "type": "phidget22-encoder",
+        "z": "d0319a94.933848",
+        "d": true,
+        "g": "4a4a35dc.26d1d4",
+        "channel": 0,
+        "deviceSerialNumber": "561741",
+        "hubPort": "3",
+        "debug": false,
+        "IOMode": "1",
+        "dataInterval": "200",
+        "positionChangeTrigger": "0",
+        "enabled": false,
+        "x": 130,
+        "y": 1180,
+        "wires": [
+            [
+                "ea17158c.b96fa8"
+            ]
+        ]
+    },
+    {
+        "id": "ea17158c.b96fa8",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "d": true,
+        "g": "4a4a35dc.26d1d4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "label",
+                "pt": "msg",
+                "to": "ARM 4",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "armno",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52b0759b.5c6144",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "be9a7643.78ca9"
+            ]
+        ]
+    },
+    {
+        "id": "ff6e5609.813a1",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1120,
+        "y": 240,
+        "wires": [
+            [
+                "be9a7643.78ca9"
+            ]
+        ]
+    },
+    {
+        "id": "b9c90ff2.aefc",
+        "type": "delay",
+        "z": "d0319a94.933848",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 910,
+        "y": 240,
+        "wires": [
+            [
+                "ff6e5609.813a1"
+            ]
+        ]
+    },
+    {
+        "id": "74e8f634.417238",
+        "type": "debug",
+        "z": "d0319a94.933848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1930,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "d08d3fe5.477d28",
+        "type": "ui_button",
+        "z": "d0319a94.933848",
+        "name": "",
+        "group": "63b898e3.cb88b",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "RELEASE",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "{\"voltage\":0}",
+        "payloadType": "json",
+        "topic": "setVoltage",
+        "topicType": "str",
+        "x": 1050,
+        "y": 1100,
+        "wires": [
+            [
+                "59c76b4e.7e0824",
+                "ae3095c9.296df",
+                "b77c3597.635d28",
+                "657024c2.fb59dc"
+            ]
+        ]
+    },
+    {
+        "id": "d923e526.0fbbc8",
+        "type": "PID",
+        "z": "d0319a94.933848",
+        "name": "",
+        "setpoint": "35",
+        "pb": "20",
+        "ti": "65536",
+        "td": "0",
+        "integral_default": "0.8",
+        "smooth_factor": "0",
+        "max_interval": 600,
+        "enable": 1,
+        "disabled_op": "0",
+        "x": 450,
+        "y": 1400,
+        "wires": [
+            [
+                "853d8170.09b4b8",
+                "f3d3e8d.b1ffb18"
+            ]
+        ]
+    },
+    {
+        "id": "f3d3e8d.b1ffb18",
+        "type": "switch",
+        "z": "d0319a94.933848",
+        "name": "",
+        "property": "pid",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 1400,
+        "wires": [
+            [
+                "f844d6f3.98934"
+            ]
+        ]
+    },
+    {
+        "id": "e6d1334f.ea237",
+        "type": "inject",
+        "z": "d0319a94.933848",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 340,
+        "y": 60,
+        "wires": [
+            [
+                "c690d20a.3eeae"
+            ]
+        ]
+    },
+    {
+        "id": "c690d20a.3eeae",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pressure",
+                "pt": "flow",
+                "to": "4",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "pid",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f844d6f3.98934",
+        "type": "function",
+        "z": "d0319a94.933848",
+        "name": "",
+        "func": "var topic = 'setVoltage';\nvar pmax = flow.get('pressure');\nvar power = msg.payload\nvar v1 = power*pmax;\nvar v2 = (1-power)*pmax;\nvar arm1 = {topic:topic, payload:{voltage:v1}};\nvar arm2 = {topic:topic, payload:{voltage:v2}};\n\nreturn [arm1,arm2];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 780,
+        "y": 1400,
+        "wires": [
+            [
+                "fe4fc6e7.d1b8a8",
+                "ae3095c9.296df"
+            ],
+            [
+                "dfca6578.0a8e7",
+                "59c76b4e.7e0824"
+            ]
+        ]
+    },
+    {
+        "id": "afcfec0.1a6ae98",
+        "type": "inject",
+        "z": "d0319a94.933848",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "enable",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 150,
+        "y": 1300,
+        "wires": [
+            [
+                "d923e526.0fbbc8",
+                "4529cb84.9e61e4"
+            ]
+        ]
+    },
+    {
+        "id": "9fbc7352.a0e2b",
+        "type": "inject",
+        "z": "d0319a94.933848",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "enable",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 100,
+        "y": 1380,
+        "wires": [
+            [
+                "d923e526.0fbbc8",
+                "3fde2be1.8b6f7c"
+            ]
+        ]
+    },
+    {
+        "id": "853d8170.09b4b8",
+        "type": "debug",
+        "z": "d0319a94.933848",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "dfca6578.0a8e7",
+        "type": "debug",
+        "z": "d0319a94.933848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "fe4fc6e7.d1b8a8",
+        "type": "debug",
+        "z": "d0319a94.933848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "40ca5ce3.622acc",
+        "type": "switch",
+        "z": "d0319a94.933848",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ARM 2",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 600,
+        "y": 1160,
+        "wires": [
+            [
+                "d923e526.0fbbc8",
+                "cd8c04d3.3ba4a"
+            ]
+        ]
+    },
+    {
+        "id": "cd8c04d3.3ba4a",
+        "type": "debug",
+        "z": "d0319a94.933848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "4529cb84.9e61e4",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pid",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3fde2be1.8b6f7c",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pid",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "928bd9ee.086758",
+        "type": "ui_text_input",
+        "z": "d0319a94.933848",
+        "name": "",
+        "label": "setpoint",
+        "tooltip": "",
+        "group": "63b898e3.cb88b",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "0",
+        "topic": "setpoint",
+        "topicType": "str",
+        "x": 200,
+        "y": 1560,
+        "wires": [
+            [
+                "d923e526.0fbbc8"
+            ]
+        ]
+    },
+    {
+        "id": "30ac5379.05f964",
+        "type": "ui_text_input",
+        "z": "d0319a94.933848",
+        "name": "",
+        "label": "prop_band",
+        "tooltip": "",
+        "group": "63b898e3.cb88b",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "0",
+        "topic": "prop_band",
+        "topicType": "str",
+        "x": 210,
+        "y": 1620,
+        "wires": [
+            [
+                "d923e526.0fbbc8"
+            ]
+        ]
+    },
+    {
+        "id": "208ab9e6.260da6",
+        "type": "ui_text_input",
+        "z": "d0319a94.933848",
+        "name": "",
+        "label": "t_integral",
+        "tooltip": "",
+        "group": "63b898e3.cb88b",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "0",
+        "topic": "t_integral",
+        "topicType": "str",
+        "x": 200,
+        "y": 1680,
+        "wires": [
+            [
+                "d923e526.0fbbc8"
+            ]
+        ]
+    },
+    {
+        "id": "3144c391.fb96cc",
+        "type": "ui_text_input",
+        "z": "d0319a94.933848",
+        "name": "",
+        "label": "t_derivative",
+        "tooltip": "",
+        "group": "63b898e3.cb88b",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "0",
+        "topic": "t_derivative",
+        "topicType": "str",
+        "x": 210,
+        "y": 1740,
+        "wires": [
+            [
+                "d923e526.0fbbc8"
+            ]
+        ]
+    },
+    {
+        "id": "ed7a0083.840a8",
+        "type": "ui_text_input",
+        "z": "d0319a94.933848",
+        "name": "",
+        "label": "pressure",
+        "tooltip": "",
+        "group": "63b898e3.cb88b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 180,
+        "y": 1820,
+        "wires": [
+            [
+                "83b9eaa6.6df188"
+            ]
+        ]
+    },
+    {
+        "id": "83b9eaa6.6df188",
+        "type": "change",
+        "z": "d0319a94.933848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pressure",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 1840,
+        "wires": [
+            []
+        ]
+    }
+]

@@ -1219,15 +1219,6 @@
         "login": false
     },
     {
-        "id": "21d594e5.b5238c",
-        "type": "ui_tab",
-        "name": "Furnace",
-        "icon": "dashboard",
-        "order": 3,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "c50b1cd6.b052d",
         "type": "ui_group",
         "name": "Motor control",
@@ -1311,15 +1302,6 @@
         "order": 3,
         "width": 1,
         "height": 1
-    },
-    {
-        "id": "e4bb11c1.04f848",
-        "type": "ui_group",
-        "name": "Group 4",
-        "tab": "f2b9b840.849ad",
-        "order": 5,
-        "disp": true,
-        "width": 6
     },
     {
         "id": "dd85593c.6e9ce",
@@ -8362,7 +8344,7 @@
         "type": "function",
         "z": "28075929.52991e",
         "name": "Attach or Detach",
-        "func": "var attached = global.get('attached')\n\nif (msg.event == 'Attach') {\n    attached[msg.topic] = true;\n    return {payload:'Attached'}\n} else {\n    attached[msg.topic] = false;\n    return {payload:'Detached'}\n}",
+        "func": "var attached = global.get('attached')\n\nif (msg.event == 'Attach') {\n    attached[msg.topic] = true;\n    return {payload:{fill:\"green\",shape:\"dot\",text:'Attached'}}\n} else {\n    attached[msg.topic] = false;\n    return {payload:{fill:\"red\",shape:\"ring\",text:'Detached'}}\n\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9202,7 +9184,7 @@
         "name": "",
         "label": "dataInterval",
         "tooltip": "This is the data acquisition period from the encoder",
-        "group": "fa943f83.ed6f3",
+        "group": "93e5d32a.4731b8",
         "order": 2,
         "width": "2",
         "height": "1",

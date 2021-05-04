@@ -2,7 +2,7 @@
     {
         "id": "cd3c6c14.6a19b8",
         "type": "tab",
-        "label": "Motors",
+        "label": "Tractors",
         "disabled": false,
         "info": "OPC-UA based control of the PLC program that runs on the PAC"
     },
@@ -30,14 +30,14 @@
     {
         "id": "39f681b1.fd6a4e",
         "type": "tab",
-        "label": "Strain",
+        "label": "Strain gauges",
         "disabled": false,
         "info": ""
     },
     {
         "id": "b9f084d.1776c78",
         "type": "tab",
-        "label": "influxdb",
+        "label": "globals",
         "disabled": false,
         "info": "Contains the singular influxdb out node."
     },
@@ -110,7 +110,13 @@
                 ]
             }
         ],
-        "out": [],
+        "out": [
+            {
+                "x": 160,
+                "y": 30,
+                "wires": []
+            }
+        ],
         "env": [
             {
                 "name": "label",
@@ -645,11 +651,12 @@
             "label": true
         },
         "nodes": [
-            "c04ebff4.2d987"
+            "c04ebff4.2d987",
+            "1f679a1d.da07ce"
         ],
         "x": 234,
         "y": 1499,
-        "w": 252,
+        "w": 412,
         "h": 82
     },
     {
@@ -661,11 +668,12 @@
             "label": true
         },
         "nodes": [
-            "31fc6597.3b1122"
+            "31fc6597.3b1122",
+            "96cd42bb.c5194"
         ],
         "x": 234,
         "y": 1299,
-        "w": 252,
+        "w": 412,
         "h": 82
     },
     {
@@ -677,11 +685,12 @@
             "label": true
         },
         "nodes": [
-            "e417d705.6ef3"
+            "e417d705.6ef3",
+            "f2eb6b48.3381b"
         ],
         "x": 234,
         "y": 1399,
-        "w": 252,
+        "w": 412,
         "h": 82
     },
     {
@@ -1031,41 +1040,6 @@
         "h": 182
     },
     {
-        "id": "6855f5c1.b565bc",
-        "type": "group",
-        "z": "472cf316.a032c4",
-        "name": "test",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "a9156b0e.cff37",
-            "a38dde2e.70967"
-        ],
-        "x": 1014,
-        "y": 59,
-        "w": 432,
-        "h": 82
-    },
-    {
-        "id": "b8db2098.029678",
-        "type": "group",
-        "z": "472cf316.a032c4",
-        "name": "test",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "768cea73.d05974",
-            "a37dbec.582244",
-            "8adab54f.5bce38"
-        ],
-        "x": 1254,
-        "y": 239,
-        "w": 532,
-        "h": 82
-    },
-    {
         "id": "7a8f7048.e5c4a8",
         "type": "group",
         "z": "7b62c48f.4019d4",
@@ -1191,7 +1165,7 @@
             "sizes": {
                 "sx": 48,
                 "sy": 48,
-                "gx": 6,
+                "gx": 20,
                 "gy": 6,
                 "cx": 6,
                 "cy": 6,
@@ -1207,7 +1181,7 @@
         "tab": "f2b9b840.849ad",
         "order": 2,
         "disp": true,
-        "width": "10",
+        "width": "11",
         "collapse": true
     },
     {
@@ -1227,25 +1201,6 @@
         "disp": true,
         "width": "6",
         "collapse": false
-    },
-    {
-        "id": "9315ce3e.fb1dc8",
-        "type": "ui_tab",
-        "name": "Strain ",
-        "icon": "dashboard",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "93e5d32a.4731b8",
-        "type": "ui_group",
-        "name": "Strain",
-        "tab": "9315ce3e.fb1dc8",
-        "order": 4,
-        "disp": true,
-        "width": "10",
-        "collapse": true
     },
     {
         "id": "590618eb.b8ddc8",
@@ -1268,11 +1223,11 @@
     {
         "id": "63b898e3.cb88b",
         "type": "ui_group",
-        "name": "Arm 1-2",
+        "name": "Feed side (Arms 1-2)",
         "tab": "f2b9b840.849ad",
         "order": 1,
         "disp": true,
-        "width": "10",
+        "width": "11",
         "collapse": false
     },
     {
@@ -1287,11 +1242,11 @@
     {
         "id": "f277b7b3.2f1898",
         "type": "ui_group",
-        "name": "Arm 3-4",
+        "name": "Draw side (Arms 3-4)",
         "tab": "f2b9b840.849ad",
-        "order": 3,
+        "order": 4,
         "disp": true,
-        "width": "10",
+        "width": "11",
         "collapse": true
     },
     {
@@ -1334,6 +1289,15 @@
         "influxdbVersion": "2.0",
         "url": "http://localhost:8086",
         "rejectUnauthorized": false
+    },
+    {
+        "id": "586b11a3.590cc8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "fa943f83.ed6f3",
+        "order": 9,
+        "width": "6",
+        "height": "1"
     },
     {
         "id": "92164c2e.bef808",
@@ -1408,7 +1372,7 @@
         "hostname": "localhost",
         "debug": false,
         "x": 110,
-        "y": 40,
+        "y": 80,
         "wires": [
             []
         ]
@@ -1420,13 +1384,13 @@
         "g": "e0b3350b.39e4d",
         "name": "",
         "group": "fa943f83.ed6f3",
-        "order": 1,
-        "width": "9",
+        "order": 2,
+        "width": "11",
         "height": "6",
         "label": "Temperature",
         "chartType": "line",
         "legend": "true",
-        "xformat": "mm:ss",
+        "xformat": "HH:mm:ss",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
@@ -1465,7 +1429,7 @@
         "channel": "0",
         "deviceSerialNumber": "559642",
         "isHubPortDevice": false,
-        "hubPort": "4",
+        "hubPort": "5",
         "debug": false,
         "LEDCurrentLimit": 0.02,
         "LEDForwardVoltage": 1,
@@ -1517,8 +1481,8 @@
         "type": "ui_chart",
         "z": "39f681b1.fd6a4e",
         "name": "",
-        "group": "93e5d32a.4731b8",
-        "order": 3,
+        "group": "fa943f83.ed6f3",
+        "order": 17,
         "width": "10",
         "height": "7",
         "label": "Strain",
@@ -1582,8 +1546,8 @@
         "type": "ui_button",
         "z": "39f681b1.fd6a4e",
         "name": "",
-        "group": "93e5d32a.4731b8",
-        "order": 1,
+        "group": "fa943f83.ed6f3",
+        "order": 19,
         "width": "2",
         "height": "1",
         "passthru": true,
@@ -3245,9 +3209,9 @@
         "type": "phidget22-temperaturesensor",
         "z": "472cf316.a032c4",
         "g": "c622cdd4.6d49c8",
-        "channel": "1",
-        "deviceSerialNumber": "559642",
-        "hubPort": "0",
+        "channel": "0",
+        "deviceSerialNumber": "626036",
+        "hubPort": "1",
         "debug": false,
         "dataInterval": "500",
         "temperatureChangeTrigger": 0,
@@ -3267,9 +3231,9 @@
         "type": "phidget22-temperaturesensor",
         "z": "472cf316.a032c4",
         "g": "8d7f6ed9.f5bfc",
-        "channel": "3",
-        "deviceSerialNumber": "559642",
-        "hubPort": "0",
+        "channel": "0",
+        "deviceSerialNumber": "626036",
+        "hubPort": "3",
         "debug": false,
         "dataInterval": "500",
         "temperatureChangeTrigger": 0,
@@ -3289,9 +3253,9 @@
         "type": "phidget22-temperaturesensor",
         "z": "472cf316.a032c4",
         "g": "ea8e2d80.cca938",
-        "channel": "2",
-        "deviceSerialNumber": "559642",
-        "hubPort": "0",
+        "channel": "0",
+        "deviceSerialNumber": "626036",
+        "hubPort": "2",
         "debug": false,
         "dataInterval": "500",
         "temperatureChangeTrigger": 0,
@@ -3312,7 +3276,7 @@
         "z": "472cf316.a032c4",
         "g": "de28e6a4.6494e",
         "channel": "0",
-        "deviceSerialNumber": "559642",
+        "deviceSerialNumber": "626036",
         "hubPort": "0",
         "debug": false,
         "dataInterval": "500",
@@ -3335,7 +3299,7 @@
         "g": "e0b3350b.39e4d",
         "name": "",
         "group": "fa943f83.ed6f3",
-        "order": 3,
+        "order": 8,
         "width": "2",
         "height": "1",
         "passthru": false,
@@ -3365,7 +3329,7 @@
         "channel": "1",
         "deviceSerialNumber": "559642",
         "isHubPortDevice": false,
-        "hubPort": "4",
+        "hubPort": "5",
         "debug": false,
         "LEDCurrentLimit": 0.02,
         "LEDForwardVoltage": 1,
@@ -3406,13 +3370,13 @@
         "g": "e0b3350b.39e4d",
         "name": "",
         "group": "fa943f83.ed6f3",
-        "order": 9,
-        "width": "9",
+        "order": 5,
+        "width": "11",
         "height": "6",
         "label": "Power",
         "chartType": "line",
         "legend": "true",
-        "xformat": "mm:ss",
+        "xformat": "HH:mm:ss",
         "interpolate": "linear",
         "nodata": "This is the power being fed into the heating elements.",
         "dot": false,
@@ -3651,7 +3615,7 @@
         "channel": "2",
         "deviceSerialNumber": "559642",
         "isHubPortDevice": false,
-        "hubPort": "4",
+        "hubPort": "5",
         "debug": false,
         "LEDCurrentLimit": 0.02,
         "LEDForwardVoltage": 1,
@@ -3757,7 +3721,7 @@
         "channel": "3",
         "deviceSerialNumber": "559642",
         "isHubPortDevice": false,
-        "hubPort": "4",
+        "hubPort": "5",
         "debug": false,
         "LEDCurrentLimit": 0.02,
         "LEDForwardVoltage": 1,
@@ -3810,9 +3774,9 @@
         "type": "phidget22-temperaturesensor",
         "z": "472cf316.a032c4",
         "g": "4a6d0eb9.05129",
-        "channel": "3",
+        "channel": "1",
         "deviceSerialNumber": "559642",
-        "hubPort": "1",
+        "hubPort": "0",
         "debug": false,
         "dataInterval": "500",
         "temperatureChangeTrigger": 0,
@@ -3822,7 +3786,9 @@
         "x": 360,
         "y": 1540,
         "wires": [
-            []
+            [
+                "1f679a1d.da07ce"
+            ]
         ]
     },
     {
@@ -3830,9 +3796,9 @@
         "type": "phidget22-temperaturesensor",
         "z": "472cf316.a032c4",
         "g": "d32a617b.531d98",
-        "channel": "1",
-        "deviceSerialNumber": "559642",
-        "hubPort": "1",
+        "channel": "0",
+        "deviceSerialNumber": "626036",
+        "hubPort": "5",
         "debug": false,
         "dataInterval": "500",
         "temperatureChangeTrigger": 0,
@@ -3842,7 +3808,9 @@
         "x": 360,
         "y": 1340,
         "wires": [
-            []
+            [
+                "96cd42bb.c5194"
+            ]
         ]
     },
     {
@@ -3850,9 +3818,9 @@
         "type": "phidget22-temperaturesensor",
         "z": "472cf316.a032c4",
         "g": "e29bdb60.c65598",
-        "channel": "2",
+        "channel": "0",
         "deviceSerialNumber": "559642",
-        "hubPort": "1",
+        "hubPort": "0",
         "debug": false,
         "dataInterval": "500",
         "temperatureChangeTrigger": 0,
@@ -3862,7 +3830,9 @@
         "x": 360,
         "y": 1440,
         "wires": [
-            []
+            [
+                "f2eb6b48.3381b"
+            ]
         ]
     },
     {
@@ -3871,8 +3841,8 @@
         "z": "472cf316.a032c4",
         "g": "2bdf9297.27d11e",
         "channel": "0",
-        "deviceSerialNumber": "559642",
-        "hubPort": "1",
+        "deviceSerialNumber": "626036",
+        "hubPort": "4",
         "debug": false,
         "dataInterval": "500",
         "temperatureChangeTrigger": 0,
@@ -3893,9 +3863,9 @@
         "z": "472cf316.a032c4",
         "d": true,
         "g": "981bb9d1.31d21",
-        "channel": "1",
+        "channel": "0",
         "deviceSerialNumber": "559642",
-        "hubPort": "2",
+        "hubPort": "3",
         "debug": false,
         "dataInterval": "500",
         "temperatureChangeTrigger": 0,
@@ -3964,7 +3934,7 @@
         "label": "dataInterval",
         "tooltip": "This is the data acquisition period from the encoder",
         "group": "fa943f83.ed6f3",
-        "order": 2,
+        "order": 7,
         "width": "2",
         "height": "1",
         "passthru": true,
@@ -7159,9 +7129,7 @@
         "x": 180,
         "y": 140,
         "wires": [
-            [
-                "c058416e.9ff77"
-            ]
+            []
         ]
     },
     {
@@ -7169,8 +7137,8 @@
         "type": "ui_button",
         "z": "39f681b1.fd6a4e",
         "name": "",
-        "group": "93e5d32a.4731b8",
-        "order": 2,
+        "group": "fa943f83.ed6f3",
+        "order": 18,
         "width": "2",
         "height": "1",
         "passthru": true,
@@ -7189,31 +7157,6 @@
             [
                 "65560268.c466c4"
             ]
-        ]
-    },
-    {
-        "id": "c058416e.9ff77",
-        "type": "change",
-        "z": "39f681b1.fd6a4e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "strains",
-                "pt": "global",
-                "to": "{}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 140,
-        "wires": [
-            []
         ]
     },
     {
@@ -7253,65 +7196,6 @@
         "wires": [
             [
                 "1d5da6b.b9983d9"
-            ]
-        ]
-    },
-    {
-        "id": "717798f6.0d4b78",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "attached",
-                "pt": "global",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "temperatures",
-                "pt": "global",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "powers",
-                "pt": "global",
-                "to": "{}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9edefba5.687d08",
-        "type": "inject",
-        "z": "472cf316.a032c4",
-        "name": "init",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "str",
-        "x": 120,
-        "y": 100,
-        "wires": [
-            [
-                "717798f6.0d4b78"
             ]
         ]
     },
@@ -7357,8 +7241,8 @@
         "retentionPolicyV18Flux": "",
         "org": "fames",
         "bucket": "fames",
-        "x": 910,
-        "y": 400,
+        "x": 630,
+        "y": 200,
         "wires": []
     },
     {
@@ -7367,13 +7251,10 @@
         "z": "b9f084d.1776c78",
         "name": "influxdb",
         "links": [
-            "151dee63.6493f2",
-            "7064dfea.c7f908",
-            "7b80c04a.b762a",
-            "7b19538b.6916cc"
+            "151dee63.6493f2"
         ],
-        "x": 775,
-        "y": 400,
+        "x": 495,
+        "y": 200,
         "wires": [
             [
                 "c120025.e616f8"
@@ -7852,7 +7733,9 @@
         ],
         "x": 1990,
         "y": 840,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "937161e8.3942f8",
@@ -7869,7 +7752,9 @@
         ],
         "x": 1990,
         "y": 940,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "42957ccf.8c6954",
@@ -7886,7 +7771,9 @@
         ],
         "x": 1990,
         "y": 1040,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "a4400c08.d2ce98",
@@ -7903,7 +7790,9 @@
         ],
         "x": 1990,
         "y": 1140,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "bc66f74d.d795d8",
@@ -7940,7 +7829,7 @@
         "label": "PID",
         "tooltip": "",
         "group": "fa943f83.ed6f3",
-        "order": 4,
+        "order": 10,
         "width": "2",
         "height": "1",
         "passthru": true,
@@ -8074,7 +7963,7 @@
         "label": "t_derivative",
         "tooltip": "Larger number larger effect",
         "group": "fa943f83.ed6f3",
-        "order": 8,
+        "order": 14,
         "width": "2",
         "height": "1",
         "passthru": false,
@@ -8151,7 +8040,7 @@
         "label": "t_integral",
         "tooltip": "Smaller number larger effect",
         "group": "fa943f83.ed6f3",
-        "order": 7,
+        "order": 13,
         "width": "2",
         "height": "1",
         "passthru": true,
@@ -8176,7 +8065,7 @@
         "label": "prop_band",
         "tooltip": "Smaller number means larger gain",
         "group": "fa943f83.ed6f3",
-        "order": 6,
+        "order": 12,
         "width": "2",
         "height": "1",
         "passthru": true,
@@ -8201,7 +8090,7 @@
         "label": "setpoint",
         "tooltip": "Temperature in °C",
         "group": "fa943f83.ed6f3",
-        "order": 5,
+        "order": 11,
         "width": "2",
         "height": "1",
         "passthru": true,
@@ -8357,47 +8246,6 @@
         ]
     },
     {
-        "id": "a9156b0e.cff37",
-        "type": "phidget22-temperaturesensor",
-        "z": "472cf316.a032c4",
-        "g": "6855f5c1.b565bc",
-        "channel": "4",
-        "deviceSerialNumber": "495907",
-        "hubPort": "0",
-        "debug": false,
-        "dataInterval": "500",
-        "temperatureChangeTrigger": 0,
-        "RTDWireSetup": 3,
-        "RTDType": 2,
-        "thermocoupleType": "1",
-        "x": 1140,
-        "y": 100,
-        "wires": [
-            [
-                "a38dde2e.70967"
-            ]
-        ]
-    },
-    {
-        "id": "a38dde2e.70967",
-        "type": "subflow:29b5b7f5.1f4978",
-        "z": "472cf316.a032c4",
-        "g": "6855f5c1.b565bc",
-        "name": "test",
-        "env": [
-            {
-                "name": "label",
-                "value": "test",
-                "type": "str"
-            }
-        ],
-        "x": 1370,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "3fbf5fac.51fba8",
         "type": "subflow:28075929.52991e",
         "z": "29b5b7f5.1f4978",
@@ -8418,129 +8266,6 @@
         "y": 580,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "768cea73.d05974",
-        "type": "phidget22-digitaloutput",
-        "z": "472cf316.a032c4",
-        "g": "b8db2098.029678",
-        "channel": "0",
-        "deviceSerialNumber": "495907",
-        "isHubPortDevice": false,
-        "hubPort": "2",
-        "debug": false,
-        "LEDCurrentLimit": 0.02,
-        "LEDForwardVoltage": 1,
-        "x": 1540,
-        "y": 280,
-        "wires": [
-            [
-                "8adab54f.5bce38"
-            ]
-        ]
-    },
-    {
-        "id": "a37dbec.582244",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "g": "b8db2098.029678",
-        "name": "setDutyCycle",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "setDutyCycle",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{ \"dutyCycle\" : (msg.payload) }",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1350,
-        "y": 280,
-        "wires": [
-            [
-                "768cea73.d05974",
-                "8adab54f.5bce38"
-            ]
-        ]
-    },
-    {
-        "id": "8adab54f.5bce38",
-        "type": "subflow:daecb3c5.c2256",
-        "z": "472cf316.a032c4",
-        "g": "b8db2098.029678",
-        "name": "testht",
-        "env": [
-            {
-                "name": "label",
-                "value": "testht",
-                "type": "str"
-            }
-        ],
-        "x": 1710,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "7e52311c.2ff518",
-        "type": "inject",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "0.5",
-        "payloadType": "num",
-        "x": 1130,
-        "y": 240,
-        "wires": [
-            [
-                "a37dbec.582244"
-            ]
-        ]
-    },
-    {
-        "id": "b7b8d72c.779b5",
-        "type": "inject",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "0.3",
-        "payloadType": "num",
-        "x": 1130,
-        "y": 320,
-        "wires": [
-            [
-                "a37dbec.582244"
-            ]
         ]
     },
     {
@@ -9184,8 +8909,8 @@
         "name": "",
         "label": "dataInterval",
         "tooltip": "This is the data acquisition period from the encoder",
-        "group": "93e5d32a.4731b8",
-        "order": 2,
+        "group": "fa943f83.ed6f3",
+        "order": 20,
         "width": "2",
         "height": "1",
         "passthru": true,
@@ -9477,6 +9202,134 @@
         "wires": [
             [
                 "65560268.c466c4"
+            ]
+        ]
+    },
+    {
+        "id": "bd317da2.4aa7e",
+        "type": "inject",
+        "z": "b9f084d.1776c78",
+        "name": "init",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 530,
+        "y": 140,
+        "wires": [
+            [
+                "aac84f6e.dd47e8"
+            ]
+        ]
+    },
+    {
+        "id": "aac84f6e.dd47e8",
+        "type": "change",
+        "z": "b9f084d.1776c78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "attached",
+                "pt": "global",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "temperatures",
+                "pt": "global",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "powers",
+                "pt": "global",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "strains",
+                "pt": "global",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "96cd42bb.c5194",
+        "type": "subflow:29b5b7f5.1f4978",
+        "z": "472cf316.a032c4",
+        "g": "d32a617b.531d98",
+        "name": "TC6",
+        "env": [
+            {
+                "name": "label",
+                "value": "TC6",
+                "type": "str"
+            }
+        ],
+        "x": 570,
+        "y": 1340,
+        "wires": [
+            [
+                "8394cb1c.eedc"
+            ]
+        ]
+    },
+    {
+        "id": "f2eb6b48.3381b",
+        "type": "subflow:29b5b7f5.1f4978",
+        "z": "472cf316.a032c4",
+        "g": "e29bdb60.c65598",
+        "name": "TC7",
+        "env": [
+            {
+                "name": "label",
+                "value": "TC7",
+                "type": "str"
+            }
+        ],
+        "x": 570,
+        "y": 1440,
+        "wires": [
+            [
+                "8394cb1c.eedc"
+            ]
+        ]
+    },
+    {
+        "id": "1f679a1d.da07ce",
+        "type": "subflow:29b5b7f5.1f4978",
+        "z": "472cf316.a032c4",
+        "g": "4a6d0eb9.05129",
+        "name": "TC8",
+        "env": [
+            {
+                "name": "label",
+                "value": "TC8",
+                "type": "str"
+            }
+        ],
+        "x": 570,
+        "y": 1540,
+        "wires": [
+            [
+                "8394cb1c.eedc"
             ]
         ]
     }

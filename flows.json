@@ -1744,9 +1744,9 @@
         "z": "39f681b1.fd6a4e",
         "g": "6a8645c6.774334",
         "channel": 0,
-        "deviceSerialNumber": "559402",
+        "deviceSerialNumber": "561741",
         "isHubPortDevice": false,
-        "hubPort": "0",
+        "hubPort": "4",
         "debug": false,
         "dataInterval": "250",
         "voltageRatioChangeTrigger": 0,
@@ -1809,9 +1809,9 @@
         "z": "39f681b1.fd6a4e",
         "g": "2eda63f4.7d845c",
         "channel": "1",
-        "deviceSerialNumber": "559402",
+        "deviceSerialNumber": "561741",
         "isHubPortDevice": false,
-        "hubPort": "0",
+        "hubPort": "4",
         "debug": false,
         "dataInterval": "250",
         "voltageRatioChangeTrigger": 0,
@@ -1861,9 +1861,9 @@
         "z": "39f681b1.fd6a4e",
         "g": "46abe05b.171a2",
         "channel": 0,
-        "deviceSerialNumber": "559402",
+        "deviceSerialNumber": "561741",
         "isHubPortDevice": false,
-        "hubPort": "1",
+        "hubPort": "5",
         "debug": false,
         "dataInterval": "250",
         "voltageRatioChangeTrigger": 0,
@@ -1883,9 +1883,9 @@
         "z": "39f681b1.fd6a4e",
         "g": "b30a1226.a9bee8",
         "channel": "1",
-        "deviceSerialNumber": "559402",
+        "deviceSerialNumber": "561741",
         "isHubPortDevice": false,
-        "hubPort": "1",
+        "hubPort": "5",
         "debug": false,
         "dataInterval": "250",
         "voltageRatioChangeTrigger": 0,
@@ -6613,7 +6613,7 @@
         "retentionPolicyV18Flux": "",
         "org": "fames",
         "bucket": "taperer",
-        "x": 1270,
+        "x": 1130,
         "y": 280,
         "wires": []
     },
@@ -6628,7 +6628,7 @@
             "1d7994b7.1679a3",
             "740edf17.7363c"
         ],
-        "x": 555,
+        "x": 415,
         "y": 280,
         "wires": [
             [
@@ -10451,7 +10451,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
+        "x": 540,
         "y": 280,
         "wires": [
             [
@@ -10510,8 +10510,8 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 500,
-        "y": 460,
+        "x": 760,
+        "y": 200,
         "wires": [
             [
                 "d7c4d75c.b968b"
@@ -10535,8 +10535,8 @@
         "topic": "",
         "payload": "false",
         "payloadType": "bool",
-        "x": 280,
-        "y": 460,
+        "x": 540,
+        "y": 200,
         "wires": [
             [
                 "586bee1f.0e3ec"
@@ -10562,8 +10562,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 740,
-        "y": 460,
+        "x": 1000,
+        "y": 200,
         "wires": [
             []
         ]
@@ -10583,7 +10583,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 990,
+        "x": 850,
         "y": 280,
         "wires": [
             [
@@ -10610,8 +10610,8 @@
         "payloadType": "json",
         "topic": "topic",
         "topicType": "str",
-        "x": 470,
-        "y": 640,
+        "x": 530,
+        "y": 400,
         "wires": [
             [
                 "47639431.6f6f7c"
@@ -10632,8 +10632,8 @@
             "76fb6c9d.7d799c",
             "4704d160.a59378"
         ],
-        "x": 645,
-        "y": 640,
+        "x": 705,
+        "y": 400,
         "wires": []
     },
     {

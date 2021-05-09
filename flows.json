@@ -1242,8 +1242,8 @@
         "nodes": [
             "1d7994b7.1679a3"
         ],
-        "x": 794,
-        "y": 1959,
+        "x": 774,
+        "y": 1799,
         "w": 82,
         "h": 82
     },
@@ -1262,28 +1262,6 @@
         "y": 819,
         "w": 82,
         "h": 82
-    },
-    {
-        "id": "205761be.b09b7e",
-        "type": "group",
-        "z": "472cf316.a032c4",
-        "name": "InnerPID parameters",
-        "style": {
-            "label": true,
-            "fill": "#ffefbf",
-            "color": "#000000"
-        },
-        "nodes": [
-            "1045f349.077655",
-            "c3794ae3.dfd748",
-            "42aa66d4.3b2a1",
-            "cd1aa4ea.95c4d",
-            "42c713cb.942e04"
-        ],
-        "x": 694,
-        "y": 119,
-        "w": 542,
-        "h": 202
     },
     {
         "id": "f3991c64.015ab8",
@@ -1309,13 +1287,11 @@
             "533289cc.c5a0c8",
             "2171f481.456784",
             "2767f17e.f37cf6",
-            "d55b5cdd.296ef8",
-            "49afa66.bad24d8",
-            "4270925e.800124"
+            "d55b5cdd.296ef8"
         ],
         "x": 34,
         "y": 359,
-        "w": 1072,
+        "w": 852,
         "h": 362
     },
     {
@@ -1701,7 +1677,7 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "x": 910,
+        "x": 950,
         "y": 820,
         "wires": [
             []
@@ -1711,6 +1687,7 @@
         "id": "671a928a.47199c",
         "type": "phidget22-digitaloutput",
         "z": "472cf316.a032c4",
+        "d": true,
         "g": "412e4124.cd2d18",
         "channel": "0",
         "deviceSerialNumber": "559642",
@@ -3170,7 +3147,6 @@
         "id": "7a3fcb86.106d54",
         "type": "phidget22-temperaturesensor",
         "z": "472cf316.a032c4",
-        "d": true,
         "g": "ea8e2d80.cca938",
         "channel": "0",
         "deviceSerialNumber": "626036",
@@ -3233,29 +3209,6 @@
         ]
     },
     {
-        "id": "1fb65c13.fab20c",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "d": true,
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 960,
-        "wires": [
-            [
-                "f15d55fe.96273"
-            ]
-        ]
-    },
-    {
         "id": "1d5da6b.b9983d9",
         "type": "ui_chart",
         "z": "472cf316.a032c4",
@@ -3302,6 +3255,7 @@
         "id": "f15d55fe.96273",
         "type": "change",
         "z": "472cf316.a032c4",
+        "d": true,
         "g": "412e4124.cd2d18",
         "name": "setDutyCycle",
         "rules": [
@@ -3366,52 +3320,8 @@
         "wires": [
             [
                 "4282a3a7.3667ec",
-                "937161e8.3942f8"
-            ]
-        ]
-    },
-    {
-        "id": "689e1002.bb3d",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 1060,
-        "wires": [
-            [
-                "8b7de8b2.1e237"
-            ]
-        ]
-    },
-    {
-        "id": "107c791c.6194ef",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "d": true,
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 1160,
-        "wires": [
-            [
-                "4bef351f.25e20c"
+                "937161e8.3942f8",
+                "21f4464.535bcba"
             ]
         ]
     },
@@ -3419,6 +3329,7 @@
         "id": "5a69be94.4a9278",
         "type": "phidget22-digitaloutput",
         "z": "472cf316.a032c4",
+        "d": true,
         "g": "a66af1c7.2c52e8",
         "channel": "2",
         "deviceSerialNumber": "559642",
@@ -3439,6 +3350,7 @@
         "id": "2e3994f.0fbdc6c",
         "type": "change",
         "z": "472cf316.a032c4",
+        "d": true,
         "g": "a66af1c7.2c52e8",
         "name": "setDutyCycle",
         "rules": [
@@ -3468,28 +3380,6 @@
             [
                 "5a69be94.4a9278",
                 "42957ccf.8c6954"
-            ]
-        ]
-    },
-    {
-        "id": "1cf2ba34.c1971e",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 1260,
-        "wires": [
-            [
-                "4ed4789.d70a808"
             ]
         ]
     },
@@ -6538,10 +6428,10 @@
         "property": "payload",
         "action": "mean",
         "count": "4",
-        "round": "2",
+        "round": "",
         "mult": "multi",
         "reduce": true,
-        "x": 680,
+        "x": 720,
         "y": 820,
         "wires": [
             [
@@ -6664,7 +6554,6 @@
         "y": 960,
         "wires": [
             [
-                "1fb65c13.fab20c",
                 "8394cb1c.eedc",
                 "1d7994b7.1679a3"
             ]
@@ -6791,7 +6680,7 @@
         "type": "function",
         "z": "29b5b7f5.1f4978",
         "name": "Update mean and std",
-        "func": "var temps = global.get('temperatures');\n\ntemps[msg.topic] = msg.payload;\n\nlet sum = 0; \nlet sum2 = 0; \n\nfor (var key in temps) {\n    sum += temps[key];\n    sum2 += Math.pow(temps[key], 2)\n}\n\nsum /= Object.keys(temps).length;\nsum2 /= Object.keys(temps).length;\n\n\nlet std = Math.sqrt(sum2 - (sum*sum));\n\nglobal.set('mean_temp', sum)\nglobal.set('std_temp', std)\n\nreturn msg;",
+        "func": "var temps = global.get('temperatures');\n\ntemps[msg.topic] = msg.payload;\n\nlet sum = 0; \nlet sum2 = 0; \n\nfor (let key in temps) {\n    sum += temps[key];\n    sum2 += Math.pow(temps[key], 2)\n}\n\nlet mean = sum / Object.keys(temps).length;\nlet mean2 = sum2 / Object.keys(temps).length;\n\nlet std = Math.sqrt(mean2 - (mean*mean));\n\nglobal.set('mean_temp', mean)\nglobal.set('std_temp', std)\n\n//residuals\n\nvar resid = {}\nsum = 0\n\nfor (let key in temps) {\n    let r = temps[key] - mean;\n    if (r<0) {\n        r = -r;\n        sum += r;\n    }\n    else \n    {\n        r=0;\n    }\n    resid[key] = r;\n}\n\nfor (let key in resid) {\n    resid[key]/=sum;\n}\n\nglobal.set('resid', resid);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6838,8 +6727,7 @@
         "wires": [
             [
                 "8394cb1c.eedc",
-                "1d7994b7.1679a3",
-                "ebe704a3.5532e8"
+                "1d7994b7.1679a3"
             ]
         ]
     },
@@ -6847,7 +6735,6 @@
         "id": "766e3bd5.7c1b2c",
         "type": "subflow:29b5b7f5.1f4978",
         "z": "472cf316.a032c4",
-        "d": true,
         "g": "ea8e2d80.cca938",
         "name": "TC3",
         "env": [
@@ -6862,8 +6749,7 @@
         "wires": [
             [
                 "8394cb1c.eedc",
-                "1d7994b7.1679a3",
-                "91bd94d1.57caa"
+                "1d7994b7.1679a3"
             ]
         ]
     },
@@ -6885,8 +6771,7 @@
         "wires": [
             [
                 "8394cb1c.eedc",
-                "1d7994b7.1679a3",
-                "17c5c76a.2cd0c1"
+                "1d7994b7.1679a3"
             ]
         ]
     },
@@ -6908,8 +6793,7 @@
         "wires": [
             [
                 "8394cb1c.eedc",
-                "1d7994b7.1679a3",
-                "ed191ff6.0c10a8"
+                "1d7994b7.1679a3"
             ]
         ]
     },
@@ -7023,6 +6907,7 @@
         "id": "ff868aaf.bf8008",
         "type": "subflow:daecb3c5.c2256",
         "z": "472cf316.a032c4",
+        "d": true,
         "g": "412e4124.cd2d18",
         "name": "HT1",
         "env": [
@@ -7067,6 +6952,7 @@
         "id": "42957ccf.8c6954",
         "type": "subflow:daecb3c5.c2256",
         "z": "472cf316.a032c4",
+        "d": true,
         "g": "a66af1c7.2c52e8",
         "name": "HT3",
         "env": [
@@ -7104,33 +6990,6 @@
             [
                 "d86dbde7.595fb8",
                 "d8994046.43533"
-            ]
-        ]
-    },
-    {
-        "id": "6fb27.90e654d98",
-        "type": "link in",
-        "z": "472cf316.a032c4",
-        "name": "PID parameters",
-        "links": [
-            "cd1aa4ea.95c4d",
-            "84ddc37.50c474",
-            "c809e115.5d146"
-        ],
-        "x": 815,
-        "y": 1400,
-        "wires": [
-            [
-                "1fb65c13.fab20c",
-                "689e1002.bb3d",
-                "107c791c.6194ef",
-                "1cf2ba34.c1971e",
-                "b3268025.fc2d5",
-                "69c00c1d.824614",
-                "e5f018a2.9291a8",
-                "aa005eb1.0cc57",
-                "94af238d.549df8",
-                "c51b46e9.ff1aa"
             ]
         ]
     },
@@ -8208,8 +8067,7 @@
         "wires": [
             [
                 "8394cb1c.eedc",
-                "1d7994b7.1679a3",
-                "1cfe246a.d436a4"
+                "1d7994b7.1679a3"
             ]
         ]
     },
@@ -8231,8 +8089,7 @@
         "wires": [
             [
                 "8394cb1c.eedc",
-                "1d7994b7.1679a3",
-                "30567a92.c4d98e"
+                "1d7994b7.1679a3"
             ]
         ]
     },
@@ -8254,8 +8111,7 @@
         "wires": [
             [
                 "8394cb1c.eedc",
-                "1d7994b7.1679a3",
-                "44d9cfd9.7e44f8"
+                "1d7994b7.1679a3"
             ]
         ]
     },
@@ -9406,8 +9262,7 @@
         "wires": [
             [
                 "8394cb1c.eedc",
-                "1d7994b7.1679a3",
-                "59a788ac.a78c88"
+                "1d7994b7.1679a3"
             ]
         ]
     },
@@ -9429,140 +9284,7 @@
         "wires": [
             [
                 "8394cb1c.eedc",
-                "1d7994b7.1679a3",
-                "fde4314e.ef8ed8"
-            ]
-        ]
-    },
-    {
-        "id": "b3268025.fc2d5",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 1360,
-        "wires": [
-            [
-                "29a6f8ae.950c38"
-            ]
-        ]
-    },
-    {
-        "id": "69c00c1d.824614",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 1460,
-        "wires": [
-            [
-                "ec462a3d.7df18"
-            ]
-        ]
-    },
-    {
-        "id": "e5f018a2.9291a8",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 1560,
-        "wires": [
-            [
-                "7adbc379.58bdbc"
-            ]
-        ]
-    },
-    {
-        "id": "aa005eb1.0cc57",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 1660,
-        "wires": [
-            [
-                "aaaca484.39cb3"
-            ]
-        ]
-    },
-    {
-        "id": "94af238d.549df8",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 1760,
-        "wires": [
-            [
-                "4a1fc2d5.69b15c"
-            ]
-        ]
-    },
-    {
-        "id": "c51b46e9.ff1aa",
-        "type": "PID",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "setpoint": "0",
-        "pb": "20",
-        "ti": "65536",
-        "td": "0",
-        "integral_default": "0",
-        "smooth_factor": "0",
-        "max_interval": 600,
-        "enable": "0",
-        "disabled_op": "0",
-        "x": 1070,
-        "y": 1860,
-        "wires": [
-            [
-                "e3e86d6f.a746b"
+                "1d7994b7.1679a3"
             ]
         ]
     },
@@ -10083,8 +9805,8 @@
         "links": [
             "24f66f48.316db"
         ],
-        "x": 835,
-        "y": 2000,
+        "x": 815,
+        "y": 1840,
         "wires": []
     },
     {
@@ -10338,7 +10060,6 @@
         "id": "49afa66.bad24d8",
         "type": "inject",
         "z": "472cf316.a032c4",
-        "g": "f3991c64.015ab8",
         "name": "",
         "props": [
             {
@@ -10356,12 +10077,13 @@
         "topic": "mean",
         "payload": "mean_temp",
         "payloadType": "global",
-        "x": 630,
-        "y": 680,
+        "x": 170,
+        "y": 820,
         "wires": [
             [
                 "d55b5cdd.296ef8",
-                "8394cb1c.eedc"
+                "8394cb1c.eedc",
+                "738b020a.0181cc"
             ]
         ]
     },
@@ -10378,140 +10100,14 @@
         "integral_default": "0",
         "smooth_factor": "0",
         "max_interval": 600,
-        "enable": "0",
+        "enable": "1",
         "disabled_op": 0,
         "x": 810,
         "y": 540,
         "wires": [
             [
-                "4270925e.800124"
-            ]
-        ]
-    },
-    {
-        "id": "1045f349.077655",
-        "type": "inject",
-        "z": "472cf316.a032c4",
-        "g": "205761be.b09b7e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "t_derivative",
-        "payload": "0",
-        "payloadType": "num",
-        "x": 820,
-        "y": 280,
-        "wires": [
-            [
-                "cd1aa4ea.95c4d"
-            ]
-        ]
-    },
-    {
-        "id": "c3794ae3.dfd748",
-        "type": "inject",
-        "z": "472cf316.a032c4",
-        "g": "205761be.b09b7e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "t_integral",
-        "payload": "65536",
-        "payloadType": "num",
-        "x": 820,
-        "y": 220,
-        "wires": [
-            [
-                "cd1aa4ea.95c4d"
-            ]
-        ]
-    },
-    {
-        "id": "42aa66d4.3b2a1",
-        "type": "inject",
-        "z": "472cf316.a032c4",
-        "g": "205761be.b09b7e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "10",
-        "payloadType": "num",
-        "x": 790,
-        "y": 160,
-        "wires": [
-            [
-                "42c713cb.942e04"
-            ]
-        ]
-    },
-    {
-        "id": "cd1aa4ea.95c4d",
-        "type": "link out",
-        "z": "472cf316.a032c4",
-        "g": "205761be.b09b7e",
-        "name": "PID Parameters",
-        "links": [
-            "6fb27.90e654d98"
-        ],
-        "x": 1195,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "ebe704a3.5532e8",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "diff",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) - $globalContext('mean_temp'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 1060,
-        "wires": [
-            [
-                "689e1002.bb3d",
-                "7ee3ea22.a0b404"
+                "4270925e.800124",
+                "20913080.b2a83"
             ]
         ]
     },
@@ -10625,6 +10221,13 @@
                 "pt": "msg",
                 "to": "true",
                 "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "PID",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -10636,8 +10239,7 @@
         "y": 400,
         "wires": [
             [
-                "d55b5cdd.296ef8",
-                "cd1aa4ea.95c4d"
+                "d55b5cdd.296ef8"
             ]
         ]
     },
@@ -10661,6 +10263,13 @@
                 "pt": "msg",
                 "to": "false",
                 "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "PID",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -10672,8 +10281,7 @@
         "y": 440,
         "wires": [
             [
-                "d55b5cdd.296ef8",
-                "cd1aa4ea.95c4d"
+                "d55b5cdd.296ef8"
             ]
         ]
     },
@@ -10885,7 +10493,6 @@
         "id": "4270925e.800124",
         "type": "change",
         "z": "472cf316.a032c4",
-        "g": "f3991c64.015ab8",
         "name": "",
         "rules": [
             {
@@ -10908,39 +10515,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 540,
+        "x": 1240,
+        "y": 640,
         "wires": [
             [
-                "d86dbde7.595fb8"
-            ]
-        ]
-    },
-    {
-        "id": "8b7de8b2.1e237",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "scale",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) * $globalContext('max_power'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 1060,
-        "wires": [
-            [
-                "cbd3ac20.0a4838",
-                "c3887544.7385d8"
+                "d86dbde7.595fb8",
+                "3d061d9c.ebb91a"
             ]
         ]
     },
@@ -10961,7 +10541,7 @@
         "wires": []
     },
     {
-        "id": "7ee3ea22.a0b404",
+        "id": "21f4464.535bcba",
         "type": "debug",
         "z": "472cf316.a032c4",
         "name": "",
@@ -10972,462 +10552,79 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1170,
-        "y": 820,
+        "x": 1490,
+        "y": 780,
         "wires": []
     },
     {
-        "id": "42c713cb.942e04",
-        "type": "ui_text_input",
+        "id": "3d061d9c.ebb91a",
+        "type": "debug",
         "z": "472cf316.a032c4",
-        "g": "205761be.b09b7e",
         "name": "",
-        "label": "inner_prop_band",
-        "tooltip": "Smaller number means larger gain",
-        "group": "fa943f83.ed6f3",
-        "order": 7,
-        "width": 2,
-        "height": 1,
-        "passthru": true,
-        "mode": "number",
-        "delay": "0",
-        "topic": "prop_band",
-        "topicType": "str",
-        "x": 1010,
-        "y": 160,
-        "wires": [
-            [
-                "cd1aa4ea.95c4d"
-            ]
-        ]
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1790,
+        "y": 480,
+        "wires": []
     },
     {
-        "id": "91bd94d1.57caa",
-        "type": "change",
+        "id": "738b020a.0181cc",
+        "type": "debug",
         "z": "472cf316.a032c4",
-        "name": "diff",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) - $globalContext('mean_temp'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 1160,
-        "wires": [
-            [
-                "107c791c.6194ef"
-            ]
-        ]
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 760,
+        "wires": []
     },
     {
-        "id": "17c5c76a.2cd0c1",
-        "type": "change",
+        "id": "20913080.b2a83",
+        "type": "function",
         "z": "472cf316.a032c4",
-        "name": "diff",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) - $globalContext('mean_temp'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 1260,
-        "wires": [
-            [
-                "1cf2ba34.c1971e"
-            ]
-        ]
-    },
-    {
-        "id": "ed191ff6.0c10a8",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "diff",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) - $globalContext('mean_temp'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
+        "name": "",
+        "func": "let power = msg.payload;\n\nlet resid = global.get('resid');\n\n//var TC = ['TC1','TC2','TC3','TC4','TC5','TC6','TC7','TC8','TC9','TC10',];\n\nmsg = [];\n\nfor (i = 1; i <11; i++) {\n    p = power* resid['TC'+i]\n    msg.push({topic:'TC'+i, payload:p})\n}\n\nreturn msg;",
+        "outputs": 10,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
         "y": 1360,
         "wires": [
+            [],
             [
-                "b3268025.fc2d5"
-            ]
-        ]
-    },
-    {
-        "id": "1cfe246a.d436a4",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "diff",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) - $globalContext('mean_temp'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 1460,
-        "wires": [
-            [
-                "69c00c1d.824614"
-            ]
-        ]
-    },
-    {
-        "id": "30567a92.c4d98e",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "diff",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) - $globalContext('mean_temp'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 1560,
-        "wires": [
-            [
-                "e5f018a2.9291a8"
-            ]
-        ]
-    },
-    {
-        "id": "44d9cfd9.7e44f8",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "diff",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) - $globalContext('mean_temp'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 1660,
-        "wires": [
-            [
-                "aa005eb1.0cc57"
-            ]
-        ]
-    },
-    {
-        "id": "59a788ac.a78c88",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "diff",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) - $globalContext('mean_temp'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 1760,
-        "wires": [
-            [
-                "94af238d.549df8"
-            ]
-        ]
-    },
-    {
-        "id": "fde4314e.ef8ed8",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "diff",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) - $globalContext('mean_temp'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 750,
-        "y": 1860,
-        "wires": [
-            [
-                "c51b46e9.ff1aa"
-            ]
-        ]
-    },
-    {
-        "id": "4bef351f.25e20c",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "scale",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) * $globalContext('max_power'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 1160,
-        "wires": [
-            [
-                "2e3994f.0fbdc6c"
-            ]
-        ]
-    },
-    {
-        "id": "4ed4789.d70a808",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "scale",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) * $globalContext('max_power'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 1260,
-        "wires": [
+                "c3887544.7385d8"
+            ],
+            [],
             [
                 "4024fc44.4a45ac"
-            ]
-        ]
-    },
-    {
-        "id": "29a6f8ae.950c38",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "scale",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) * $globalContext('max_power'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 1360,
-        "wires": [
+            ],
             [
                 "aab6d00b.5b7258"
-            ]
-        ]
-    },
-    {
-        "id": "ec462a3d.7df18",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "scale",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) * $globalContext('max_power'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 1460,
-        "wires": [
+            ],
             [
                 "19908d86.73ac72"
-            ]
-        ]
-    },
-    {
-        "id": "7adbc379.58bdbc",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "scale",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) * $globalContext('max_power'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 1560,
-        "wires": [
+            ],
             [
                 "d778a8e6.360ed"
-            ]
-        ]
-    },
-    {
-        "id": "aaaca484.39cb3",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "scale",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) * $globalContext('max_power'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 1660,
-        "wires": [
+            ],
             [
                 "4ef74614.8e7238"
-            ]
-        ]
-    },
-    {
-        "id": "4a1fc2d5.69b15c",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "scale",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) * $globalContext('max_power'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 1760,
-        "wires": [
+            ],
             [
                 "5ff99cac.af9a1c"
-            ]
-        ]
-    },
-    {
-        "id": "e3e86d6f.a746b",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "scale",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "((payload) * $globalContext('max_power'))",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 1860,
-        "wires": [
+            ],
             [
                 "2598d46b.952f2c"
             ]

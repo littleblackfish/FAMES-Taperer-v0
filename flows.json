@@ -912,8 +912,8 @@
         "nodes": [
             "d8994046.43533"
         ],
-        "x": 2174,
-        "y": 1059,
+        "x": 2194,
+        "y": 1239,
         "w": 82,
         "h": 82
     },
@@ -928,8 +928,8 @@
         "nodes": [
             "1d7994b7.1679a3"
         ],
-        "x": 754,
-        "y": 1079,
+        "x": 794,
+        "y": 1219,
         "w": 82,
         "h": 82
     },
@@ -4608,7 +4608,7 @@
         "type": "function",
         "z": "29b5b7f5.1f4978",
         "name": "Update mean and std",
-        "func": "var temps = global.get('temperatures');\n\ntemps[msg.topic] = msg.payload;\n\nlet sum = 0; \nlet sum2 = 0; \n\nfor (let key in temps) {\n    sum += temps[key];\n    sum2 += Math.pow(temps[key], 2)\n}\n\nlet mean = sum / Object.keys(temps).length;\nlet mean2 = sum2 / Object.keys(temps).length;\n\nlet std = Math.sqrt(mean2 - (mean*mean));\n\nglobal.set('mean_temp', mean)\nglobal.set('std_temp', std)\n\n//residuals\n\nvar resid = {}\nsum = 0\n\nfor (let key in temps) {\n    let r = temps[key] - mean;\n    if (r<0) {\n        r = -r;\n        sum += r;\n    }\n    else \n    {\n        r=0;\n    }\n    resid[key] = r;\n}\n\nfor (let key in resid) {\n    resid[key]/=sum;\n}\n\nglobal.set('resid', resid);\n\nreturn msg;",
+        "func": "var temps = global.get('temperatures');\n\ntemps[msg.topic] = msg.payload;\n\nlet sum = 0; \nlet sum2 = 0; \n\nfor (let key in temps) {\n    sum += temps[key];\n    sum2 += Math.pow(temps[key], 2)\n}\n\nlet mean = sum / Object.keys(temps).length;\nlet mean2 = sum2 / Object.keys(temps).length;\n\nlet std = Math.sqrt(mean2 - (mean*mean));\n\nglobal.set('mean_temp', mean)\nglobal.set('std_temp', std)\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7451,8 +7451,8 @@
         "links": [
             "24f66f48.316db"
         ],
-        "x": 2215,
-        "y": 1100,
+        "x": 2235,
+        "y": 1280,
         "wires": []
     },
     {
@@ -7491,8 +7491,8 @@
         "links": [
             "24f66f48.316db"
         ],
-        "x": 795,
-        "y": 1120,
+        "x": 835,
+        "y": 1260,
         "wires": []
     },
     {
@@ -8210,7 +8210,7 @@
         "type": "function",
         "z": "472cf316.a032c4",
         "name": "",
-        "func": "let power = msg.payload;\n\nlet resid = global.get('resid');\n\n//var TC = ['TC1','TC2','TC3','TC4','TC5','TC6','TC7','TC8','TC9','TC10',];\n\nmsg = [];\n\nfor (i = 1; i <11; i++) {\n    p = power* resid['TC'+i]\n    msg.push({topic:'TC'+i, payload:p})\n}\n\nreturn msg;",
+        "func": "let temps = global.get('temperatures');\nlet mean_temp = global.get('mean_temp');\n\nlet resid = {}\nlet sum = 0\n\nfor (let key in temps) {\n    let r = temps[key] - mean_temp;\n    if (r<0) {\n        r = -r;\n        sum += r;\n    }\n    else {\n        r=0;\n    }\n    resid[key] = r;\n}\n\nfor (let key in resid) {\n    resid[key]/=sum;\n}\n\nlet power = msg.payload;\nmsg = [];\n\nfor (i = 1; i <11; i++) {\n    p = power* resid['TC'+i]\n    msg.push({topic:'TC'+i, payload:p})\n}\n\nreturn msg;",
         "outputs": 10,
         "noerr": 0,
         "initialize": "",

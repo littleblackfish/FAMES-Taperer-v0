@@ -1670,7 +1670,6 @@
         "id": "671a928a.47199c",
         "type": "phidget22-digitaloutput",
         "z": "472cf316.a032c4",
-        "d": true,
         "g": "412e4124.cd2d18",
         "channel": "0",
         "deviceSerialNumber": "559642",
@@ -2978,7 +2977,6 @@
         "id": "257e7bac.6143d4",
         "type": "phidget22-temperaturesensor",
         "z": "472cf316.a032c4",
-        "d": true,
         "g": "de28e6a4.6494e",
         "channel": "0",
         "deviceSerialNumber": "626036",
@@ -3064,7 +3062,6 @@
         "id": "f15d55fe.96273",
         "type": "change",
         "z": "472cf316.a032c4",
-        "d": true,
         "g": "412e4124.cd2d18",
         "name": "setDutyCycle",
         "rules": [
@@ -5931,7 +5928,6 @@
         "id": "94e70763.3395b8",
         "type": "subflow:29b5b7f5.1f4978",
         "z": "472cf316.a032c4",
-        "d": true,
         "g": "de28e6a4.6494e",
         "name": "TC1",
         "env": [
@@ -6298,7 +6294,6 @@
         "id": "ff868aaf.bf8008",
         "type": "subflow:daecb3c5.c2256",
         "z": "472cf316.a032c4",
-        "d": true,
         "g": "412e4124.cd2d18",
         "name": "HT1",
         "env": [
@@ -7951,9 +7946,7 @@
         "x": 670,
         "y": 920,
         "wires": [
-            [
-                "43d0dfc3.1424f8"
-            ],
+            [],
             [
                 "91ade881.e0e318"
             ]
@@ -8012,9 +8005,7 @@
         "x": 670,
         "y": 1040,
         "wires": [
-            [
-                "43d0dfc3.1424f8"
-            ],
+            [],
             [
                 "91ade881.e0e318"
             ]
@@ -10923,5 +10914,59 @@
                 "a2085bfb.2692d"
             ]
         ]
+    },
+    {
+        "id": "99c22691.064ec8",
+        "type": "function",
+        "z": "b9f084d.1776c78",
+        "name": "",
+        "func": "let attached = global.get('attached')\n\nlet total = 0;\nlet isattached = 0;\n\nfor (let key in attached) {\n    total ++ ;\n    if (attached[key] ==true) {\n        isattached ++;\n    }\n}\n\nmsg.payload = isattached + '/' + total\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 580,
+        "wires": [
+            [
+                "65a164e8.9a67b4"
+            ]
+        ]
+    },
+    {
+        "id": "9844b594.8e3c",
+        "type": "inject",
+        "z": "b9f084d.1776c78",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 560,
+        "y": 580,
+        "wires": [
+            [
+                "99c22691.064ec8"
+            ]
+        ]
+    },
+    {
+        "id": "65a164e8.9a67b4",
+        "type": "ui_text",
+        "z": "b9f084d.1776c78",
+        "group": "5a59f44e.bb600c",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "name": "",
+        "label": "Phidget channels",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1010,
+        "y": 580,
+        "wires": []
     }
 ]

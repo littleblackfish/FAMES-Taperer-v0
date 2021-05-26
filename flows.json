@@ -2201,7 +2201,7 @@
         "label": "Release",
         "tooltip": "",
         "color": "",
-        "bgcolor": "red",
+        "bgcolor": "#8f0000",
         "icon": "",
         "payload": "0",
         "payloadType": "json",
@@ -2855,11 +2855,11 @@
         "topic": "setDutyCycle",
         "topicType": "str",
         "x": 650,
-        "y": 800,
+        "y": 880,
         "wires": [
             [
-                "3ca6ca7.541f5b6",
-                "17d4f0c0.ed5a97"
+                "17d4f0c0.ed5a97",
+                "8473d484.2a9a68"
             ]
         ]
     },
@@ -2883,11 +2883,11 @@
         "topic": "setDutyCycle",
         "topicType": "str",
         "x": 650,
-        "y": 700,
+        "y": 780,
         "wires": [
             [
-                "e25be2f.d1ff02",
-                "72d66de5.d452d4"
+                "72d66de5.d452d4",
+                "6066c5f4.5330cc"
             ]
         ]
     },
@@ -2921,10 +2921,17 @@
         "rules": [
             {
                 "t": "set",
-                "p": "busy",
+                "p": "p_hold",
                 "pt": "flow",
-                "to": "false",
-                "tot": "bool"
+                "to": "5",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "p_lift",
+                "pt": "flow",
+                "to": "8",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -2932,28 +2939,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 420,
+        "x": 430,
         "y": 180,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "be4080be.980bb",
-        "type": "easing",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "easingType": "easeInOutQuad",
-        "outputType": "asArray",
-        "duration": "4000",
-        "interval": "200",
-        "numberOfValues": 10,
-        "x": 1030,
-        "y": 860,
-        "wires": [
-            [
-                "8d3a9d47.4bf428"
-            ]
         ]
     },
     {
@@ -3000,198 +2989,6 @@
         ]
     },
     {
-        "id": "cf31de12.1ed858",
-        "type": "function",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "func": "var position = global.get('pressures').IV4;\nvar destination = 10;\n\nvar distance = Math.abs(destination-position);\n\n//this is the velocity of the setpoint\nvar velocity = 0.2; // mm/step\n\nvar nsteps = distance/velocity;\n\nvar interval = 100; // ms/step\n\nvar duration = nsteps*interval;\n\nmsg.payload = { from:position, \n                to:destination, \n                size:nsteps };\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 860,
-        "wires": [
-            [
-                "be4080be.980bb"
-            ]
-        ]
-    },
-    {
-        "id": "8d3a9d47.4bf428",
-        "type": "split",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1170,
-        "y": 860,
-        "wires": [
-            [
-                "d32276c4.d7aec8"
-            ]
-        ]
-    },
-    {
-        "id": "d32276c4.d7aec8",
-        "type": "delay",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "10",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 1340,
-        "y": 860,
-        "wires": [
-            [
-                "dde59eb4.b51be",
-                "d93aad88.4785e8"
-            ]
-        ]
-    },
-    {
-        "id": "dde59eb4.b51be",
-        "type": "switch",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "property": "parts.index",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "(msg.parts.count-1)",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1530,
-        "y": 860,
-        "wires": [
-            [
-                "e2516b3d.c1662"
-            ]
-        ]
-    },
-    {
-        "id": "359553cd.fb05cc",
-        "type": "easing",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "easingType": "easeInOutQuad",
-        "outputType": "asArray",
-        "duration": "4000",
-        "interval": "200",
-        "numberOfValues": 10,
-        "x": 1030,
-        "y": 800,
-        "wires": [
-            [
-                "e7229cf1.686828"
-            ]
-        ]
-    },
-    {
-        "id": "3ca6ca7.541f5b6",
-        "type": "function",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "func": "var position = global.get('pressures').IV3;\nvar destination = 10;\n\nvar distance = Math.abs(destination-position);\n\n//this is the velocity of the setpoint\nvar velocity = 0.2; // mm/step\n\nvar nsteps = distance/velocity;\n\nvar interval = 100; // ms/step\n\nvar duration = nsteps*interval;\n\nmsg.payload = { from:position, \n                to:destination, \n                size:nsteps };\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 800,
-        "wires": [
-            [
-                "359553cd.fb05cc"
-            ]
-        ]
-    },
-    {
-        "id": "e7229cf1.686828",
-        "type": "split",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1170,
-        "y": 800,
-        "wires": [
-            [
-                "b9191b42.30996"
-            ]
-        ]
-    },
-    {
-        "id": "b9191b42.30996",
-        "type": "delay",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "10",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 1340,
-        "y": 800,
-        "wires": [
-            [
-                "f5ecda00.98c9c",
-                "ef46928d.95e0b"
-            ]
-        ]
-    },
-    {
-        "id": "f5ecda00.98c9c",
-        "type": "switch",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "property": "parts.index",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "(msg.parts.count-1)",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1530,
-        "y": 800,
-        "wires": [
-            [
-                "cf31de12.1ed858"
-            ]
-        ]
-    },
-    {
         "id": "74c7f506.0c5b5c",
         "type": "delay",
         "z": "36a8cb83.a57434",
@@ -3207,116 +3004,11 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 530,
-        "y": 980,
+        "y": 1060,
         "wires": [
             [
                 "7ff71eed.f2476",
                 "7a40e378.67ca7c"
-            ]
-        ]
-    },
-    {
-        "id": "c5bac155.4236",
-        "type": "easing",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "easingType": "easeInOutQuad",
-        "outputType": "asArray",
-        "duration": "4000",
-        "interval": "200",
-        "numberOfValues": 10,
-        "x": 1030,
-        "y": 700,
-        "wires": [
-            [
-                "74800cbf.723cfc"
-            ]
-        ]
-    },
-    {
-        "id": "e25be2f.d1ff02",
-        "type": "function",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "func": "var position = global.get('pressures').IV3;\nvar destination = 5;\n\nvar distance = Math.abs(destination-position);\n\n//this is the velocity of the setpoint\nvar velocity = 0.2; // mm/step\n\nvar nsteps = distance/velocity;\n\nvar interval = 100; // ms/step\n\nvar duration = nsteps*interval;\n\nmsg.payload = { from:position, \n                to:destination, \n                size:nsteps };\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 700,
-        "wires": [
-            [
-                "c5bac155.4236"
-            ]
-        ]
-    },
-    {
-        "id": "74800cbf.723cfc",
-        "type": "split",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1170,
-        "y": 700,
-        "wires": [
-            [
-                "3f7e28d6.3eaba"
-            ]
-        ]
-    },
-    {
-        "id": "3f7e28d6.3eaba",
-        "type": "delay",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "10",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 1340,
-        "y": 700,
-        "wires": [
-            [
-                "69d200b2.86fb58",
-                "ef46928d.95e0b"
-            ]
-        ]
-    },
-    {
-        "id": "69d200b2.86fb58",
-        "type": "switch",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "property": "parts.index",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "(msg.parts.count-1)",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1530,
-        "y": 700,
-        "wires": [
-            [
-                "887d1b1e.9053"
             ]
         ]
     },
@@ -3333,251 +3025,19 @@
         "label": "Release",
         "tooltip": "",
         "color": "",
-        "bgcolor": "red",
+        "bgcolor": "#8f0000",
         "icon": "",
-        "payload": "{\"voltage\":0}",
-        "payloadType": "json",
-        "topic": "setVoltage",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
         "topicType": "str",
         "x": 640,
-        "y": 500,
+        "y": 420,
         "wires": [
             [
-                "46c0b3af.048a3c",
+                "22d0814d.f3bd4e",
+                "8d37452f.bac818",
                 "72d66de5.d452d4"
-            ]
-        ]
-    },
-    {
-        "id": "565db1a5.833e4",
-        "type": "easing",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "easingType": "easeInOutQuad",
-        "outputType": "asArray",
-        "duration": "4000",
-        "interval": "200",
-        "numberOfValues": 10,
-        "x": 1030,
-        "y": 500,
-        "wires": [
-            [
-                "bdbfe14.95c922"
-            ]
-        ]
-    },
-    {
-        "id": "46c0b3af.048a3c",
-        "type": "function",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "func": "var position = flow.get('pressures').IV4;\nvar destination = 0;\n\nvar distance = Math.abs(destination-position);\n\n//this is the velocity of the setpoint\nvar velocity = 0.2; // mm/step\n\nvar nsteps = distance/velocity;\n\nvar interval = 100; // ms/step\n\nvar duration = nsteps*interval;\n\nmsg.payload = { from:position, \n                to:destination, \n                size:nsteps };\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 500,
-        "wires": [
-            [
-                "565db1a5.833e4"
-            ]
-        ]
-    },
-    {
-        "id": "bdbfe14.95c922",
-        "type": "split",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1170,
-        "y": 500,
-        "wires": [
-            [
-                "dce731c5.274ce"
-            ]
-        ]
-    },
-    {
-        "id": "dce731c5.274ce",
-        "type": "delay",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "10",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 1340,
-        "y": 500,
-        "wires": [
-            [
-                "fa344fa0.996ae",
-                "d93aad88.4785e8"
-            ]
-        ]
-    },
-    {
-        "id": "fa344fa0.996ae",
-        "type": "switch",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "property": "parts.index",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "(msg.parts.count-1)",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1530,
-        "y": 500,
-        "wires": [
-            [
-                "f3b03ea1.f4b88"
-            ]
-        ]
-    },
-    {
-        "id": "3dccf4a8.2a5a14",
-        "type": "easing",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "easingType": "easeInOutQuad",
-        "outputType": "asArray",
-        "duration": "4000",
-        "interval": "200",
-        "numberOfValues": 10,
-        "x": 1030,
-        "y": 560,
-        "wires": [
-            [
-                "4a064a28.4dbcd4"
-            ]
-        ]
-    },
-    {
-        "id": "f3b03ea1.f4b88",
-        "type": "function",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "func": "var position = flow.get('pressures').IV3;\nvar destination = 0;\n\nvar distance = Math.abs(destination-position);\n\n//this is the velocity of the setpoint\nvar velocity = 0.2; // mm/step\n\nvar nsteps = distance/velocity;\n\nvar interval = 100; // ms/step\n\nvar duration = nsteps*interval;\n\nmsg.payload = { from:position, \n                to:destination, \n                size:nsteps };\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 560,
-        "wires": [
-            [
-                "3dccf4a8.2a5a14"
-            ]
-        ]
-    },
-    {
-        "id": "4a064a28.4dbcd4",
-        "type": "split",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1170,
-        "y": 560,
-        "wires": [
-            [
-                "25a80d77.e144da"
-            ]
-        ]
-    },
-    {
-        "id": "25a80d77.e144da",
-        "type": "delay",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "10",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 1340,
-        "y": 560,
-        "wires": [
-            [
-                "a68c2a12.3dfc78",
-                "ef46928d.95e0b"
-            ]
-        ]
-    },
-    {
-        "id": "a68c2a12.3dfc78",
-        "type": "switch",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "property": "parts.index",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "(msg.parts.count-1)",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1530,
-        "y": 560,
-        "wires": [
-            [
-                "5f3e571c.6cd16"
-            ]
-        ]
-    },
-    {
-        "id": "887d1b1e.9053",
-        "type": "delay",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "500",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 1850,
-        "y": 400,
-        "wires": [
-            [
-                "963a41ef.001f88"
             ]
         ]
     },
@@ -3737,7 +3197,7 @@
         "label": "Stop",
         "tooltip": "Set velocity to 0",
         "color": "",
-        "bgcolor": "red",
+        "bgcolor": "#8f0000",
         "icon": "",
         "payload": "0",
         "payloadType": "num",
@@ -4300,7 +3760,7 @@
         "label": "Stop",
         "tooltip": "Set velocity to 0 ",
         "color": "",
-        "bgcolor": "red",
+        "bgcolor": "#8f0000",
         "icon": "",
         "payload": "0",
         "payloadType": "num",
@@ -8439,111 +7899,6 @@
         ]
     },
     {
-        "id": "5b487128.6e25c",
-        "type": "easing",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "easingType": "easeInOutQuad",
-        "outputType": "asArray",
-        "duration": "4000",
-        "interval": "200",
-        "numberOfValues": 10,
-        "x": 1030,
-        "y": 920,
-        "wires": [
-            [
-                "317f78fc.983f58"
-            ]
-        ]
-    },
-    {
-        "id": "e2516b3d.c1662",
-        "type": "function",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "func": "var position = global.get('pressures').IV3;\nvar destination = 5;\n\nvar distance = Math.abs(destination-position);\n\n//this is the velocity of the setpoint\nvar velocity = 0.2; // mm/step\n\nvar nsteps = distance/velocity;\n\nvar interval = 100; // ms/step\n\nvar duration = nsteps*interval;\n\nmsg.payload = { from:position, \n                to:destination, \n                size:nsteps };\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 920,
-        "wires": [
-            [
-                "5b487128.6e25c"
-            ]
-        ]
-    },
-    {
-        "id": "317f78fc.983f58",
-        "type": "split",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1170,
-        "y": 920,
-        "wires": [
-            [
-                "f0fa38d1.8c67e8"
-            ]
-        ]
-    },
-    {
-        "id": "f0fa38d1.8c67e8",
-        "type": "delay",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "10",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 1340,
-        "y": 920,
-        "wires": [
-            [
-                "3fad37af.24ea5",
-                "ef46928d.95e0b"
-            ]
-        ]
-    },
-    {
-        "id": "3fad37af.24ea5",
-        "type": "switch",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "property": "parts.index",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "(msg.parts.count-1)",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1530,
-        "y": 920,
-        "wires": [
-            [
-                "74c7f506.0c5b5c"
-            ]
-        ]
-    },
-    {
         "id": "7ff71eed.f2476",
         "type": "change",
         "z": "36a8cb83.a57434",
@@ -8626,111 +7981,6 @@
         ]
     },
     {
-        "id": "67c359d.80430a8",
-        "type": "easing",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "easingType": "easeInOutQuad",
-        "outputType": "asArray",
-        "duration": "4000",
-        "interval": "200",
-        "numberOfValues": 10,
-        "x": 1030,
-        "y": 980,
-        "wires": [
-            [
-                "8ceddc8e.b7cbf"
-            ]
-        ]
-    },
-    {
-        "id": "a2085bfb.2692d",
-        "type": "function",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "func": "var position = global.get('pressures').IV3;\nvar destination = 8;\n\nvar distance = Math.abs(destination-position);\n\n//this is the velocity of the setpoint\nvar velocity = 0.2; // mm/step\n\nvar nsteps = distance/velocity;\n\nvar interval = 100; // ms/step\n\nvar duration = nsteps*interval;\n\nmsg.payload = { from:position, \n                to:destination, \n                size:nsteps };\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 980,
-        "wires": [
-            [
-                "67c359d.80430a8"
-            ]
-        ]
-    },
-    {
-        "id": "8ceddc8e.b7cbf",
-        "type": "split",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1170,
-        "y": 980,
-        "wires": [
-            [
-                "f802ed26.a8e4d8"
-            ]
-        ]
-    },
-    {
-        "id": "f802ed26.a8e4d8",
-        "type": "delay",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "10",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 1340,
-        "y": 980,
-        "wires": [
-            [
-                "363f7629.66141a",
-                "ef46928d.95e0b"
-            ]
-        ]
-    },
-    {
-        "id": "363f7629.66141a",
-        "type": "switch",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "property": "parts.index",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "(msg.parts.count-1)",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1530,
-        "y": 980,
-        "wires": [
-            [
-                "887d1b1e.9053"
-            ]
-        ]
-    },
-    {
         "id": "7a40e378.67ca7c",
         "type": "delay",
         "z": "36a8cb83.a57434",
@@ -8746,10 +7996,10 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 710,
-        "y": 980,
+        "y": 1060,
         "wires": [
             [
-                "a2085bfb.2692d"
+                "2ac37e68.da45ca"
             ]
         ]
     },
@@ -8934,116 +8184,11 @@
         "topic": "setDutyCycle",
         "topicType": "str",
         "x": 650,
-        "y": 640,
+        "y": 660,
         "wires": [
             [
-                "f022fe2a.090328",
-                "72d66de5.d452d4"
-            ]
-        ]
-    },
-    {
-        "id": "c459b73f.ad8ca",
-        "type": "easing",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "easingType": "easeInOutQuad",
-        "outputType": "asArray",
-        "duration": "4000",
-        "interval": "200",
-        "numberOfValues": 10,
-        "x": 1030,
-        "y": 640,
-        "wires": [
-            [
-                "8de14565.dea7a8"
-            ]
-        ]
-    },
-    {
-        "id": "f022fe2a.090328",
-        "type": "function",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "func": "var position = global.get('pressures').IV3;\nvar destination = 10;\n\nvar distance = Math.abs(destination-position);\n\n//this is the velocity of the setpoint\nvar velocity = 0.2; // mm/step\n\nvar nsteps = distance/velocity;\n\nvar interval = 100; // ms/step\n\nvar duration = nsteps*interval;\n\nmsg.payload = { from:position, \n                to:destination, \n                size:nsteps };\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 880,
-        "y": 640,
-        "wires": [
-            [
-                "c459b73f.ad8ca"
-            ]
-        ]
-    },
-    {
-        "id": "8de14565.dea7a8",
-        "type": "split",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1170,
-        "y": 640,
-        "wires": [
-            [
-                "722c2188.2424f"
-            ]
-        ]
-    },
-    {
-        "id": "722c2188.2424f",
-        "type": "delay",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "10",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 1340,
-        "y": 640,
-        "wires": [
-            [
-                "14c25265.c8cf66",
-                "ef46928d.95e0b"
-            ]
-        ]
-    },
-    {
-        "id": "14c25265.c8cf66",
-        "type": "switch",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "property": "parts.index",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "(msg.parts.count-1)",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1530,
-        "y": 640,
-        "wires": [
-            [
-                "887d1b1e.9053"
+                "72d66de5.d452d4",
+                "3bf9df1f.6319e8"
             ]
         ]
     },
@@ -9621,35 +8766,6 @@
         ]
     },
     {
-        "id": "652c755e.23165c",
-        "type": "change",
-        "z": "36a8cb83.a57434",
-        "name": "enable",
-        "rules": [
-            {
-                "t": "set",
-                "p": "enabled",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 640,
-        "wires": [
-            [
-                "21cd9c6f.1f3cec",
-                "b3f928cb.0ac13",
-                "378b79f3.b9a3ce"
-            ]
-        ]
-    },
-    {
         "id": "f48e09e9.7915b8",
         "type": "change",
         "z": "36a8cb83.a57434",
@@ -9668,11 +8784,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 420,
-        "y": 560,
+        "x": 400,
+        "y": 520,
         "wires": [
             [
-                "21cd9c6f.1f3cec",
                 "b3f928cb.0ac13",
                 "378b79f3.b9a3ce"
             ]
@@ -9698,7 +8813,7 @@
         "to": "",
         "reg": false,
         "x": 450,
-        "y": 800,
+        "y": 880,
         "wires": [
             [
                 "453b7501.f48674"
@@ -9725,57 +8840,12 @@
         "to": "",
         "reg": false,
         "x": 660,
-        "y": 880,
+        "y": 960,
         "wires": [
             [
                 "453b7501.f48674"
             ]
         ]
-    },
-    {
-        "id": "bdc1d71d.316af8",
-        "type": "link in",
-        "z": "36a8cb83.a57434",
-        "name": "busy",
-        "links": [
-            "72d66de5.d452d4"
-        ],
-        "x": 235,
-        "y": 560,
-        "wires": [
-            [
-                "f48e09e9.7915b8"
-            ]
-        ]
-    },
-    {
-        "id": "f00191c5.977b1",
-        "type": "link in",
-        "z": "36a8cb83.a57434",
-        "name": "init",
-        "links": [
-            "9e3bac6d.01aba",
-            "963a41ef.001f88"
-        ],
-        "x": 235,
-        "y": 640,
-        "wires": [
-            [
-                "652c755e.23165c"
-            ]
-        ]
-    },
-    {
-        "id": "963a41ef.001f88",
-        "type": "link out",
-        "z": "36a8cb83.a57434",
-        "name": "",
-        "links": [
-            "f00191c5.977b1"
-        ],
-        "x": 2015,
-        "y": 400,
-        "wires": []
     },
     {
         "id": "72d66de5.d452d4",
@@ -9786,7 +8856,7 @@
             "bdc1d71d.316af8"
         ],
         "x": 795,
-        "y": 600,
+        "y": 280,
         "wires": []
     },
     {
@@ -9804,8 +8874,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1190,
-        "y": 200,
+        "x": 1410,
+        "y": 480,
         "wires": [
             [
                 "fedf575a.2e2508"
@@ -10394,6 +9464,996 @@
         "wires": [
             [
                 "7b19141d.6cf79c"
+            ]
+        ]
+    },
+    {
+        "id": "8473d484.2a9a68",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.from",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.to",
+                "pt": "msg",
+                "to": "p_lift",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.duration",
+                "pt": "msg",
+                "to": "$flowContext('p_lift')*500",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.interval",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 880,
+        "wires": [
+            [
+                "dab6cab8.14729"
+            ]
+        ]
+    },
+    {
+        "id": "dab6cab8.14729",
+        "type": "easing",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "easingType": "easeInOutQuad",
+        "outputType": "overTime",
+        "duration": "4000",
+        "interval": "200",
+        "numberOfValues": 10,
+        "x": 1080,
+        "y": 880,
+        "wires": [
+            [
+                "16755f20.050981",
+                "ef46928d.95e0b"
+            ]
+        ]
+    },
+    {
+        "id": "16755f20.050981",
+        "type": "switch",
+        "z": "36a8cb83.a57434",
+        "name": "done",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "p_lift",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1240,
+        "y": 880,
+        "wires": [
+            [
+                "cb4a48ee.7cc75"
+            ]
+        ]
+    },
+    {
+        "id": "cb4a48ee.7cc75",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.from",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.to",
+                "pt": "msg",
+                "to": "10",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.duration",
+                "pt": "msg",
+                "to": "5000",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.interval",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 940,
+        "wires": [
+            [
+                "f38a277.1b40558"
+            ]
+        ]
+    },
+    {
+        "id": "f38a277.1b40558",
+        "type": "easing",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "easingType": "easeInOutQuad",
+        "outputType": "overTime",
+        "duration": "4000",
+        "interval": "200",
+        "numberOfValues": 10,
+        "x": 1080,
+        "y": 940,
+        "wires": [
+            [
+                "cbe428f6.fa8b88",
+                "d93aad88.4785e8"
+            ]
+        ]
+    },
+    {
+        "id": "cbe428f6.fa8b88",
+        "type": "switch",
+        "z": "36a8cb83.a57434",
+        "name": "done",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1240,
+        "y": 940,
+        "wires": [
+            [
+                "311bab95.f2f2c4"
+            ]
+        ]
+    },
+    {
+        "id": "311bab95.f2f2c4",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.from",
+                "pt": "msg",
+                "to": "p_lift",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.to",
+                "pt": "msg",
+                "to": "p_hold",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.duration",
+                "pt": "msg",
+                "to": "($flowContext('p_lift')-$flowContext('p_hold'))*500",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.interval",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 1000,
+        "wires": [
+            [
+                "cd81b58e.0c9ba"
+            ]
+        ]
+    },
+    {
+        "id": "cd81b58e.0c9ba",
+        "type": "easing",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "easingType": "easeInOutQuad",
+        "outputType": "overTime",
+        "duration": "4000",
+        "interval": "200",
+        "numberOfValues": 10,
+        "x": 1080,
+        "y": 1000,
+        "wires": [
+            [
+                "d69a94d9.19462",
+                "ef46928d.95e0b"
+            ]
+        ]
+    },
+    {
+        "id": "d69a94d9.19462",
+        "type": "switch",
+        "z": "36a8cb83.a57434",
+        "name": "done",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "p_hold",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1240,
+        "y": 1000,
+        "wires": [
+            [
+                "74c7f506.0c5b5c"
+            ]
+        ]
+    },
+    {
+        "id": "2ac37e68.da45ca",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.from",
+                "pt": "msg",
+                "to": "p_hold",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.to",
+                "pt": "msg",
+                "to": "p_lift",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.duration",
+                "pt": "msg",
+                "to": "($flowContext('p_lift')-$flowContext('p_hold'))*500",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.interval",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 1060,
+        "wires": [
+            [
+                "a21753f5.b961f8"
+            ]
+        ]
+    },
+    {
+        "id": "a21753f5.b961f8",
+        "type": "easing",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "easingType": "easeInOutQuad",
+        "outputType": "overTime",
+        "duration": "4000",
+        "interval": "200",
+        "numberOfValues": 10,
+        "x": 1080,
+        "y": 1060,
+        "wires": [
+            [
+                "4a365716.183ce8",
+                "ef46928d.95e0b"
+            ]
+        ]
+    },
+    {
+        "id": "4a365716.183ce8",
+        "type": "switch",
+        "z": "36a8cb83.a57434",
+        "name": "done",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "p_lift",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1230,
+        "y": 1060,
+        "wires": [
+            [
+                "ffe1c1c8.108b1"
+            ]
+        ]
+    },
+    {
+        "id": "bdc1d71d.316af8",
+        "type": "link in",
+        "z": "36a8cb83.a57434",
+        "name": "busy",
+        "links": [
+            "72d66de5.d452d4"
+        ],
+        "x": 235,
+        "y": 520,
+        "wires": [
+            [
+                "f48e09e9.7915b8"
+            ]
+        ]
+    },
+    {
+        "id": "3bf9df1f.6319e8",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.from",
+                "pt": "msg",
+                "to": "p_hold",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.to",
+                "pt": "msg",
+                "to": "p_lift",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.duration",
+                "pt": "msg",
+                "to": "($flowContext('p_lift')-$flowContext('p_hold'))*500",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.interval",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 660,
+        "wires": [
+            [
+                "a2039b48.6479c"
+            ]
+        ]
+    },
+    {
+        "id": "a2039b48.6479c",
+        "type": "easing",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "easingType": "easeInOutQuad",
+        "outputType": "overTime",
+        "duration": "4000",
+        "interval": "200",
+        "numberOfValues": 10,
+        "x": 1080,
+        "y": 660,
+        "wires": [
+            [
+                "d2185384.3ad3b",
+                "ef46928d.95e0b"
+            ]
+        ]
+    },
+    {
+        "id": "d2185384.3ad3b",
+        "type": "switch",
+        "z": "36a8cb83.a57434",
+        "name": "done",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "p_lift",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1230,
+        "y": 660,
+        "wires": [
+            [
+                "6ea2101d.e6b24"
+            ]
+        ]
+    },
+    {
+        "id": "8e1657bc.3d9ae8",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "enable",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1550,
+        "y": 660,
+        "wires": [
+            [
+                "378b79f3.b9a3ce"
+            ]
+        ]
+    },
+    {
+        "id": "6066c5f4.5330cc",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.from",
+                "pt": "msg",
+                "to": "p_lift",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.to",
+                "pt": "msg",
+                "to": "p_hold",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.duration",
+                "pt": "msg",
+                "to": "($flowContext('p_lift')-$flowContext('p_hold'))*500",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.interval",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 780,
+        "wires": [
+            [
+                "ae663ce7.901928"
+            ]
+        ]
+    },
+    {
+        "id": "ae663ce7.901928",
+        "type": "easing",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "easingType": "easeInOutQuad",
+        "outputType": "overTime",
+        "duration": "4000",
+        "interval": "200",
+        "numberOfValues": 10,
+        "x": 1080,
+        "y": 780,
+        "wires": [
+            [
+                "55fa9c13.daf88c",
+                "ef46928d.95e0b"
+            ]
+        ]
+    },
+    {
+        "id": "55fa9c13.daf88c",
+        "type": "switch",
+        "z": "36a8cb83.a57434",
+        "name": "done",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "p_hold",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1230,
+        "y": 780,
+        "wires": [
+            [
+                "4f72827.63b9ffc"
+            ]
+        ]
+    },
+    {
+        "id": "17cc18a6.167277",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "enable",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1550,
+        "y": 780,
+        "wires": [
+            [
+                "b3f928cb.0ac13"
+            ]
+        ]
+    },
+    {
+        "id": "54c54ce5.56d5d4",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "enable",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1550,
+        "y": 1060,
+        "wires": [
+            [
+                "378b79f3.b9a3ce"
+            ]
+        ]
+    },
+    {
+        "id": "ffe1c1c8.108b1",
+        "type": "delay",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1390,
+        "y": 1060,
+        "wires": [
+            [
+                "54c54ce5.56d5d4"
+            ]
+        ]
+    },
+    {
+        "id": "4f72827.63b9ffc",
+        "type": "delay",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1390,
+        "y": 780,
+        "wires": [
+            [
+                "17cc18a6.167277"
+            ]
+        ]
+    },
+    {
+        "id": "6ea2101d.e6b24",
+        "type": "delay",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1390,
+        "y": 660,
+        "wires": [
+            [
+                "8e1657bc.3d9ae8"
+            ]
+        ]
+    },
+    {
+        "id": "8d37452f.bac818",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.from",
+                "pt": "msg",
+                "to": "pressures.IV4",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.to",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.duration",
+                "pt": "msg",
+                "to": "$globalContext('pressures').IV4*500",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.interval",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 420,
+        "wires": [
+            [
+                "30b8ba89.b32456"
+            ]
+        ]
+    },
+    {
+        "id": "30b8ba89.b32456",
+        "type": "easing",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "easingType": "easeInOutQuad",
+        "outputType": "overTime",
+        "duration": "4000",
+        "interval": "200",
+        "numberOfValues": 10,
+        "x": 1080,
+        "y": 420,
+        "wires": [
+            [
+                "2e81d2dc.04215e",
+                "d93aad88.4785e8"
+            ]
+        ]
+    },
+    {
+        "id": "2e81d2dc.04215e",
+        "type": "switch",
+        "z": "36a8cb83.a57434",
+        "name": "done",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1230,
+        "y": 420,
+        "wires": [
+            [
+                "7a58ceea.ed259"
+            ]
+        ]
+    },
+    {
+        "id": "7a58ceea.ed259",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.from",
+                "pt": "msg",
+                "to": "pressures.IV3",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.to",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.duration",
+                "pt": "msg",
+                "to": "$globalContext('pressures').IV3*500",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.interval",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 480,
+        "wires": [
+            [
+                "fc0abafd.10a078"
+            ]
+        ]
+    },
+    {
+        "id": "fc0abafd.10a078",
+        "type": "easing",
+        "z": "36a8cb83.a57434",
+        "name": "",
+        "easingType": "easeInOutQuad",
+        "outputType": "overTime",
+        "duration": "4000",
+        "interval": "200",
+        "numberOfValues": 10,
+        "x": 1080,
+        "y": 480,
+        "wires": [
+            [
+                "f78af08a.71e94",
+                "ef46928d.95e0b"
+            ]
+        ]
+    },
+    {
+        "id": "f78af08a.71e94",
+        "type": "switch",
+        "z": "36a8cb83.a57434",
+        "name": "done",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1230,
+        "y": 480,
+        "wires": [
+            [
+                "5f3e571c.6cd16"
+            ]
+        ]
+    },
+    {
+        "id": "22d0814d.f3bd4e",
+        "type": "change",
+        "z": "36a8cb83.a57434",
+        "name": "reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "reset",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 580,
+        "wires": [
+            [
+                "a2039b48.6479c",
+                "ae663ce7.901928",
+                "dab6cab8.14729",
+                "f38a277.1b40558",
+                "cd81b58e.0c9ba",
+                "a21753f5.b961f8"
             ]
         ]
     }

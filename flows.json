@@ -647,7 +647,9 @@
             "9305743.6cab688"
         ],
         "x": 314,
-        "y": 419
+        "y": 419,
+        "w": 172,
+        "h": 202
     },
     {
         "id": "f5ef5e0b.1bb768",
@@ -662,7 +664,9 @@
             "a37af2b.9f3b59"
         ],
         "x": 314,
-        "y": 279
+        "y": 279,
+        "w": 172,
+        "h": 122
     },
     {
         "id": "d044628d.d1a6a8",
@@ -677,7 +681,9 @@
             "5252b032.0b85d"
         ],
         "x": 314,
-        "y": 139
+        "y": 139,
+        "w": 172,
+        "h": 122
     },
     {
         "id": "6a8645c6.774334",
@@ -752,7 +758,9 @@
             "151dee63.6493f2"
         ],
         "x": 754,
-        "y": 39
+        "y": 39,
+        "w": 342,
+        "h": 82
     },
     {
         "id": "f87e1bec.5f3918",
@@ -956,7 +964,9 @@
             "14780578.fac7d3"
         ],
         "x": 454,
-        "y": 699
+        "y": 699,
+        "w": 622,
+        "h": 82
     },
     {
         "id": "91a67c68.93205",
@@ -3814,6 +3824,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
+        "payloadType": "str",
         "x": 1790,
         "y": 480,
         "wires": [
@@ -7158,7 +7169,7 @@
         "order": 8,
         "width": "2",
         "height": 1,
-        "passthru": false,
+        "passthru": true,
         "label": "Clear",
         "tooltip": "",
         "color": "",
@@ -7168,7 +7179,7 @@
         "payloadType": "json",
         "topic": "topic",
         "topicType": "str",
-        "x": 530,
+        "x": 650,
         "y": 400,
         "wires": [
             [
@@ -7190,7 +7201,7 @@
             "76fb6c9d.7d799c",
             "4704d160.a59378"
         ],
-        "x": 705,
+        "x": 825,
         "y": 400,
         "wires": []
     },
@@ -10574,8 +10585,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 740,
-        "y": 1280,
+        "x": 680,
+        "y": 460,
         "wires": [
             [
                 "8a1f1cde.762fc8"
@@ -10595,8 +10606,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 890,
-        "y": 1280,
+        "x": 830,
+        "y": 460,
         "wires": [
             [
                 "d333495f.9cba18"
@@ -10614,8 +10625,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1040,
-        "y": 1280,
+        "x": 980,
+        "y": 460,
         "wires": [
             [
                 "d32657d1.e652e8"
@@ -10636,8 +10647,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 1200,
-        "y": 1280,
+        "x": 1140,
+        "y": 460,
         "wires": [
             []
         ],
@@ -10647,26 +10658,27 @@
         "id": "b89b5c77.1bd88",
         "type": "ui_button",
         "z": "b9f084d.1776c78",
-        "name": "",
+        "name": "Reset",
         "group": "5a59f44e.bb600c",
         "order": 13,
         "width": "2",
         "height": "1",
         "passthru": false,
-        "label": "reset",
+        "label": "Reset",
         "tooltip": "",
         "color": "",
-        "bgcolor": "",
+        "bgcolor": "#8f0000",
         "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 410,
-        "y": 1280,
+        "x": 490,
+        "y": 460,
         "wires": [
             [
-                "48c7ffa1.2ee41"
+                "48c7ffa1.2ee41",
+                "699b478e.034d08"
             ]
         ]
     },

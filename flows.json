@@ -52,7 +52,7 @@
         "id": "29b5b7f5.1f4978",
         "type": "subflow",
         "name": "TC event",
-        "info": "Subflow to process an event from a thermocouple phidget.",
+        "info": "Subflow to handle events from a [Thermocouple Phidget](https://www.phidgets.com/?tier=3&catid=14&pcid=12&prodid=725).\n\nThere are 10 of these in the furnace. Temperatures are reported in °C.",
         "category": "",
         "in": [
             {
@@ -118,7 +118,7 @@
         "id": "daecb3c5.c2256",
         "type": "subflow",
         "name": "HT event",
-        "info": "",
+        "info": "Subflow to handle events from a [Solid State Relay Phidget](https://www.phidgets.com/?tier=3&catid=46&pcid=39&prodid=721). \n\nThe power sent to a heating element (in Watts) is approximated by by the through the duty cycle of the solid state relay multiplied by the rated power of the heating element (in Watts).",
         "category": "",
         "in": [
             {
@@ -148,6 +148,11 @@
                 "name": "label",
                 "type": "str",
                 "value": ""
+            },
+            {
+                "name": "power",
+                "type": "num",
+                "value": "400"
             }
         ],
         "meta": {},
@@ -167,7 +172,7 @@
         "id": "28075929.52991e",
         "type": "subflow",
         "name": "[At/De]tach",
-        "info": "",
+        "info": "Subflow to handle Attach and Detach events for Phidget nodes.\n\nThis is used internally in Phidget (XX) event handlers. ",
         "category": "",
         "in": [
             {
@@ -200,7 +205,7 @@
         "id": "7b62c48f.4019d4",
         "type": "subflow",
         "name": "SG event",
-        "info": "",
+        "info": "Subflow to handle events from a [Wheatstone Bridge Phidget](https://www.phidgets.com/?tier=3&catid=64&pcid=57&prodid=957).\n\nThese are used to read the strain gauges. Each instance can be zeroed by sending a 'SetOffset' event, but they are not calibrated. I honestly haven't found a way to make sense out of this signal. ",
         "category": "",
         "in": [
             {
@@ -249,7 +254,7 @@
         "id": "3d0cd0fc.71538",
         "type": "subflow",
         "name": "EN event",
-        "info": "",
+        "info": "\n\nSubflow to handle events from a [Quadrature Encoder Phidget](https://www.phidgets.com/?tier=3&catid=4&pcid=2&prodid=959) and keep track of absolute position after homing.",
         "category": "",
         "in": [
             {
@@ -312,7 +317,7 @@
         "id": "e9a50f1a.8125e",
         "type": "subflow",
         "name": "IV event",
-        "info": "",
+        "info": "Subflow to handle events from a [Voltage Output Phidget](https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=713).\n\nThese are used, along with voltage-current converters to drive the transducers that regulate the air pressure on 4 pistons that translate the arms.\n\nActual pressure values are approximated by mapping the 0-10 V range to the pressure ranges of respective transducers. \nThis is 2-60 PSI for arms 1-2 and 2-100 PSI for arms 3-4.\nNote that we get no feedback from this system and there is an additional source of uncertainty that is the calibration of the voltage-current converters. ",
         "category": "",
         "in": [
             {
@@ -719,9 +724,7 @@
             "1f680714.ce4601"
         ],
         "x": 254,
-        "y": 219,
-        "w": 412,
-        "h": 82
+        "y": 219
     },
     {
         "id": "2eda63f4.7d845c",
@@ -736,9 +739,7 @@
             "62630b25.d9e8c4"
         ],
         "x": 254,
-        "y": 319,
-        "w": 412,
-        "h": 82
+        "y": 319
     },
     {
         "id": "46abe05b.171a2",
@@ -753,9 +754,7 @@
             "2004fe14.587f8a"
         ],
         "x": 254,
-        "y": 419,
-        "w": 412,
-        "h": 82
+        "y": 419
     },
     {
         "id": "b30a1226.a9bee8",
@@ -770,9 +769,7 @@
             "b70c9ca5.a29e2"
         ],
         "x": 254,
-        "y": 519,
-        "w": 412,
-        "h": 82
+        "y": 519
     },
     {
         "id": "1d6adcc.14c14a3",
@@ -831,7 +828,7 @@
         "id": "99faae0b.9ae6e8",
         "type": "group",
         "z": "472cf316.a032c4",
-        "name": "HT4",
+        "name": "HT7",
         "style": {
             "label": true
         },
@@ -849,7 +846,7 @@
         "id": "b89fa898.3685c",
         "type": "group",
         "z": "472cf316.a032c4",
-        "name": "HT4",
+        "name": "HT8",
         "style": {
             "label": true
         },
@@ -867,7 +864,7 @@
         "id": "6c120055.6be63",
         "type": "group",
         "z": "472cf316.a032c4",
-        "name": "HT4",
+        "name": "HT9",
         "style": {
             "label": true
         },
@@ -885,7 +882,7 @@
         "id": "11fca2db.168405",
         "type": "group",
         "z": "472cf316.a032c4",
-        "name": "HT4",
+        "name": "HT10",
         "style": {
             "label": true
         },
@@ -943,9 +940,7 @@
             "740edf17.7363c"
         ],
         "x": 804,
-        "y": 659,
-        "w": 82,
-        "h": 82
+        "y": 659
     },
     {
         "id": "ceb6968f.596908",
@@ -1050,9 +1045,40 @@
             "73a09e66.81a39"
         ],
         "x": 894,
-        "y": 579,
-        "w": 82,
-        "h": 82
+        "y": 579
+    },
+    {
+        "id": "f3991c64.015ab8",
+        "type": "group",
+        "z": "472cf316.a032c4",
+        "name": "PID parameters",
+        "style": {
+            "label": true,
+            "fill": "#ffefbf",
+            "color": "#000000"
+        },
+        "nodes": [
+            "c76c7069.408c98",
+            "11dd6b0.9c80895",
+            "a187d4f4.6b12b8",
+            "e197eb2a.a625d",
+            "b6136cec.653b28",
+            "40c2d4fd.6926cc",
+            "168569b9.74ad9e",
+            "533289cc.c5a0c8",
+            "2171f481.456784",
+            "2767f17e.f37cf6",
+            "fc37730d.83ddc",
+            "1f08f7f6.abf18",
+            "ab9d3a21.f1e968",
+            "46e9f8a5.8dfbf8",
+            "7f23abfc.0dd9f4",
+            "5cd8c7e2.0715d"
+        ],
+        "x": 74,
+        "y": 159,
+        "w": 962,
+        "h": 362
     },
     {
         "id": "f0fc5028.32d6a8",
@@ -1283,39 +1309,6 @@
         "y": 619,
         "w": 492,
         "h": 202
-    },
-    {
-        "id": "f3991c64.015ab8",
-        "type": "group",
-        "z": "472cf316.a032c4",
-        "name": "PID parameters",
-        "style": {
-            "label": true,
-            "fill": "#ffefbf",
-            "color": "#000000"
-        },
-        "nodes": [
-            "c76c7069.408c98",
-            "11dd6b0.9c80895",
-            "a187d4f4.6b12b8",
-            "e197eb2a.a625d",
-            "b6136cec.653b28",
-            "40c2d4fd.6926cc",
-            "168569b9.74ad9e",
-            "533289cc.c5a0c8",
-            "2171f481.456784",
-            "2767f17e.f37cf6",
-            "fc37730d.83ddc",
-            "1f08f7f6.abf18",
-            "ab9d3a21.f1e968",
-            "46e9f8a5.8dfbf8",
-            "7f23abfc.0dd9f4",
-            "5cd8c7e2.0715d"
-        ],
-        "x": 74,
-        "y": 159,
-        "w": 962,
-        "h": 362
     },
     {
         "id": "8680f5c5.8c3ab8",
@@ -4377,6 +4370,11 @@
                 "name": "label",
                 "value": "HT2",
                 "type": "str"
+            },
+            {
+                "name": "power",
+                "value": "125",
+                "type": "num"
             }
         ],
         "x": 1770,
@@ -4421,6 +4419,11 @@
                 "name": "label",
                 "value": "HT4",
                 "type": "str"
+            },
+            {
+                "name": "power",
+                "value": "125",
+                "type": "num"
             }
         ],
         "x": 1770,
@@ -4683,7 +4686,7 @@
         "type": "function",
         "z": "daecb3c5.c2256",
         "name": "Update",
-        "func": "var powers = global.get('powers');\n\npowers[msg.topic] = msg.payload;\n\nmsg.payload *= global.get('ht_power')[msg.topic]\n\nreturn msg",
+        "func": "var powers = global.get('powers');\n\nmsg.payload *= env.get('power');\n\npowers[msg.topic] = msg.payload;\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5245,6 +5248,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "resetOffset",
+        "payloadType": "str",
         "x": 490,
         "y": 380,
         "wires": [
@@ -6779,6 +6783,11 @@
                 "name": "label",
                 "value": "HT7",
                 "type": "str"
+            },
+            {
+                "name": "power",
+                "value": "125",
+                "type": "num"
             }
         ],
         "x": 1770,
@@ -6935,6 +6944,11 @@
                 "name": "label",
                 "value": "HT9",
                 "type": "str"
+            },
+            {
+                "name": "power",
+                "value": "125",
+                "type": "num"
             }
         ],
         "x": 1770,
@@ -10434,60 +10448,6 @@
         "wires": [
             [
                 "3e3c4bc7.201364"
-            ]
-        ]
-    },
-    {
-        "id": "2b43d028.21156",
-        "type": "change",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ht_power",
-                "pt": "global",
-                "to": "{\"HT1\":400,\"HT2\":125,\"HT3\":400,\"HT4\":125,\"HT5\":400,\"HT6\":125,\"HT7\":400,\"HT8\":400,\"HT9\":125,\"HT10\":400}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1650,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "297aa7df.d3ad4",
-        "type": "inject",
-        "z": "472cf316.a032c4",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1370,
-        "y": 100,
-        "wires": [
-            [
-                "2b43d028.21156"
             ]
         ]
     },

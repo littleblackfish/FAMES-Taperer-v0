@@ -13,10 +13,13 @@ The tapering setup is a hybrid system consisting of a PLC controller that runs t
 The PLC component is implemented in IEC 61131-3 structured text via Parker's proprietary IDE (PAM 1.4), using PLCopen motion control function blocks. 
 While it is separate and self contained, dumps of the [PAM project](PLC/taperer.projectarchive) and a functional motor controller [configuration](PLC/pd04_config.txt) are contained in this repository for reference. 
 
-The main body of the software is implemented in Node-RED. It talks to the PLC component over OPC-UA and to phidgets via the node-red-contrib-phidget22 library through a phidget22networkserver instance running on the same machine. Graphical interface is implemented using the node-red-dashboard library. 
+The main body of the software is implemented in Node-RED. It talks to the PLC component over OPC-UA and to phidgets via the node-red-contrib-phidget22 library through a phidget22networkserver instance running on the same machine. Graphical interface is implemented using [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard). 
 
 The dashboard provides the user with real time controls and visulalization of the most recent readings. 
 Raw sensor readings are also pushed into an influxdb database for offline analysis. 
+
+Only software prerequisites are [phidget22networkserver](https://www.phidgets.com/docs/Phidgets_Drivers#Operating_Systems_Drivers) and Docker. 
+
 
 ## Startup 
 
@@ -52,43 +55,37 @@ Arm 2 is geared into Arm 1 and Arm 3 is geared into Arm 4 in the PLC program (1:
 
 The remainder of the system is interfaced by 22 phidgets connected into 4 VINT Hubs (HUB0000_0) connected into a 7-port USB hub (HUB0003_0) that is powered by the 24V DC supply in the cabinet (that also powers the PAC etc.). This hub will not do anything without external power, so the DC supply needs to be on for Phidgets to function. That means there is no way to independently power cycle the PLC or Phidget components in this set up.
 
-10x TMP1100_0 Isolated Thermocouple Phidgets for thermocouples
-
-1x REL1101_0 16x Isolated Solid State Relay Phidget for heating elements 
-
-1x REL1100_0 4x Isolated Solid State Relay Phidget for solenoid valves
-
-4x OUT1002_0 Isolated 16-bit Voltage Output Phidgets for transducers
-
-2x DAQ_1500_0 Wheatstone Bridge phidgets for strain gauges
-
-4x ENC1000_0 Quadrature Encoder Phidgets for the encoders
-
+ * 10x [TMP1100_0](https://www.phidgets.com/?tier=3&catid=14&pcid=12&prodid=725) Isolated Thermocouple Phidgets for thermocouples
+ * 1x [REL1101_0](https://www.phidgets.com/?tier=3&catid=46&pcid=39&prodid=721) 16x Isolated Solid State Relay Phidget for heating elements 
+ * 1x [REL1100_0](https://www.phidgets.com/?tier=3&catid=46&pcid=39&prodid=720) 4x Isolated Solid State Relay Phidget for solenoid valves
+ * 4x [OUT1002_0](https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=713) Isolated 16-bit Voltage Output Phidgets for transducers
+ * 2x [DAQ1500_0](https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=957) Wheatstone Bridge Phidgets for strain gauges
+ * 4x [ENC1000_0](https://www.phidgets.com/?tier=3&catid=4&pcid=2&prodid=959) Quadrature Encoder Phidgets for encoders
 
 ## Furnace
 
 Furnace body consists of a copper tube with 10 axial through-bores for heating elements and a visual inspection cutout.
-Copper tube is wholly shielded by a quartz tube outside, and partially shielded by two quartz tubes inside, which together with the geometry of the cutout achieves a temperature profile that is expected to peak at the center of the cylindrical volume.
+Copper tube is wholly shielded by a quartz tube outside, and partially shielded by two quartz tubes inside, which together with the geometry of the cutout generates a temperature profile with an expected peak at the center of the cylindrical volume.
 
 Heating elements are [Watt-Flex cartridge heaters](https://daltonelectric.com/watt-flex-cartridge-heaters/cartridge-heaters) by Dalton Electric.
 All 10 cartriges are of 1/4" diameter with dual grooves for external thermocouples.
 6 of them run across the furnace (6" length, rated 400 Watts at 120 Volts, part no. G2C060) and the remaining 4 are shorter, and run in pairs due to being interrupted by the visual inspection cutout (2" length, rated 125 Watts at 120 Volts, part no. G2C020).
-These are driven by mains power through 10 x AC solid state relays, which are in turn driven by 24V DC through a 16x solid state relay phidget (REL1101_0).
+These are driven by mains power through 10 x AC solid state relays (KYOTTO [KD20C25AX](https://www.phidgets.com/?tier=3&catid=46&pcid=39&prodid=574)), which are in turn driven by 24V DC through a 16x solid state relay phidget (REL1101_0).
 
 Thrmocouples are Type J (grounded), of 0.40" diameter with lengths 1/2" over their respective cartridges, and suppied by the same company.
 Each thermocouple is read by an individual isolated thermocouple phidget (TMP1100_0).
 
 ## Pneumatics
 
-Each tractor 
+Arms 1 and 2 are mounted on independent horizontal stages driven by pneumatic cylinders (Festo DZF-1"-1.500-A-P-A). 
+Pressure to these cylinders is in turn regulated by I/P transducers (Omega IP710-X60-D) rated for 2 to 60 psi. 
 
-IP710-X60-D 2-60 psi
-IP710-X100-D 2-100 psi
+Arms 3 and 4 are similarly set up on a vertical axis, with higher rated (2-100 psi, Omega IP710-X100-D) transducers to compensate for their weight.
 
-### Solenoids
+Originally, this set up was designed to be able to actively center arbitrarily shaped preforms, which was the reason for this overcomplicated set up. 
+In this current implementation, however, they act as vises, to be manually centered using set screws. 
 
-V61R517A-A313JH
-
+There also exist 4 solenoids (Norgren V61R517A-A313JH) that could be utilized to switch the direction of motion at the cylinders, but they are not utilized in this implementation.
 
 ## Encoders
 

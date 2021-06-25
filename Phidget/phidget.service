@@ -1,0 +1,7 @@
+[Unit]
+Description=Phidget Network Server
+[Service]
+Type=simple
+ExecStart=/usr/bin/phidget22networkserver
+[Install]
+WantedBy=multi-user.target

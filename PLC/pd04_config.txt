@@ -1,0 +1,238 @@
+0x2000,0x0,Motor ID,702
+0x2001,0x0,Encoder Type,4
+0x2002,0x0,Encoder Pulse per Revolution,262144
+0x2003,0x0,Node ID,0
+0x2004,0x0,Rotation Direction Select,0
+0x2005,0x0,Absolute Encoder Configuration,1
+0x2006,0x0,Main Power Fail Check Mode,0
+0x2007,0x0,Main Power Fail Check Time,20
+0x2008,0x0,7SEG Display Selection,0
+0x2009,0x0,Regen. Brake Resistor Configuration,0
+0x200A,0x0,Regen. Brake Resistor Derating Factor,100
+0x200B,0x0,Regen. Brake Resistor Value,100
+0x200C,0x0,Regen. Brake Resistor Power,50
+0x200D,0x0,Peak Power of Regen. Brake Resistor,100
+0x200E,0x0,Duration Time @ Peak Power of Regen. Brake Resistor,5000
+0x200F,0x0,Overload Check Base,100
+0x2010,0x0,Overload Warning Level,50
+0x2011,0x0,PWM Off Delay Time,10
+0x2012,0x0,Dynamic Brake Control Mode,0
+0x2013,0x0,Emergency Stop Configuration,1
+0x2014,0x0,Warning Mask Configuration,0
+0x2015,0x0,U Phase Current Offset,0
+0x2016,0x0,V Phase Current Offset,0
+0x2017,0x0,W Phase Current Offset,0
+0x2018,0x0,Magnetic Pole Pitch,2400
+0x2019,0x0,Linear Scale Resolution,1000
+0x201A,0x0,Commutation Method,0
+0x201B,0x0,Commutation Current,500
+0x201C,0x0,Commutation Time,1000
+0x201D,0x0,Grating Period of Sinusoidal Encoder,40
+0x201E,0x0,Homing Done Behaviour,0
+0x201F,0x0,Velocity Function Select,0
+0x2020,0x0,Motor and Hall Phase Correction,0
+0x2100,0x0,Inertia Ratio,581
+0x2101,0x0,Position Loop Gain 1,22
+0x2102,0x0,Speed Loop Gain 1,33
+0x2103,0x0,Speed Loop Integral Time Constant 1,30
+0x2104,0x0,Torque Command Filter Time Constant 1,8
+0x2105,0x0,Position Loop Gain 2,30
+0x2106,0x0,Speed Loop Gain 2,50
+0x2107,0x0,Speed Loop Integral Time Constant 2,50
+0x2108,0x0,Torque Command Filter Time Constant 2,5
+0x2109,0x0,Position Command Filter Time Constant,0
+0x210A,0x0,Position Command Average Filter Time Constant,0
+0x210B,0x0,Speed Feedback Filter Time Constant,5
+0x210C,0x0,Velocity Feed-forward Gain,0
+0x210D,0x0,Velocity Feed-forward Filter Time Constant,10
+0x210E,0x0,Torque Feed-forward Gain,0
+0x210F,0x0,Torque Feed-forward Filter Time Constant,10
+0x2110,0x0,Torque Limit Function Select,0
+0x2111,0x0,External Positive Torque Limit Value,3000
+0x2112,0x0,External Negative Torque Limit Value,3000
+0x2113,0x0,Emergency Stop Torque,1000
+0x2114,0x0,P/PI Control Conversion Mode,0
+0x2115,0x0,P Control Switch Torque,500
+0x2116,0x0,P Control Switch Speed,100
+0x2117,0x0,P Control Switch Acceleration,1000
+0x2118,0x0,P Control Switch Following Error,100
+0x2119,0x0,Gain Conversion Mode,0
+0x211A,0x0,Gain Conversion Time 1,2
+0x211B,0x0,Gain Conversion Time 2,2
+0x211C,0x0,Gain Conversion Waiting Time 1,0
+0x211D,0x0,Gain Conversion Waiting Time 2,0
+0x211E,0x0,Dead Band for Position Control,0
+0x211F,0x0,Drive Control Input 1,0
+0x2120,0x0,Drive Control Input 2,0
+0x2121,0x0,Drive Status Output 1,33949
+0x2122,0x0,Drive Status Output 2,0
+0x2200,0x0,Digital Input Signal 1 Selection,0
+0x2201,0x0,Digital Input Signal 2 Selection,0
+0x2202,0x0,Digital Input Signal 3 Selection,0
+0x2203,0x0,Digital Input Signal 4 Selection,0
+0x2204,0x0,Digital Input Signal 5 Selection,0
+0x2205,0x0,Digital Input Signal 6 Selection,0
+0x2206,0x0,Digital Input Signal 7 Selection,0
+0x2207,0x0,Digital Input Signal 8 Selection,0
+0x2210,0x0,Digital Output Signal 1 Selection,32768
+0x2211,0x0,Digital Output Signal 2 Selection,32768
+0x2212,0x0,Digital Output Signal 3 Selection,0
+0x2213,0x0,Digital Output Signal 4 Selection,0
+0x221C,0x0,Analog Torque Limit Scale,100
+0x221D,0x0,Analog Torque Limit Offset,0
+0x2220,0x0,Analog Monitor Output Mode,0
+0x2221,0x0,Analog Monitor Channel 1 Select,0
+0x2222,0x0,Analog Monitor Channel 2 Select,1
+0x2223,0x0,Analog Monitor Channel 1 Offset,0
+0x2224,0x0,Analog Monitor Channel 2 Offset,0
+0x2225,0x0,Analog Monitor Channel 1 Scale,500
+0x2226,0x0,Analog Monitor Channel 2 Scale,500
+0x2300,0x0,Jog Operation Speed,500
+0x2301,0x0,Speed Command Acceleration Time,200
+0x2302,0x0,Speed Command Deceleration Time,200
+0x2303,0x0,Speed Command S-curve Time,0
+0x2304,0x0,Program Jog Operation Speed 1,0
+0x2305,0x0,Program Jog Operation Speed 2,500
+0x2306,0x0,Program Jog Operation Speed 3,0
+0x2307,0x0,Program Jog Operation Speed 4,-500
+0x2308,0x0,Program Jog Operation Time 1,500
+0x2309,0x0,Program Jog Operation Time 2,5000
+0x230A,0x0,Program Jog Operation Time 3,500
+0x230B,0x0,Program Jog Operation Time 4,5000
+0x230C,0x0,Index Pulse Search Speed,20
+0x230D,0x0,Speed Limit Function Select,0
+0x230E,0x0,Speed Limit Value at Torque Control Mode,1000
+0x230F,0x0,Over Speed Detection Level,6000
+0x2310,0x0,Excessive Speed Error Detection Level,5000
+0x2311,0x0,Servo-Lock Function Select,0
+0x2400,0x0,Software Position Limit Function Select,0
+0x2401,0x0,INPOS1 Output Range,100
+0x2402,0x0,INPOS1 Output Time,0
+0x2403,0x0,INPOS2 Output Range,100
+0x2404,0x0,ZSPD Output Range,10
+0x2405,0x0,TGON Output Range,100
+0x2406,0x0,INSPD Output Range,100
+0x2407,0x0,BRAKE Output Speed,100
+0x2408,0x0,BRAKE Output Delay Time,100
+0x2409,0x0,Torque Limit for Homing Using Stopper,250
+0x240A,0x0,Duration Time for Homing Using Stopper,50
+0x240B,0x0,Modulo Mode,0
+0x240C,0x0,Modulo Factor,3600
+0x240D,0x0,User Drive Name,ARM 4
+0x240E,0x0,Individual Parameter Save,0
+0x2500,0x0,Adaptive Filter Function Select,0
+0x2501,0x0,Notch Filter 1 Frequency,5000
+0x2502,0x0,Notch Filter 1 Width,1
+0x2503,0x0,Notch Filter 1 Depth,1
+0x2504,0x0,Notch Filter 2 Frequency,5000
+0x2505,0x0,Notch Filter 2 Width,1
+0x2506,0x0,Notch Filter 2 Depth,1
+0x2507,0x0,Notch Filter 3 Frequency,5000
+0x2508,0x0,Notch Filter 3 Width,1
+0x2509,0x0,Notch Filter 3 Depth,1
+0x250A,0x0,Notch Filter 4 Frequency,5000
+0x250B,0x0,Notch Filter 4 Width,1
+0x250C,0x0,Notch Filter 4 Depth,1
+0x250D,0x0,On-line Gain Tuning Mode,0
+0x250E,0x0,System Rigidity for Gain Tuning,5
+0x250F,0x0,On-line Gain Tuning Adaptation Speed,1
+0x2510,0x0,Off-line Gain Tuning Direction,0
+0x2511,0x0,Off-line Gain Tuning Distance,5
+0x2512,0x0,Disturbance Observer Gain,0
+0x2513,0x0,Disturbance Observer Filter Time Constant,10
+0x2514,0x0,Current Controller Gain,100
+0x2515,0x0,Vibration Suppression Filter Configuration,0
+0x2516,0x0,Vibration Suppression Filter 1 Frequency,0
+0x2517,0x0,Vibration Suppression Filter 1 Damping,0
+0x2518,0x0,Vibration Suppression Filter 2 Frequency,0
+0x2519,0x0,Vibration Suppression Filter 2 Damping,0
+0x2600,0x0,Feedback Speed,0
+0x2601,0x0,Command Speed,0
+0x2602,0x0,Following Error,0
+0x2603,0x0,Accumulated Operation Overload,0
+0x2604,0x0,Instantaneous Maximum Operation Overload,0
+0x2605,0x0,DC-Link Voltage,163
+0x2606,0x0,Accumulated Regeneration Overload,0
+0x2607,0x0,SingleTurn Data,47451
+0x2608,0x0,Mechanical Angle,651
+0x2609,0x0,Electrical Angle,806
+0x260A,0x0,MultiTurn Data,77
+0x260B,0x0,Drive Temperature 1,41
+0x260C,0x0,Drive Temperature 2,43
+0x260D,0x0,Encoder Temperature,0
+0x260E,0x0,Motor Rated Speed,3000
+0x260F,0x0,Motor Maximum Speed,5000
+0x2610,0x0,Drive Rated Current,30
+0x2611,0x0,FPGA Version,0.12
+0x2612,0x0,Hall Signal Value,0
+0x2613,0x0,Bootloader Version,0.09
+0x2614,0x0,Warning Code,0
+0x2615,0x0,Analog Input 1 Value,32
+0x2619,0x0,RMS Operation Overload,0
+0x603F,0x0,Error Code,0
+0x6040,0x0,Controlword,0
+0x6041,0x0,Statusword,1648
+0x605A,0x0,Quick Stop Option Code,2
+0x605B,0x0,Shutdown Option Code,0
+0x605C,0x0,Disable Operation Option Code,1
+0x605D,0x0,Halt Option Code,0
+0x605E,0x0,Fault Reaction Option Code,0
+0x6060,0x0,Modes of Operation,8
+0x6061,0x0,Modes of Operation Display,8
+0x6062,0x0,Position Demand Value,20111371
+0x6063,0x0,Position Actual Internal Value,20111371
+0x6064,0x0,Position Actual Value,20111371
+0x6065,0x0,Following Error Window,1200000
+0x6066,0x0,Following Error Timeout,0
+0x6067,0x0,Position Window,100
+0x6068,0x0,Position Window Time,0
+0x606B,0x0,Velocity Demand Value,0
+0x606C,0x0,Velocity Actual Value,0
+0x606D,0x0,Velocity Window,20000
+0x606E,0x0,Velocity Window Time,0
+0x6071,0x0,Target Torque,0
+0x6072,0x0,Maximum Torque,3000
+0x6074,0x0,Torque Demand Value,0
+0x6076,0x0,Motor Rated Torque,170
+0x6077,0x0,Torque Actual Value,0
+0x6078,0x0,Current Actual Value,0
+0x6079,0x0,DC Link Circuit Voltage,1629
+0x607A,0x0,Target Position,20111371
+0x607C,0x0,Home Offset,0
+0x607D,0x0,Software Position Limit,2
+0x607D,0x1,Min position limit,-1000000000
+0x607D,0x2,Max position limit,1000000000
+0x607F,0x0,Maximum Profile Velocity,2147483647
+0x6080,0x0,Maximum Motor Speed,5000
+0x6081,0x0,Profile Velocity,100000
+0x6083,0x0,Profile Acceleration,200000
+0x6084,0x0,Profile Deceleration,200000
+0x6085,0x0,Quick Stop Deceleration,200000
+0x6087,0x0,Torque Slope,1000
+0x6091,0x0,Gear Ratio,2
+0x6091,0x1,Motor revolutions,1
+0x6091,0x2,Shaft revolutions,1
+0x6098,0x0,Homing Method,34
+0x6099,0x0,Homing Speeds,2
+0x6099,0x1,Speed during search for switch,500000
+0x6099,0x2,Speed during search for zero,100000
+0x609A,0x0,Homing Acceleration,200000
+0x60B0,0x0,Positon Offset,0
+0x60B1,0x0,Velocity Offset,0
+0x60B2,0x0,Torque Offset,0
+0x60B8,0x0,Touch Probe Function,0
+0x60B9,0x0,Touch Probe Status,0
+0x60BA,0x0,Touch Probe 1 Positive Edge Position Value,0
+0x60BB,0x0,Touch Probe 1 Negative Edge Position Value,0
+0x60BC,0x0,Touch Probe 2 Positive Edge Position Value,0
+0x60BD,0x0,Touch Probe 2 Negative Edge Position Value,0
+0x60E0,0x0,Positive Torque Limit Value,3000
+0x60E1,0x0,Negative Torque Limit Value,3000
+0x60F4,0x0,Following Error Actual Value,0
+0x60FC,0x0,Position Demand Internal Value,20111371
+0x60FD,0x0,Digital Inputs,0
+0x60FE,0x0,Digital outputs,2
+0x60FE,0x1,Physical outputs,0
+0x60FE,0x2,Bit mask,0
+0x60FF,0x0,Target Velocity,0
+0x6502,0x0,Supported Drive Modes,1005
